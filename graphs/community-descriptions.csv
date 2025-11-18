@@ -1,0 +1,230 @@
+community,description,size
+200,mixed,103
+165,"Contrastive/time connectors (同时, 但是, 因此...)",88
+0,"Family & identity terms (friends, everybody, parents)",87
+163,Studying / learning actions and contexts,75
+186,Calendar & daily time expressions (day/week/time),69
+210,Food & beverages vocabulary,69
+208,Directions and spatial relations (above/below/etc),56
+28,"Culture, music, art-related terms",52
+203,"Objects, apparel, consumer items",46
+206,Perception & cognition verbs,43
+195,Transportation & vehicles,39
+126,"Temporal expressions (after, already, soon, etc)",36
+158,Movement & location-changing verbs,34
+77,"Modal verbs (can, want, need)",26
+167,Weather & seasons,26
+211,Sports & athletics vocabulary,26
+108,Economic activity / commerce,24
+120,Positive emotions & feelings,23
+33,"Calendar (year, month, dates)",22
+80,Determiners & quantifiers,21
+46,General nouns for problems/things,20
+81,Authenticity / correctness adjectives,20
+16,Numbers & measurement units,19
+34,Implementation & advancement actions,18
+39,Verbs of stating / pointing out,18
+114,People & workforce categories,18
+133,Temporal references (past/present),18
+140,"Methods, ideas, viewpoints",18
+157,"Language, words, names",18
+178,"Reasons, traits, pros/cons",18
+7,Measure words / classifiers,17
+122,Geographic regions & directions,17
+9,Occurrence / impact verbs,16
+71,"Life, emotion, personality terms",16
+52,Physical action verbs,15
+64,"Standards, regulations, decisions",15
+127,Retail / service venues,15
+166,Colors,15
+182,Approximation & fraction expressions,15
+187,Speech & reactions,15
+197,Messaging & documents,15
+18,Geographic scope (domestic vs abroad),14
+43,Media & publications,14
+82,Construction / launch events,14
+115,Meetings & statements,14
+199,Banking IDs & paperwork,14
+49,Ensuring / maintaining verbs,13
+98,Achievements & progress,13
+102,Polite phrases / greetings,13
+11,"Media, arts, entertainment (overlap)",12
+58,Interaction / diplomacy,12
+78,Payments & fees,12
+149,Leadership titles,12
+190,Degree / intensity,12
+192,Travel / tickets,12
+205,Visual media & photos,12
+19,mixed,11
+62,mixed,11
+79,mixed,11
+87,mixed,11
+129,mixed,11
+142,mixed,11
+194,mixed,11
+8,mixed,10
+75,mixed,10
+89,mixed,10
+99,mixed,10
+134,mixed,10
+162,mixed,10
+193,mixed,10
+22,mixed,9
+53,mixed,9
+74,mixed,9
+83,mixed,9
+111,mixed,9
+125,mixed,9
+176,mixed,9
+228,mixed,9
+13,mixed,8
+113,mixed,8
+136,mixed,8
+170,mixed,8
+12,mixed,7
+17,mixed,7
+45,mixed,7
+47,mixed,7
+50,mixed,7
+57,mixed,7
+100,mixed,7
+147,mixed,7
+160,mixed,7
+202,mixed,7
+29,Direct/straight,6
+32,Experience / going through,6
+38,Conditions / environment / status,6
+65,Groups & membership,6
+95,Ethnicity / nature / civilization,6
+96,Possession / fullness,6
+104,Loss vs supplement,6
+107,Enthusiastic welcome & confidence,6
+130,Seizing opportunities,6
+141,Flying & transport vehicles,6
+161,"Ancient vs modern, transmission/legend",6
+169,Life/death verbs,6
+185,"Light, wind, washing/grooming",6
+5,Time/place references,5
+21,Size & shape,5
+26,"Technology, innovation, jobs",5
+41,Doing things together,5
+44,Development stage (advanced vs lagging),5
+59,Historical eras,5
+73,Ending / stopping / cancelling,5
+84,Ranking & queueing,5
+97,"Cities & rural locations (Beijing, village)",5
+106,Peace / freedom / equality ideals,5
+119,Continuity / persistence,5
+128,Preserving / making up for shortages,5
+131,Repetition vs. thrift (repeat/save/waste),5
+150,Records / breaking records,5
+151,Safety & public health,5
+171,Support vs. criticism,5
+201,Skill levels (高级/初级),5
+1,mixed,4
+4,mixed,4
+10,mixed,4
+25,mixed,4
+37,mixed,4
+40,mixed,4
+152,mixed,4
+155,mixed,4
+196,mixed,4
+23,mixed,3
+51,mixed,3
+67,mixed,3
+68,mixed,3
+86,mixed,3
+116,mixed,3
+132,mixed,3
+135,mixed,3
+159,mixed,3
+189,mixed,3
+226,mixed,3
+227,mixed,3
+6,mixed,2
+15,mixed,2
+20,mixed,2
+24,mixed,2
+27,mixed,2
+30,mixed,2
+31,mixed,2
+35,mixed,2
+42,mixed,2
+61,mixed,2
+63,mixed,2
+72,mixed,2
+76,mixed,2
+90,mixed,2
+93,mixed,2
+143,mixed,2
+148,mixed,2
+172,mixed,2
+173,mixed,2
+175,mixed,2
+177,mixed,2
+180,mixed,2
+183,mixed,2
+184,mixed,2
+191,mixed,2
+2,mixed,1
+3,mixed,1
+14,mixed,1
+36,mixed,1
+48,mixed,1
+54,mixed,1
+55,mixed,1
+56,mixed,1
+60,mixed,1
+66,mixed,1
+69,mixed,1
+70,mixed,1
+85,mixed,1
+88,mixed,1
+91,mixed,1
+92,mixed,1
+94,mixed,1
+101,mixed,1
+103,mixed,1
+105,mixed,1
+109,mixed,1
+110,mixed,1
+112,mixed,1
+117,mixed,1
+118,mixed,1
+121,mixed,1
+123,mixed,1
+124,mixed,1
+137,mixed,1
+138,mixed,1
+139,mixed,1
+144,mixed,1
+145,mixed,1
+146,mixed,1
+153,mixed,1
+154,mixed,1
+156,mixed,1
+164,mixed,1
+168,mixed,1
+174,mixed,1
+179,mixed,1
+181,mixed,1
+188,mixed,1
+198,mixed,1
+204,mixed,1
+207,mixed,1
+209,mixed,1
+212,mixed,1
+213,mixed,1
+214,mixed,1
+215,mixed,1
+216,mixed,1
+217,mixed,1
+218,mixed,1
+219,mixed,1
+220,mixed,1
+221,mixed,1
+222,mixed,1
+223,mixed,1
+224,mixed,1
+225,mixed,1
