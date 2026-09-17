@@ -1,5 +1,6 @@
 use std::cmp::Ordering;
 use std::collections::{BTreeMap, HashMap};
+use std::path::PathBuf;
 
 use anyhow::{anyhow, Result};
 use clap::Parser;
@@ -8,22 +9,27 @@ use graphrs::{
         centrality::{betweenness, closeness, eigenvector},
         cluster,
     },
-    readwrite, Graph, GraphSpecs,
+    Graph,
 };
+use hskclustering::graph_io::{read_graph, DEFAULT_FILTERED_GRAPH};
 
 #[derive(Parser, Debug)]
 #[command(name = "observe_graph")]
 #[command(about = "Inspect a GraphML file and print quick structural stats.")]
 struct Args {
-    #[arg(long, short = 'i', default_value = "hsk123-embeddings.graphml")]
-    input: String,
+    #[arg(long, short = 'i', default_value = DEFAULT_FILTERED_GRAPH)]
+    input: PathBuf,
 
     /// how many entries to show for ranked lists
     #[arg(long, short = 'k', default_value_t = 5)]
     top: usize,
 
-    /// skip centrality calculations (useful for extremely large graphs)
-    #[arg(long)]
+    /// Compute expensive centralities; shortest paths interpret weights as distances
+    #[arg(long, conflicts_with = "skip_centrality")]
+    centrality: bool,
+
+    /// Accepted for compatibility; centrality is now skipped by default
+    #[arg(long, hide = true)]
     skip_centrality: bool,
 
     /// compute clustering coefficient and transitivity. it might take hours, off by default
@@ -34,15 +40,14 @@ struct Args {
 fn main() -> Result<()> {
     let args = Args::parse();
 
-    let graph = readwrite::graphml::read_graphml_file(&args.input, GraphSpecs::undirected())
-        .map_err(|err| anyhow!("Failed to read GraphML from {}: {}", args.input, err))?;
+    let graph = read_graph(&args.input)?;
 
     let all_edges = graph.get_all_edges();
-    let missing_weight_count = all_edges.iter().filter(|e| e.weight.is_nan()).count();
-    let weights: Vec<f64> = all_edges
+    let missing_weight_count = all_edges.iter().filter(|e| !e.weight.is_finite()).count();
+    let mut weights: Vec<f64> = all_edges
         .iter()
         .filter_map(|edge| {
-            if edge.weight.is_nan() {
+            if !edge.weight.is_finite() {
                 None
             } else {
                 Some(edge.weight)
@@ -65,11 +70,13 @@ fn main() -> Result<()> {
     describe_degrees(&graph, args.top);
 
     println!("\n== Edge Weight Distribution ==");
-    describe_weights(&weights, missing_weight_count);
+    describe_weights(&mut weights, missing_weight_count);
+    drop(weights);
+    drop(all_edges);
 
-    if args.skip_centrality {
+    if !args.centrality {
         println!("\n== Centrality Metrics ==");
-        println!("  (skipped --skip-centrality)");
+        println!("  (skipped; enable with --centrality)");
     } else {
         println!("\n== Centrality Metrics (top {}) ==", args.top);
         describe_centralities(&graph, args.top)?;
@@ -90,7 +97,7 @@ fn describe_graph_structure(
 
     if missing_weight_count > 0 {
         println!(
-            "Edges missing weights: {} (excluded from weight stats)",
+            "Edges with missing/non-finite weights: {} (excluded from weight stats)",
             missing_weight_count
         );
     }
@@ -132,7 +139,7 @@ fn describe_degrees(graph: &Graph<String, ()>, top: usize) {
     }
 }
 
-fn describe_weights(weights: &[f64], missing_weight_count: usize) {
+fn describe_weights(weights: &mut [f64], missing_weight_count: usize) {
     if weights.is_empty() {
         if missing_weight_count == 0 {
             println!("  (graph has no edge weights)");
@@ -142,8 +149,7 @@ fn describe_weights(weights: &[f64], missing_weight_count: usize) {
         return;
     }
 
-    let mut sorted = weights.to_vec();
-    let summary = summarize(&mut sorted);
+    let summary = summarize(weights);
     if let Some(stats) = &summary {
         println!(
             "Count {} | min {:.4} | median {:.4} | mean {:.4} | max {:.4}",
@@ -153,13 +159,21 @@ fn describe_weights(weights: &[f64], missing_weight_count: usize) {
             "  Spread: p10 {:.4} | p90 {:.4} | std {:.4}",
             stats.p10, stats.p90, stats.std_dev
         );
-        println!("Total weight: {:.6}", sorted.iter().sum::<f64>());
+        println!("Total weight: {:.6}", weights.iter().sum::<f64>());
     }
 
-    print_ascii_histogram(&sorted, 20, "  ", "Edge weight histogram");
+    print_ascii_histogram(weights, 20, "  ", "Edge weight histogram");
 }
 
 fn describe_centralities(graph: &Graph<String, ()>, top: usize) -> Result<()> {
+    anyhow::ensure!(
+        graph
+            .get_all_edges()
+            .iter()
+            .all(|edge| edge.weight.is_finite() && edge.weight > 0.0),
+        "Weighted path centralities require finite, strictly positive edge lengths"
+    );
+    println!("  Path metrics treat weights as distances. Similarity weights need a distance model before these values are meaningful.");
     let bet = betweenness::betweenness_centrality(graph, true, true)
         .map_err(|err| anyhow!("betweenness centrality failed: {}", err))?;
     let closeness = closeness::closeness_centrality(graph, true, true)
@@ -191,7 +205,7 @@ fn summarize(values: &mut [f64]) -> Option<SummaryStats> {
         return None;
     }
 
-    values.sort_by(|a, b| a.partial_cmp(b).unwrap_or(Ordering::Equal));
+    values.sort_unstable_by(f64::total_cmp);
     let count = values.len();
     let sum: f64 = values.iter().sum();
     let mean = sum / count as f64;
@@ -429,12 +443,10 @@ fn print_top_float_map(title: &str, map: &HashMap<String, f64>, k: usize) {
 
 fn top_entries_f64(map: &HashMap<String, f64>, k: usize) -> Vec<(String, f64)> {
     let mut entries: Vec<(String, f64)> = map.iter().map(|(k, &v)| (k.clone(), v)).collect();
-    entries.sort_by(
-        |a, b| match b.1.partial_cmp(&a.1).unwrap_or(Ordering::Equal) {
-            Ordering::Equal => a.0.cmp(&b.0),
-            other => other,
-        },
-    );
+    entries.sort_by(|a, b| match b.1.total_cmp(&a.1) {
+        Ordering::Equal => a.0.cmp(&b.0),
+        other => other,
+    });
     entries.truncate(k);
     entries
 }

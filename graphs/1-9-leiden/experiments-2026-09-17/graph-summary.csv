@@ -1,0 +1,6 @@
+graph,nodes,edges,mean_degree,median_degree,p90_degree,max_degree,isolates,connected_components,largest_connected_component
+graphs/1-9-leiden/experiments-2026-09-17/graphs/pca100-t0.737.graphml,10936,126098,23.06108266276518,17.0,48,184,79,81,10855
+graphs/1-9-leiden/experiments-2026-09-17/graphs/pca200-fullfit-t0.686.graphml,10936,126971,23.220738844184346,19.0,46,141,37,39,10897
+graphs/1-9-leiden/hsk1-9-thresh0.70.graphml,10936,303267,55.462143379663495,40.0,119,489,3,4,10933
+graphs/1-9-leiden/experiments-2026-09-17/graphs/raw-t0.725.graphml,10936,127234,23.26883686905633,16.0,51,196,89,92,10843
+graphs/1-9-leiden/experiments-2026-09-17/graphs/raw-t0.75.graphml,10936,55939,10.230248719824433,7.0,23,103,559,599,10288

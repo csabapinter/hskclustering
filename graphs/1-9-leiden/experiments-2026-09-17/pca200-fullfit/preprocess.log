@@ -1,0 +1,47 @@
+Fitting centered, unwhitened PCA with 200 components
+Similarity rows 32/10936; 858 edges written
+Similarity rows 288/10936; 5854 edges written
+Similarity rows 544/10936; 10450 edges written
+Similarity rows 800/10936; 14344 edges written
+Similarity rows 1056/10936; 18410 edges written
+Similarity rows 1312/10936; 22413 edges written
+Similarity rows 1568/10936; 26569 edges written
+Similarity rows 1824/10936; 30380 edges written
+Similarity rows 2080/10936; 34444 edges written
+Similarity rows 2336/10936; 38472 edges written
+Similarity rows 2592/10936; 42203 edges written
+Similarity rows 2848/10936; 45685 edges written
+Similarity rows 3104/10936; 49496 edges written
+Similarity rows 3360/10936; 53363 edges written
+Similarity rows 3616/10936; 56859 edges written
+Similarity rows 3872/10936; 60504 edges written
+Similarity rows 4128/10936; 63786 edges written
+Similarity rows 4384/10936; 67361 edges written
+Similarity rows 4640/10936; 70722 edges written
+Similarity rows 4896/10936; 73972 edges written
+Similarity rows 5152/10936; 77351 edges written
+Similarity rows 5408/10936; 80927 edges written
+Similarity rows 5664/10936; 84518 edges written
+Similarity rows 5920/10936; 87813 edges written
+Similarity rows 6176/10936; 90915 edges written
+Similarity rows 6432/10936; 93891 edges written
+Similarity rows 6688/10936; 96936 edges written
+Similarity rows 6944/10936; 99606 edges written
+Similarity rows 7200/10936; 102490 edges written
+Similarity rows 7456/10936; 105006 edges written
+Similarity rows 7712/10936; 107507 edges written
+Similarity rows 7968/10936; 110019 edges written
+Similarity rows 8224/10936; 112580 edges written
+Similarity rows 8480/10936; 114660 edges written
+Similarity rows 8736/10936; 116793 edges written
+Similarity rows 8992/10936; 118693 edges written
+Similarity rows 9248/10936; 120475 edges written
+Similarity rows 9504/10936; 121971 edges written
+Similarity rows 9760/10936; 123546 edges written
+Similarity rows 10016/10936; 124647 edges written
+Similarity rows 10272/10936; 125598 edges written
+Similarity rows 10528/10936; 126319 edges written
+Similarity rows 10784/10936; 126831 edges written
+Similarity rows 10936/10936; 126971 edges written
+{"components":200,"fitted_components":300,"whiten":false,"fit_on":"all raw SGNS rows before L2 normalization","retained_centered_variance":0.8326358295618316,"target_edges":127234,"threshold":0.686,"edges":126971,"mean_degree":23.220738844184346,"edges_at_0_700":88354,"edges_at_0_725":47264,"edges_at_0_750":25709}
+

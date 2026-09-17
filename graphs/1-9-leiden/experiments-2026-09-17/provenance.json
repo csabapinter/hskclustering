@@ -1,0 +1,54 @@
+{
+  "date": "2026-09-17",
+  "platform": "macOS-26.3-arm64-arm-64bit",
+  "rustc": "rustc 1.95.0 (59807616e 2026-04-14)",
+  "git_head": "79ee4c0744cd2a158be42c416f56fb5984e94fd6",
+  "input_hashes": {
+    "data/input-embeddings.txt": "5dcd7e46ec00a70d92adc4510638c73b0642bd2f09afea053bea38bd60cacafa",
+    "data/hsk-data.csv": "17b592a3a9d42d4ffacb0686d326c7efbfe380327c3671563108b984af948e24",
+    "Cargo.lock": "91ad80d95eae860f13ad3ca98928aa9977b040aa428d50a2412c0b7666615b1d",
+    "graphs/1-9-leiden/hsk1-9-thresh0.70.graphml": "64fee58e649365ce1c4d4aec95b5102e77afcc1a565be9ff6d398658dd8fcaa5",
+    "graphs/1-9-leiden/hsk1-9-thresh0.70.communities.csv": "797476e0e04a5ad0d980b26d3bf7973d6bda4e1a543d5da16038654b17e51b27",
+    "vendor/graphrs-0.12.0/src/algorithms/community/leiden/mod.rs": "4de1e78c96ecdca8d4792e963821113c6cea87deaa76aaf6f8dab04547722065"
+  },
+  "binary_hashes": {
+    "target/release/leiden_community": "463b1ed0767e9e8b71a7b2998718de1c71803f3c0a97229f7f159f8454746280",
+    "target/release/filter_graph": "e83f0187f60fc086016823206836387755a13d0040dbf92bb727f8553e15d803",
+    "graphs/1-9-leiden/experiments-2026-09-17/experiment_tools": "8f452a438eb127317e517759896dfd087786b41ee440b3224b9f2322fb6ebaf3"
+  },
+  "application_source_hashes": {
+    "src/bin/build_graph.rs": "22379af96df1aafe2e589e41048d9325f2bc05d5ab956a1b2462c2a687fea367",
+    "src/bin/filter_graph.rs": "87527e78efe2c09cd9203ee20edf183bfd55456b12b9ac116ea9e1c998145661",
+    "src/bin/leiden_community.rs": "20901f5878ae54ac9905911793cbbcd843732a270329ba1662c10f42cb9c06c2",
+    "src/bin/observe_graph.rs": "384b7b4e44ba2cb4f835951882f3cd8e663529f1bffd4e521e4853343f70bc63",
+    "src/community.rs": "a0b11c18da27bbef340b451739d5ffaab9660a19be9df6e407739634b8e101fb",
+    "src/embeddings/mod.rs": "f48813110b96ff5efb91c60c693917e3daacfab121e728c92969aca262cef619",
+    "src/embeddings/preprocess.rs": "10269a8e843ad4af20aa3c5f93d8dc408040891fc2d11a477956d36551f1551a",
+    "src/graph_io/filter.rs": "7b0245379e97a062d5a11b567042a76b63777ca938568ef3141748860ebfa7cf",
+    "src/graph_io.rs": "daa2f99332efe22f3203ad8859257bcb64d2db5586a84042e4eed59772b29f24",
+    "src/lib.rs": "640b4373cc619012d2f229a767dc7eee89106bc92d2fdd25b1f43d8ec0773005",
+    "src/output.rs": "776e2f75c0cdd6d874529cf3156ac36a5dcce2bbec6537d189cc65ef3d1cd28e"
+  },
+  "build_command": [
+    "cargo",
+    "build",
+    "--release",
+    "--locked",
+    "--bins",
+    "--lib"
+  ],
+  "run_commands": "runs/*/run.json",
+  "analysis_source": [
+    "experiment_tools.rs",
+    "summarize.py",
+    "export_review.py"
+  ],
+  "pca_rayon_threads": 3,
+  "leiden_seed_exposed": false,
+  "limitations": [
+    "No labelled semantic ground truth",
+    "No embedding/data perturbation bootstrap",
+    "PCA centring not isolated from dimension reduction",
+    "Not an exhaustive parameter search"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "components": 200,
+  "whiten": false,
+  "fit_on": "all raw SGNS rows before L2 normalization",
+  "retained_centered_variance": 0.665987263486238,
+  "target_edges": 127234,
+  "threshold": 0.669,
+  "edges": 127508,
+  "mean_degree": 23.318946598390635,
+  "edges_at_0_700": 54611,
+  "edges_at_0_725": 28788,
+  "edges_at_0_750": 15609,
+  "fitted_components": 200,
+  "eigen_audit": {
+    "components": 200,
+    "relative_eigen_residual": 0.350165981426533,
+    "max_orthonormality_error": 5.595524044110789e-14,
+    "eigen_residual_pass_1e_6": false
+  },
+  "used_for_clustering": false,
+  "note": "Rejected: eigen residual 0.35. No clustering runs use this graph."
+}

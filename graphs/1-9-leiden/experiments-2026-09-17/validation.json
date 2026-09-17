@@ -1,0 +1,16 @@
+{
+  "successful_new_runs": 31,
+  "unique_configurations": 15,
+  "words_per_partition": 10936,
+  "all_communities_connected": true,
+  "all_recorded_graph_and_assignment_hashes_match": true,
+  "original_inputs_baseline_and_vendor_patch_unchanged": true,
+  "recommended_communities": 1372,
+  "recommended_words": 10936,
+  "repeat_configurations": 4,
+  "repeats_each": 5,
+  "pairwise_ari_comparisons": 40,
+  "pca100_crosscheck_identical_edge_set": true,
+  "pca100_crosscheck_max_weight_difference": 1.1920928955078125e-07,
+  "invalid_direct_pca200_excluded": true
+}

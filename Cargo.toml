@@ -2,17 +2,29 @@
 name = "hskclustering"
 version = "0.1.0"
 edition = "2021"
+rust-version = "1.87"
 
 [dependencies]
-# Graph library that supports undirected graphs, weighted edges, and GraphML I/O.
-# We pin to the doc'd version to avoid API drift.
-graphrs = { version = "0.11.13" }
+# Graph algorithms, including Leiden community detection.
+graphrs = "0.12.0"
 
 # Simple CLI argument parsing
-clap = { version = "4.5", features = ["derive"] }
+clap = { version = "4.6.7", features = ["derive"] }
 
 # Ergonomic error handling
-anyhow = "1.0"
-ndarray = "0.15"
-linfa = { version = "0.7", default-features = false, features = ["serde"] }
-linfa-reduction = { version = "0.7", default-features = false }
+anyhow = "1.0.104"
+# Linfa 0.8.1 uses ndarray 0.16; 0.17 has incompatible array types.
+ndarray = "0.16.1"
+linfa = { version = "0.8.1", default-features = false }
+linfa-reduction = { version = "0.8.1", default-features = false }
+
+# Streaming, escaped output and atomic file replacement.
+csv = "1.4.0"
+quick-xml = "0.42.0"
+tempfile = "3.27.0"
+rayon = "1.12.0"
+
+[patch.crates-io]
+# Upstream Leiden overflows its refinement sampling weights on the HSK 1–9 graph.
+# This 0.12.0 source copy contains only the numerical fix documented alongside it.
+graphrs = { path = "vendor/graphrs-0.12.0" }

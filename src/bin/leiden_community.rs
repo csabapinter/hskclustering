@@ -1,28 +1,24 @@
-use anyhow::{Context, Result};
+use anyhow::Result;
 use clap::{Parser, ValueEnum};
-use graphrs::{
-    algorithms::community::leiden::{self, QualityFunction},
-    readwrite, GraphSpecs,
+use graphrs::algorithms::community::leiden::QualityFunction;
+use hskclustering::{
+    community::{detect_communities, write_assignments, LeidenConfig},
+    graph_io::{read_graph, DEFAULT_FILTERED_GRAPH},
+    output::ensure_distinct_paths,
 };
-use hskclustering::graph_io::default_output_for_input;
-use std::collections::HashMap;
-use std::fs::File;
-use std::io::{BufWriter, Write};
 use std::path::PathBuf;
+use std::time::Instant;
 
 #[derive(Parser, Debug)]
-#[command(name = "leiden_community")]
-#[command(about = "Run Leiden community detection on a GraphML and write token-community CSV")]
+#[command(about = "Run Leiden on a weighted GraphML and write a token-community CSV")]
 struct Args {
-    /// Input GraphML file
-    #[arg(long, short = 'i', default_value = "hsk123-embeddings.graphml")]
-    input: String,
+    #[arg(long, short = 'i', default_value = DEFAULT_FILTERED_GRAPH)]
+    input: PathBuf,
 
     /// Output CSV (defaults to input basename + .communities.csv)
     #[arg(long, short = 'o')]
-    output: Option<String>,
+    output: Option<PathBuf>,
 
-    /// Quality function (CPM or Modularity)
     #[arg(long, value_enum, default_value = "cpm")]
     quality: Quality,
 
@@ -30,11 +26,11 @@ struct Args {
     #[arg(long, default_value_t = 0.05)]
     resolution: f64,
 
-    /// Theta parameter controlling randomness
+    /// Positive theta controlling refinement randomness
     #[arg(long, default_value_t = 0.3)]
     theta: f64,
 
-    /// CPM gamma controlling community granularity (ignored for modularity)
+    /// Refinement connectivity parameter, used by graphrs for BOTH quality functions
     #[arg(long, default_value_t = 0.05)]
     gamma: f64,
 }
@@ -47,74 +43,49 @@ enum Quality {
 
 fn main() -> Result<()> {
     let args = Args::parse();
-    let input = &args.input;
-    let csv_path = match &args.output {
-        Some(path) => PathBuf::from(path),
-        None => default_output_for_input(input).with_extension("communities.csv"),
+    let config = LeidenConfig {
+        quality: match args.quality {
+            Quality::Cpm => QualityFunction::CPM,
+            Quality::Modularity => QualityFunction::Modularity,
+        },
+        resolution: args.resolution,
+        theta: args.theta,
+        gamma: args.gamma,
     };
-
+    config.validate()?;
+    let output = args
+        .output
+        .unwrap_or_else(|| args.input.with_extension("communities.csv"));
+    ensure_distinct_paths(&args.input, &output)?;
+    eprintln!("Loading {}", args.input.display());
+    let graph = read_graph(&args.input)?;
     eprintln!(
-        "Loading graph from {} and running Leiden ({:?}, resolution {:.3}, theta {:.3}, gamma {:.3})",
-        input, args.quality, args.resolution, args.theta, args.gamma
+        "Running Leiden on {} nodes / {} edges ({:?}, resolution {}, theta {}, gamma {})",
+        graph.number_of_nodes(),
+        graph.number_of_edges(),
+        args.quality,
+        args.resolution,
+        args.theta,
+        args.gamma,
     );
-    let graph = readwrite::graphml::read_graphml_file(input, GraphSpecs::undirected())
-        .map_err(|e| anyhow::anyhow!("Failed to read GraphML from {}: {}", input, e))?;
-
-    let quality_fn = match args.quality {
-        Quality::Cpm => QualityFunction::CPM,
-        Quality::Modularity => QualityFunction::Modularity,
+    eprintln!("graphrs does not expose a random seed; partitions may differ between runs.");
+    let started = Instant::now();
+    let communities = detect_communities(&graph, config)?;
+    let mut sizes: Vec<_> = communities.iter().map(Vec::len).collect();
+    sizes.sort_unstable();
+    let median = if sizes.is_empty() {
+        0.0
+    } else {
+        (sizes[(sizes.len() - 1) / 2] as f64 + sizes[sizes.len() / 2] as f64) / 2.0
     };
-    let gamma = match args.quality {
-        Quality::Cpm => Some(args.gamma),
-        Quality::Modularity => None,
-    };
-    let communities = leiden::leiden(
-        &graph,
-        true,
-        quality_fn,
-        Some(args.resolution),
-        Some(args.theta),
-        gamma,
-    )
-    .map_err(|e| anyhow::anyhow!("Leiden community detection failed: {}", e))?;
-
-    let mut community_sizes: Vec<usize> = communities.iter().map(|c| c.len()).collect();
-    community_sizes.sort_by(|a, b| b.cmp(a));
     eprintln!(
-        "Communities: {} (median size {}), largest {}",
-        community_sizes.len(),
-        median(&community_sizes),
-        community_sizes.first().copied().unwrap_or(0)
+        "{} communities; median size {median}, largest {}, singletons {}; Leiden took {:.2?}",
+        sizes.len(),
+        sizes.last().copied().unwrap_or(0),
+        sizes.iter().filter(|&&size| size == 1).count(),
+        started.elapsed()
     );
-
-    let mut assignments: HashMap<String, usize> = HashMap::new();
-    for (cid, members) in communities.iter().enumerate() {
-        for token in members {
-            assignments.insert(token.clone(), cid);
-        }
-    }
-
-    let mut writer = BufWriter::new(
-        File::create(&csv_path).with_context(|| format!("Failed to create {:?}", csv_path))?,
-    );
-    writeln!(writer, "token,community")?;
-    for node in graph.get_all_nodes() {
-        let token = node.name.clone();
-        if let Some(cid) = assignments.get(&token) {
-            writeln!(writer, "{},{}", token, cid)?;
-        }
-    }
-    writer.flush()?;
-
-    eprintln!("Wrote {} assignments to {:?}", assignments.len(), csv_path);
+    let count = write_assignments(&output, &communities)?;
+    eprintln!("Wrote {count} assignments to {}", output.display());
     Ok(())
-}
-
-fn median(values: &[usize]) -> usize {
-    if values.is_empty() {
-        return 0;
-    }
-    let mut sorted = values.to_vec();
-    sorted.sort();
-    sorted[sorted.len() / 2]
 }

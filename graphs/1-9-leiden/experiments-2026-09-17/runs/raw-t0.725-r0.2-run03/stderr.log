@@ -1,0 +1,5 @@
+Loading /Users/xiaogou/Documents/hskclustering/graphs/1-9-leiden/experiments-2026-09-17/graphs/raw-t0.725.graphml
+Running Leiden on 10936 nodes / 127234 edges (Cpm, resolution 0.2, theta 0.3, gamma 0.2)
+graphrs does not expose a random seed; partitions may differ between runs.
+2195 communities; median size 3, largest 111, singletons 476; Leiden took 77.83s
+Wrote 10936 assignments to /Users/xiaogou/Documents/hskclustering/graphs/1-9-leiden/experiments-2026-09-17/runs/raw-t0.725-r0.2-run03/communities.csv

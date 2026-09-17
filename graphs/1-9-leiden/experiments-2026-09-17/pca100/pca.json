@@ -1,0 +1,22 @@
+{
+  "components": 100,
+  "whiten": false,
+  "fit_on": "all raw SGNS rows before L2 normalization",
+  "retained_centered_variance": 0.559738882333719,
+  "target_edges": 127234,
+  "threshold": 0.737,
+  "edges": 126098,
+  "mean_degree": 23.06108266276518,
+  "edges_at_0_700": 309602,
+  "edges_at_0_725": 169184,
+  "edges_at_0_750": 91680,
+  "fitted_components": 100,
+  "eigen_audit": {
+    "components": 100,
+    "relative_eigen_residual": 4.2632865368690953e-13,
+    "max_orthonormality_error": 1.3100631690576847e-14,
+    "eigen_residual_pass_1e_6": true
+  },
+  "used_for_clustering": true,
+  "note": "Validated against full 300-component fit; used for PCA100 grid."
+}

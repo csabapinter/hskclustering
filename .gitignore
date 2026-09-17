@@ -1,3 +1,13 @@
 .DS_Store
 /data/
 /target/
+# Regenerable multi-GB complete graph; keep it locally without adding it to Git.
+/graphs/1-9-leiden/hsk1-9-full.graphml
+
+# Regenerable experiment artifacts. Keep reports, settings and assignments tracked.
+/graphs/1-9-leiden/experiments-*/experiment_tools
+/graphs/1-9-leiden/experiments-*/graphs/*.graphml
+/graphs/1-9-leiden/experiments-*/pca*/embeddings.txt
+/graphs/1-9-leiden/experiments-*/pca*/pca-components.csv
+/graphs/1-9-leiden/experiments-*/runs/*/words.csv
+/graphs/1-9-leiden/experiments-*/baseline/words.csv

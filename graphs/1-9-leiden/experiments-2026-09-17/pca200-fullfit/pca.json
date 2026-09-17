@@ -1,0 +1,22 @@
+{
+  "components": 200,
+  "fitted_components": 300,
+  "whiten": false,
+  "fit_on": "all raw SGNS rows before L2 normalization",
+  "retained_centered_variance": 0.8326358295618316,
+  "target_edges": 127234,
+  "threshold": 0.686,
+  "edges": 126971,
+  "mean_degree": 23.220738844184346,
+  "edges_at_0_700": 88354,
+  "edges_at_0_725": 47264,
+  "edges_at_0_750": 25709,
+  "eigen_audit": {
+    "components": 200,
+    "relative_eigen_residual": 8.541936952321245e-10,
+    "max_orthonormality_error": 5.350002663107034e-10,
+    "eigen_residual_pass_1e_6": true
+  },
+  "used_for_clustering": true,
+  "note": "Fit all 300 directions and retained leading 200; eigen residual below 1e-6."
+}

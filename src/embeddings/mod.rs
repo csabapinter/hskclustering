@@ -2,10 +2,12 @@ mod preprocess;
 
 pub use preprocess::PcaWhiteningConfig;
 
-use anyhow::{bail, Context, Result};
+use anyhow::{bail, ensure, Context, Result};
 use preprocess::apply_pca_whitening;
+use std::collections::HashSet;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
+use std::path::Path;
 
 /// Load a text SGNS-style embedding file (tokens + raw vectors).
 ///
@@ -20,10 +22,14 @@ use std::io::{BufRead, BufReader};
 /// Returns:
 /// - `tokens`: all tokens in order (as owned `String`s)
 /// - `vectors`: parallel Vec of raw `Vec<f32>` of length `dim`
-pub fn load_embeddings(path: &str) -> Result<(Vec<String>, Vec<Vec<f32>>)> {
-    let file = File::open(path).with_context(|| format!("Failed to open {}", path))?;
-    let mut reader = BufReader::new(file);
+pub fn load_embeddings(path: impl AsRef<Path>) -> Result<(Vec<String>, Vec<Vec<f32>>)> {
+    let path = path.as_ref();
+    let file = File::open(path).with_context(|| format!("Failed to open {}", path.display()))?;
+    read_embeddings(BufReader::new(file))
+        .with_context(|| format!("Invalid embeddings in {}", path.display()))
+}
 
+fn read_embeddings(mut reader: impl BufRead) -> Result<(Vec<String>, Vec<Vec<f32>>)> {
     let mut header = String::new();
     reader
         .read_line(&mut header)
@@ -39,9 +45,16 @@ pub fn load_embeddings(path: &str) -> Result<(Vec<String>, Vec<Vec<f32>>)> {
         .context("Header missing dimension")?
         .parse()
         .context("Failed to parse dimension as usize")?;
+    ensure!(
+        it.next().is_none(),
+        "Header must contain exactly a token count and dimension"
+    );
+    ensure!(d > 0, "Embedding dimension must be positive");
 
-    let mut tokens = Vec::with_capacity(n);
-    let mut vectors = Vec::with_capacity(n);
+    // Do not trust an unvalidated header enough to allocate its declared size.
+    let mut tokens = Vec::new();
+    let mut vectors = Vec::new();
+    let mut seen = HashSet::new();
 
     for (line_idx, line) in reader.lines().enumerate() {
         let line = line.with_context(|| format!("Failed to read line {}", line_idx + 2))?;
@@ -51,8 +64,18 @@ pub fn load_embeddings(path: &str) -> Result<(Vec<String>, Vec<Vec<f32>>)> {
             .next()
             .with_context(|| format!("Missing token at data line {}", line_idx + 2))?
             .to_string();
+        ensure!(
+            tokens.len() < n,
+            "More rows than the header's {n} tokens (line {})",
+            line_idx + 2
+        );
+        ensure!(
+            seen.insert(token.clone()),
+            "Duplicate token {token:?} at line {}",
+            line_idx + 2
+        );
 
-        let mut vec = Vec::with_capacity(d);
+        let mut vec = Vec::new();
         for j in 0..d {
             let v = parts
                 .next()
@@ -61,8 +84,19 @@ pub fn load_embeddings(path: &str) -> Result<(Vec<String>, Vec<Vec<f32>>)> {
                 .with_context(|| {
                     format!("Failed to parse float at line {} dim {}", line_idx + 2, j)
                 })?;
+            ensure!(
+                v.is_finite(),
+                "Non-finite value for {token:?} at line {}, dimension {}",
+                line_idx + 2,
+                j
+            );
             vec.push(v);
         }
+        ensure!(
+            parts.next().is_none(),
+            "Extra values for {token:?} at line {}; expected {d} dimensions",
+            line_idx + 2
+        );
 
         tokens.push(token);
         vectors.push(vec);
@@ -70,9 +104,8 @@ pub fn load_embeddings(path: &str) -> Result<(Vec<String>, Vec<Vec<f32>>)> {
 
     if tokens.len() != n {
         bail!(
-            "Header said {} tokens but actually loaded {}. If your file truly has {} rows after the header, update the header or remove this check.",
+            "Header said {} tokens but actually loaded {}",
             n,
-            tokens.len(),
             tokens.len()
         );
     }
@@ -82,7 +115,7 @@ pub fn load_embeddings(path: &str) -> Result<(Vec<String>, Vec<Vec<f32>>)> {
 
 /// Load embeddings, optionally run PCA whitening, then L2-normalize rows.
 pub fn prepare_embeddings(
-    path: &str,
+    path: impl AsRef<Path>,
     whitening: Option<PcaWhiteningConfig>,
 ) -> Result<(Vec<String>, Vec<Vec<f32>>)> {
     let (tokens, mut vectors) = load_embeddings(path)?;
@@ -98,17 +131,14 @@ pub fn prepare_embeddings(
 
 fn l2_normalize_vectors(vectors: &mut [Vec<f32>]) -> Result<()> {
     for (row_idx, vec) in vectors.iter_mut().enumerate() {
-        let norm_sq: f32 = vec.iter().map(|x| x * x).sum();
-        if norm_sq == 0.0 {
-            bail!(
-                "Zero-norm vector encountered at row {} (token index {})",
-                row_idx,
-                row_idx
-            );
+        // f64 accumulation avoids overflow/underflow for finite f32 input.
+        let norm_sq: f64 = vec.iter().map(|&x| f64::from(x).powi(2)).sum();
+        if !norm_sq.is_finite() || norm_sq == 0.0 {
+            bail!("Zero or non-finite vector norm at token index {}", row_idx);
         }
         let norm = norm_sq.sqrt();
         for x in vec.iter_mut() {
-            *x /= norm;
+            *x = (f64::from(*x) / norm) as f32;
         }
     }
     Ok(())
@@ -117,10 +147,60 @@ fn l2_normalize_vectors(vectors: &mut [Vec<f32>]) -> Result<()> {
 /// Compute cosine similarity between two already-L2-normalized vectors of equal length.
 #[inline]
 pub fn cosine_normalized(a: &[f32], b: &[f32]) -> f32 {
-    debug_assert_eq!(a.len(), b.len());
-    let mut s: f32 = 0.0;
-    for i in 0..a.len() {
-        s += a[i] * b[i];
+    assert_eq!(
+        a.len(),
+        b.len(),
+        "Cosine vectors must have equal dimensions"
+    );
+    a.iter()
+        .zip(b)
+        .map(|(x, y)| x * y)
+        .sum::<f32>()
+        .clamp(-1.0, 1.0)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn parses_unicode_tokens_and_exact_shape() -> Result<()> {
+        let (tokens, vectors) = read_embeddings("2 2\n你好 3 4\n学习 -1 0\n".as_bytes())?;
+        assert_eq!(tokens, ["你好", "学习"]);
+        assert_eq!(vectors, [vec![3.0, 4.0], vec![-1.0, 0.0]]);
+        Ok(())
     }
-    s
+
+    #[test]
+    fn rejects_malformed_embeddings() {
+        for text in [
+            "",
+            "1 0\na\n",
+            "1 1 extra\na 1\n",
+            "1 2\na 1\n",
+            "1 1\na 1 2\n",
+            "1 1\na NaN\n",
+            "1 1\na inf\n",
+            "2 1\na 1\na 2\n",
+            "2 1\na 1\n",
+            "1 1\na 1\nb 2\n",
+        ] {
+            assert!(
+                read_embeddings(text.as_bytes()).is_err(),
+                "accepted {text:?}"
+            );
+        }
+    }
+
+    #[test]
+    fn normalization_handles_finite_extremes_and_rejects_zero() -> Result<()> {
+        let mut vectors = vec![vec![f32::MAX, f32::MAX], vec![f32::MIN_POSITIVE, 0.0]];
+        l2_normalize_vectors(&mut vectors)?;
+        for vector in &vectors {
+            assert!((cosine_normalized(vector, vector) - 1.0).abs() < 1e-6);
+        }
+        assert!(l2_normalize_vectors(&mut [vec![0.0, 0.0]]).is_err());
+        assert!(l2_normalize_vectors(&mut [vec![f32::NAN]]).is_err());
+        Ok(())
+    }
 }

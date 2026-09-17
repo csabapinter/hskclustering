@@ -1,0 +1,5 @@
+Loading /Users/xiaogou/Documents/hskclustering/graphs/1-9-leiden/experiments-2026-09-17/graphs/pca200-fullfit-t0.686.graphml
+Running Leiden on 10936 nodes / 126971 edges (Cpm, resolution 0.2, theta 0.3, gamma 0.2)
+graphrs does not expose a random seed; partitions may differ between runs.
+1950 communities; median size 4, largest 105, singletons 350; Leiden took 79.77s
+Wrote 10936 assignments to /Users/xiaogou/Documents/hskclustering/graphs/1-9-leiden/experiments-2026-09-17/runs/pca200-fullfit-t0.686-r0.2-run01/communities.csv
