@@ -2,8 +2,9 @@ use anyhow::Result;
 use clap::{Parser, ValueEnum};
 use graphrs::algorithms::community::leiden::QualityFunction;
 use hskclustering::{
-    community::{detect_communities, write_assignments, LeidenConfig},
+    clustering::write_partition,
     graph_io::{read_graph, DEFAULT_FILTERED_GRAPH},
+    leiden::{detect_communities, LeidenConfig},
     output::ensure_distinct_paths,
 };
 use std::path::PathBuf;
@@ -85,7 +86,7 @@ fn main() -> Result<()> {
         sizes.iter().filter(|&&size| size == 1).count(),
         started.elapsed()
     );
-    let count = write_assignments(&output, &communities)?;
+    let count = write_partition(&output, &communities)?;
     eprintln!("Wrote {count} assignments to {}", output.display());
     Ok(())
 }

@@ -33,8 +33,9 @@ Versions were checked against the published crate metadata and downloaded source
 
 Linfa 0.8.1 explicitly pins `sprs = 0.11.2` to avoid an ndarray version mismatch.
 Do not independently force sprs or ndarray to their newest minor versions.
-`linfa-clustering` has not been added as an unused dependency; add its 0.8.1 release
-when implementing GMMs. The 0.8 line adds GMM probability prediction. The covariance
+At the time of this review, `linfa-clustering` was not yet used. The subsequent
+GMM implementation adds its 0.8.1 release with a documented local numerical
+patch; see [vendor notes](../vendor/README.md). The 0.8 line adds GMM probability prediction. The covariance
 update fix was already present in the previously resolved Linfa 0.7.1 ecosystem.
 
 Sources: [Linfa changelog](https://github.com/rust-ml/linfa/blob/master/CHANGELOG.md),
@@ -66,7 +67,7 @@ This is a release/API/source review, not a full RustSec vulnerability audit.
 - The patched full-range Leiden run completed in about 240 seconds with 508
   communities. An independent CSV/XML check verified exactly one assignment per
   input token and that all 508 communities induce connected subgraphs. Detailed
-  settings, artifact hashes and coverage are in the [run notes](../graphs/1-9-leiden/README.md).
+  settings, artifact hashes and coverage are in the [run notes](../results/leiden/1-9/README.md).
 
 ## Fixed engineering issues
 
@@ -103,7 +104,7 @@ This is a release/API/source review, not a full RustSec vulnerability audit.
    Community members, IDs and rows are canonicalized. All file writers flush and
    publish via a temporary file in the destination directory; a failed write
    retains an existing result. Commands reject overwriting their own input.
-8. **CLI consistency.** Active defaults use `graphs/1-9-leiden/`, thresholds are
+8. **CLI consistency.** Active defaults use `results/leiden/1-9/`, thresholds are
    reflected in filenames without rounding distinct values together, and paths
    use `PathBuf`. Long-running centralities are opt-in. Median community size now
    handles even counts correctly. Edge-weight summaries avoid an extra full copy.

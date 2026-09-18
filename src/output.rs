@@ -1,4 +1,6 @@
 use anyhow::{ensure, Context, Result};
+use serde::Serialize;
+use sha2::{Digest, Sha256};
 use std::fs::{self, File};
 use std::io::{BufWriter, Write};
 use std::path::Path;
@@ -40,6 +42,29 @@ pub fn ensure_distinct_paths(input: &Path, output: &Path) -> Result<()> {
         );
     }
     Ok(())
+}
+
+pub fn write_json(path: &Path, value: &impl Serialize) -> Result<()> {
+    write_atomic(path, |writer| {
+        serde_json::to_writer_pretty(&mut *writer, value)?;
+        writeln!(writer)?;
+        Ok(())
+    })
+}
+
+pub fn sha256(path: &Path) -> Result<String> {
+    use std::io::Read;
+    let mut reader = std::io::BufReader::new(File::open(path)?);
+    let mut hash = Sha256::new();
+    let mut buffer = [0_u8; 65536];
+    loop {
+        let count = reader.read(&mut buffer)?;
+        if count == 0 {
+            break;
+        }
+        hash.update(&buffer[..count]);
+    }
+    Ok(format!("{:x}", hash.finalize()))
 }
 
 #[cfg(test)]

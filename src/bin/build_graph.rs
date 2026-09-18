@@ -18,7 +18,7 @@ struct Args {
     #[arg(long, short = 'i', default_value = "data/input-embeddings.txt")]
     input: PathBuf,
 
-    /// Output GraphML path (defaults to graphs/1-9-leiden/hsk1-9-full.graphml)
+    /// Output GraphML path (defaults to results/leiden/1-9/hsk1-9-full.graphml)
     #[arg(long, short = 'o')]
     output: Option<PathBuf>,
 

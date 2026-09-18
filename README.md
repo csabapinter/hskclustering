@@ -1,11 +1,27 @@
 # HSK vocabulary clustering
 
 Group Chinese words with related contexts/meanings into communities for studying,
-using graphrs for Leiden and Linfa for optional embedding preprocessing.
+using Rust: graphrs for Leiden and Linfa for Gaussian mixture models (GMM).
 
-The active output directory is `graphs/1-9-leiden/`. `graphs/1-3-leiden/` is an
-archive; the earlier observation that about 72% of words formed distinguishable
-thematic groups applies only to that experiment.
+Each method has a small, separate runner. Shared code covers embeddings,
+assignment CSVs and comparison metrics; there is no clustering plugin framework.
+Adding a third method means adding its runner and writing the same
+`token,community` CSV. `community` means a cluster ID local to that particular run.
+
+```text
+results/
+  leiden/
+    1-3/                         # archived experiment
+    1-9/                         # baseline and dated experiment archive
+  gmm/
+    1-9/<run>/                   # model selection, assignments, probabilities
+```
+
+The previous `graphs/1-9-leiden/` and `graphs/1-3-leiden/` directories moved to
+`results/leiden/1-9/` and `results/leiden/1-3/`. Existing results are preserved.
+Graphs are still valid artifacts within Leiden results, not a requirement of
+other methods. The old estimate of about 72% distinguishable thematic groups
+applies only to the HSK 1–3 archive.
 
 ## Input
 
@@ -26,7 +42,7 @@ The current input covers all HSK 1–9 bands with 10,936 distinct spellings; 36 
 in `data/hsk-data.csv` have no matched embedding. HSK entries and spellings are not
 one-to-one, so these two counts do not sum to the CSV row count.
 
-## Run the baseline
+## Run Leiden
 
 Run from the repository root with Rust 1.87 or newer. Exact dependency versions
 are recorded in `Cargo.lock`; use `--locked` when reproducing a run.
@@ -47,9 +63,9 @@ cargo run --release --locked --bin leiden_community
 
 These defaults produce:
 
-- `graphs/1-9-leiden/hsk1-9-full.graphml`
-- `graphs/1-9-leiden/hsk1-9-thresh0.70.graphml`
-- `graphs/1-9-leiden/hsk1-9-thresh0.70.communities.csv`
+- `results/leiden/1-9/hsk1-9-full.graphml`
+- `results/leiden/1-9/hsk1-9-thresh0.70.graphml`
+- `results/leiden/1-9/hsk1-9-thresh0.70.communities.csv`
 
 For subsequent runs that only need the clustering graph, the following computes
 the same thresholded edges directly, without exporting the complete graph first:
@@ -58,11 +74,83 @@ the same thresholded edges directly, without exporting the complete graph first:
 cargo run --release --locked --bin build_graph -- --threshold 0.70
 ```
 
-All commands accept `--input` and `--output`. Every node is retained when filtering,
+All Leiden commands accept `--input` and `--output`. Every node is retained when filtering,
 including isolated words. Output directories are created as needed, and completed
-files replace prior results atomically. `--preprocess` still enables PCA whitening;
-it is off for this baseline. Preprocessing and clustering choices will be revisited
-separately from the engineering changes.
+files replace prior results atomically. The existing `--preprocess` flag still
+whitens raw embeddings before final normalization; it is off for this baseline.
+GMM has its own explicitly ordered preprocessing below.
+
+## Run GMM
+
+```sh
+cargo run --release --locked --bin gmm_cluster -- \
+  --pca-components 30 --clusters 50,100,200 \
+  --regularization 0.000001,0.00001 --seeds 42,43,44 \
+  --criterion bic --output results/gmm/1-9/pca30
+```
+
+The pipeline is **L2-normalize each SGNS vector → subtract the global mean →
+PCA → optionally whiten the retained components → fit GMM**. Add `--whiten`
+to enable whitening. There is no final L2 normalization. PCA fits the normalized
+input vocabulary, using an exact symmetric covariance decomposition in `f64`;
+zero-variance or numerically rank-deficient projections fail with an error.
+
+One invocation fixes the PCA representation and sweeps cluster counts,
+covariance regularization and independent seeds. Full covariance is currently
+the only variant supported by Linfa. Fitting and scoring use `f64`, with no BLAS
+installation required. The default maximum is 300 EM iterations and tolerance
+0.001; see `--help` for controls. Full covariance costs roughly O(n*k*d²) per
+iteration, so start with a short grid before trying hundreds of components and
+many seeds. Larger PCA dimensions substantially increase the work.
+
+Each run needs a **new output directory** and produces:
+
+| File | Contents |
+| --- | --- |
+| `candidates.csv` | Every attempted fit, log likelihood, parameter count, AIC, BIC, elapsed time and any failure. |
+| `run.json` | Input SHA-256, command, preprocessing/settings, candidates and the AIC/BIC winners. |
+| `k*-reg*-seed*.communities.csv` | Hard assignments for every successful candidate. |
+| `communities.csv` | Hard assignments from the selected model. |
+| `memberships.csv` | Selected model's full probability distribution for each token; column `probability_j` matches assignment/component `j`. |
+| `pca.json`, `model.json` | Fitted preprocessing (mean, basis, variances) and selected GMM parameters. |
+
+Rows are token-sorted. Probabilities sum to one per word; a hard assignment is
+their argmax. Some mixture components may receive no hard assignments. These
+are model responsibilities, not calibrated probabilities of semantic correctness.
+Large membership/model files are kept locally and ignored by Git.
+
+Lower AIC/BIC wins among successfully converged fits; failed/non-converged fits
+are recorded and excluded. For full covariance the parameter count is
+`p = (k - 1) + k*d + k*d*(d + 1)/2`; `AIC = 2p - 2 log L` and
+`BIC = p log n - 2 log L`, using the total training log likelihood. PCA is held
+fixed across that sweep. Seeds are separate initializations, not extra model
+parameters. Linfa's `n_runs` does not restart initialization in 0.8.1, so this
+runner performs independent fits itself. A small numerical patch stabilizes
+GMM likelihoods; see [vendor notes](vendor/README.md).
+
+Run 20D, 30D, 50D and whitening choices in separate directories. **Do not rank
+their raw AIC/BIC together**: they describe different observations/density scales.
+Use the shared original-space metrics and inspect clusters when comparing those
+choices or comparing GMM with Leiden. AIC/BIC are density-fit criteria, not
+semantic ground truth, and cannot be compared to Leiden's quality objective.
+
+## Compare methods
+
+```sh
+cargo run --release --locked --bin compare_clusters -- \
+  results/leiden/1-9/experiments-2026-09-17/recommended.communities.csv \
+  results/gmm/1-9/pca30/communities.csv \
+  --output results/gmm/1-9/pca30/versus-leiden.json
+```
+
+Pass any two or more assignment CSVs, including individual GMM candidates or
+Leiden repeats. Every file must cover exactly the embedding vocabulary; missing,
+unknown and duplicate tokens are errors. The report contains cluster size/coverage
+statistics, within-cluster mean cosine, exact cosine silhouette in the original
+normalized embeddings, and pairwise adjusted Rand index (ARI). Silhouette uses
+batched dot products with cluster means rather than an n-by-n distance matrix.
+It is undefined for one cluster or all singletons. ARI measures agreement between
+partitions, not which method is better. Numeric IDs have no meaning across runs.
 
 ## Scale and reproducibility
 
@@ -99,9 +187,13 @@ cargo fmt --check
 cargo test --locked
 cargo clippy --all-targets --locked -- -D warnings
 cargo test --locked -p graphrs --lib
+# Upstream GMM tests use the vendored crate's own development dependencies.
+cargo test --manifest-path vendor/linfa-clustering-0.8.1/Cargo.toml \
+  --lib gaussian_mixture --target-dir target/vendor-tests
 ```
 
-The library separates embeddings, streaming graph I/O, community detection and
-atomic output; the binaries handle command-line arguments and reporting.
+`src/leiden.rs` and `src/gmm.rs` contain method-specific code;
+`src/clustering.rs` contains the shared file format and comparison metrics.
+The binaries handle command-line arguments and reporting.
 See [the engineering review](docs/engineering-review.md) for the dependency audit,
 fixed issues and remaining library limitations.

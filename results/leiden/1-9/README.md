@@ -27,7 +27,7 @@ graph retains weights >= 0.70 and every input node. Its three isolated nodes are
 - Resolution: 0.05.
 - Theta: 0.3.
 - Gamma: 0.05.
-- Backend: graphrs 0.12.0 with the [documented numerical patch](../../vendor/README.md).
+- Backend: graphrs 0.12.0 with the [documented numerical patch](../../../vendor/README.md).
 - Result: 508 communities; median size 9.5; largest 450; 74 singletons.
 - Successful Leiden execution: about 240 seconds, using the release build.
 

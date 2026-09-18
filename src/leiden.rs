@@ -4,9 +4,6 @@ use graphrs::{
     Graph,
 };
 use std::collections::HashSet;
-use std::path::Path;
-
-use crate::output::write_atomic;
 
 pub struct LeidenConfig {
     pub quality: QualityFunction,
@@ -114,24 +111,6 @@ fn canonicalize_partition(
     Ok(result)
 }
 
-pub fn write_assignments(path: &Path, communities: &[Vec<String>]) -> Result<usize> {
-    let mut assignments: Vec<_> = communities
-        .iter()
-        .enumerate()
-        .flat_map(|(id, members)| members.iter().map(move |token| (token.as_str(), id)))
-        .collect();
-    assignments.sort_unstable_by(|a, b| a.0.cmp(b.0));
-    write_atomic(path, |output| {
-        let mut writer = csv::Writer::from_writer(output);
-        writer.write_record(["token", "community"])?;
-        for &(token, community) in &assignments {
-            writer.serialize((token, community))?;
-        }
-        writer.flush()?;
-        Ok(assignments.len())
-    })
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -155,21 +134,6 @@ mod tests {
             communities,
             [vec!["a", "b"], vec!["c", "d"], vec!["isolate"]]
         );
-        Ok(())
-    }
-
-    #[test]
-    fn csv_round_trips_commas_quotes_and_unicode() -> Result<()> {
-        let directory = tempfile::tempdir()?;
-        let path = directory.path().join("communities.csv");
-        let communities = vec![vec!["中,文".into(), "带\"引号".into(), "a".into()]];
-        assert_eq!(write_assignments(&path, &communities)?, 3);
-        let records = csv::Reader::from_path(path)?
-            .records()
-            .collect::<std::result::Result<Vec<_>, _>>()?;
-        assert_eq!(&records[0][0], "a");
-        assert_eq!(&records[1][0], "中,文");
-        assert_eq!(&records[2][0], "带\"引号");
         Ok(())
     }
 

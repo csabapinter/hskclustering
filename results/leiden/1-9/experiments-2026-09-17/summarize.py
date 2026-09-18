@@ -9,7 +9,7 @@ import subprocess
 import xml.etree.ElementTree as ET
 
 OUT = Path(__file__).resolve().parent
-ROOT = OUT.parents[2]
+ROOT = OUT.parents[3]
 
 
 def write_csv(path, rows):
@@ -93,7 +93,8 @@ def main():
         partition = assignments(directory / 'communities.csv')
         assert len(partition) == 10936
         parts[record['name']] = partition
-        graph_path = record['graph']
+        # Saved run metadata keeps the original command paths.
+        graph_path = record['graph'].replace('graphs/1-9-leiden/', 'results/leiden/1-9/', 1)
         if graph_path not in graphs:
             nodes, edges = read_graph(ROOT / graph_path)
             graphs[graph_path] = (nodes, edges)

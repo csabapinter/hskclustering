@@ -7,7 +7,7 @@ from pathlib import Path
 import shutil
 
 OUT=Path(__file__).resolve().parent
-ROOT=OUT.parents[2]
+ROOT=OUT.parents[3]
 ANCHORS=['苹果','牛奶','咖啡','衬衫','足球','老师','焦虑','政策','合同','银行','软件','感冒','火车','妈妈','为什么','公斤','花','行']
 
 

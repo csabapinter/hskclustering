@@ -1,6 +1,8 @@
 mod preprocess;
+mod projection;
 
 pub use preprocess::PcaWhiteningConfig;
+pub use projection::{prepare_gmm_embeddings, PcaModel, ProjectedEmbeddings};
 
 use anyhow::{bail, ensure, Context, Result};
 use preprocess::apply_pca_whitening;

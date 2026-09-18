@@ -12,8 +12,8 @@ use std::path::{Path, PathBuf};
 
 use crate::{embeddings::cosine_normalized, output::write_atomic};
 
-pub const DEFAULT_FULL_GRAPH: &str = "graphs/1-9-leiden/hsk1-9-full.graphml";
-pub const DEFAULT_FILTERED_GRAPH: &str = "graphs/1-9-leiden/hsk1-9-thresh0.70.graphml";
+pub const DEFAULT_FULL_GRAPH: &str = "results/leiden/1-9/hsk1-9-full.graphml";
+pub const DEFAULT_FILTERED_GRAPH: &str = "results/leiden/1-9/hsk1-9-thresh0.70.graphml";
 
 /// Stream every pair to disk without constructing an in-memory graph.
 pub fn build_graph_and_write_graphml(
