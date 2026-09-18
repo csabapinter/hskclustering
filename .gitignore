@@ -21,3 +21,10 @@ __pycache__/
 # Large GMM artifacts can be regenerated using each run's saved settings.
 /results/gmm/**/memberships.csv
 /results/gmm/**/model.json
+# Detailed per-word geometry is regenerable from saved GMM assignments.
+/results/gmm/**/runs/*/words.csv
+# Per-run PCA bases are reproducible; settings, variance summaries and hashes remain tracked.
+/results/gmm/**/runs/*/pca.json
+# This archive has one fit per run: these files exactly duplicate communities.csv.
+# Keep candidate assignments in ordinary multi-fit sweeps.
+/results/gmm/1-9/experiments-2026-09-18/runs/*/k*-reg*-seed*.communities.csv

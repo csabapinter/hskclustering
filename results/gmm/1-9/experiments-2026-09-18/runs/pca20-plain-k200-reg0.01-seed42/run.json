@@ -1,0 +1,103 @@
+{
+  "backend": "linfa-clustering 0.8.1 + local patch",
+  "best_aic": {
+    "config": {
+      "clusters": 200,
+      "max_iterations": 300,
+      "regularization": 0.01,
+      "seed": 42,
+      "tolerance": 0.001
+    },
+    "elapsed_seconds": 8.380703542,
+    "error": null,
+    "scores": {
+      "aic": -281003.98008994316,
+      "bic": 56240.190576933324,
+      "log_likelihood": 186700.99004497158,
+      "parameters": 46199
+    }
+  },
+  "best_bic": {
+    "config": {
+      "clusters": 200,
+      "max_iterations": 300,
+      "regularization": 0.01,
+      "seed": 42,
+      "tolerance": 0.001
+    },
+    "elapsed_seconds": 8.380703542,
+    "error": null,
+    "scores": {
+      "aic": -281003.98008994316,
+      "bic": 56240.190576933324,
+      "log_likelihood": 186700.99004497158,
+      "parameters": 46199
+    }
+  },
+  "candidates": [
+    {
+      "config": {
+        "clusters": 200,
+        "max_iterations": 300,
+        "regularization": 0.01,
+        "seed": 42,
+        "tolerance": 0.001
+      },
+      "elapsed_seconds": 8.380703542,
+      "error": null,
+      "scores": {
+        "aic": -281003.98008994316,
+        "bic": 56240.190576933324,
+        "log_likelihood": 186700.99004497158,
+        "parameters": 46199
+      }
+    }
+  ],
+  "command": [
+    "/Users/xiaogou/Documents/hskclustering/target/release/gmm_cluster",
+    "--input",
+    "/Users/xiaogou/Documents/hskclustering/data/input-embeddings.txt",
+    "--output",
+    "/Users/xiaogou/Documents/hskclustering/results/gmm/1-9/experiments-2026-09-18/runs/pca20-plain-k200-reg0.01-seed42",
+    "--pca-components",
+    "20",
+    "--clusters",
+    "200",
+    "--regularization",
+    "0.01",
+    "--seeds",
+    "42",
+    "--max-iterations",
+    "300",
+    "--tolerance",
+    "0.001",
+    "--criterion",
+    "bic"
+  ],
+  "covariance": "full",
+  "criterion": "bic",
+  "input": "/Users/xiaogou/Documents/hskclustering/data/input-embeddings.txt",
+  "input_dimensions": 300,
+  "input_sha256": "5dcd7e46ec00a70d92adc4510638c73b0642bd2f09afea053bea38bd60cacafa",
+  "method": "gmm",
+  "pca_components": 20,
+  "preprocessing": "L2-normalize -> global mean subtraction -> PCA -> optional retained-component whitening; no final normalization",
+  "score_scope": "Only compare AIC/BIC on identical tokens and preprocessing; not across PCA dimensions, whitening choices, or with Leiden objectives.",
+  "selected": {
+    "config": {
+      "clusters": 200,
+      "max_iterations": 300,
+      "regularization": 0.01,
+      "seed": 42,
+      "tolerance": 0.001
+    },
+    "scores": {
+      "aic": -281003.98008994316,
+      "bic": 56240.190576933324,
+      "log_likelihood": 186700.99004497158,
+      "parameters": 46199
+    }
+  },
+  "tokens": 10936,
+  "whiten": false
+}

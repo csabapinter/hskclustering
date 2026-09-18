@@ -1,0 +1,5 @@
+Preparing L2 -> center -> PCA(20)
+10936 tokens, 20 dimensions; retained 21.81% of centered variance
+Fitting k=5, regularization=0.00001, seed=42
+  AIC -472821.616, BIC -464397.629 (0.3s)
+Selected k=5, regularization=0.00001, seed=42 by Bic; saved /Users/xiaogou/Documents/hskclustering/results/gmm/1-9/experiments-2026-09-18/runs/pca20-plain-k5-reg1e-05-seed42

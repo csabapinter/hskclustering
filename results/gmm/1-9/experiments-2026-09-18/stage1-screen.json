@@ -1,0 +1,111 @@
+{
+  "stage": "screen",
+  "rationale": "Explore component count and retained dimension without imposing a desired granularity. Review semantic structure and concentration before refinement.",
+  "jobs": [
+    {
+      "dimensions": 20,
+      "whiten": false,
+      "clusters": 10,
+      "regularization": 1e-05,
+      "seed": 42
+    },
+    {
+      "dimensions": 20,
+      "whiten": false,
+      "clusters": 25,
+      "regularization": 1e-05,
+      "seed": 42
+    },
+    {
+      "dimensions": 20,
+      "whiten": false,
+      "clusters": 50,
+      "regularization": 1e-05,
+      "seed": 42
+    },
+    {
+      "dimensions": 20,
+      "whiten": false,
+      "clusters": 100,
+      "regularization": 1e-05,
+      "seed": 42
+    },
+    {
+      "dimensions": 20,
+      "whiten": false,
+      "clusters": 200,
+      "regularization": 1e-05,
+      "seed": 42
+    },
+    {
+      "dimensions": 30,
+      "whiten": false,
+      "clusters": 10,
+      "regularization": 1e-05,
+      "seed": 42
+    },
+    {
+      "dimensions": 30,
+      "whiten": false,
+      "clusters": 25,
+      "regularization": 1e-05,
+      "seed": 42
+    },
+    {
+      "dimensions": 30,
+      "whiten": false,
+      "clusters": 50,
+      "regularization": 1e-05,
+      "seed": 42
+    },
+    {
+      "dimensions": 30,
+      "whiten": false,
+      "clusters": 100,
+      "regularization": 1e-05,
+      "seed": 42
+    },
+    {
+      "dimensions": 30,
+      "whiten": false,
+      "clusters": 200,
+      "regularization": 1e-05,
+      "seed": 42
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 10,
+      "regularization": 1e-05,
+      "seed": 42
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 25,
+      "regularization": 1e-05,
+      "seed": 42
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 50,
+      "regularization": 1e-05,
+      "seed": 42
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 100,
+      "regularization": 1e-05,
+      "seed": 42
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 200,
+      "regularization": 1e-05,
+      "seed": 42
+    }
+  ]
+}

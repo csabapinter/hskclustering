@@ -1,0 +1,238 @@
+{
+  "stage": "sensitivity",
+  "rationale": [
+    "All 15 screen fits converged, with zero components of hard size 1-5 and largest shares 1.0%-17.2%. No preferred size distribution is inferred.",
+    "BIC preferred the smallest screened k within all three representations: test k=2,5 at 20D and 50D to characterize this boundary, without treating density selection as linguistic selection.",
+    "50D retains only 37.3% of centered normalized-vector variance: test 100D at k=10,50,200.",
+    "Mean maximum membership approached 1 in 50D k=50,100,200: test weaker and substantially stronger covariance regularization.",
+    "Inspect whitening at k=50,200 with regularization 0.01 and 0.1 in units of retained-axis variance 1. These are sensitivity probes, not equal nominal penalties to unwhitened runs.",
+    "50D k=200 has recognizable semantic cores and no tiny-tail signal. Test k=400 as an upper-bound probe without a desired granularity.",
+    "Full-covariance components are not assumed to correspond one-to-one to semantic groups; retain all configurations and soft assignments. No cross-method comparison."
+  ],
+  "jobs": [
+    {
+      "dimensions": 20,
+      "whiten": false,
+      "clusters": 2,
+      "regularization": 1e-05,
+      "seed": 42
+    },
+    {
+      "dimensions": 20,
+      "whiten": false,
+      "clusters": 5,
+      "regularization": 1e-05,
+      "seed": 42
+    },
+    {
+      "dimensions": 20,
+      "whiten": false,
+      "clusters": 50,
+      "regularization": 1e-06,
+      "seed": 42
+    },
+    {
+      "dimensions": 20,
+      "whiten": false,
+      "clusters": 50,
+      "regularization": 0.0001,
+      "seed": 42
+    },
+    {
+      "dimensions": 20,
+      "whiten": false,
+      "clusters": 50,
+      "regularization": 0.001,
+      "seed": 42
+    },
+    {
+      "dimensions": 20,
+      "whiten": false,
+      "clusters": 200,
+      "regularization": 1e-06,
+      "seed": 42
+    },
+    {
+      "dimensions": 20,
+      "whiten": false,
+      "clusters": 200,
+      "regularization": 0.0001,
+      "seed": 42
+    },
+    {
+      "dimensions": 20,
+      "whiten": false,
+      "clusters": 200,
+      "regularization": 0.001,
+      "seed": 42
+    },
+    {
+      "dimensions": 20,
+      "whiten": true,
+      "clusters": 50,
+      "regularization": 0.01,
+      "seed": 42
+    },
+    {
+      "dimensions": 20,
+      "whiten": true,
+      "clusters": 50,
+      "regularization": 0.1,
+      "seed": 42
+    },
+    {
+      "dimensions": 20,
+      "whiten": true,
+      "clusters": 200,
+      "regularization": 0.01,
+      "seed": 42
+    },
+    {
+      "dimensions": 20,
+      "whiten": true,
+      "clusters": 200,
+      "regularization": 0.1,
+      "seed": 42
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 2,
+      "regularization": 1e-05,
+      "seed": 42
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 5,
+      "regularization": 1e-05,
+      "seed": 42
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 50,
+      "regularization": 1e-06,
+      "seed": 42
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 50,
+      "regularization": 0.0001,
+      "seed": 42
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 50,
+      "regularization": 0.001,
+      "seed": 42
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 200,
+      "regularization": 1e-06,
+      "seed": 42
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 200,
+      "regularization": 0.0001,
+      "seed": 42
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 200,
+      "regularization": 0.001,
+      "seed": 42
+    },
+    {
+      "dimensions": 50,
+      "whiten": true,
+      "clusters": 50,
+      "regularization": 0.01,
+      "seed": 42
+    },
+    {
+      "dimensions": 50,
+      "whiten": true,
+      "clusters": 50,
+      "regularization": 0.1,
+      "seed": 42
+    },
+    {
+      "dimensions": 50,
+      "whiten": true,
+      "clusters": 200,
+      "regularization": 0.01,
+      "seed": 42
+    },
+    {
+      "dimensions": 50,
+      "whiten": true,
+      "clusters": 200,
+      "regularization": 0.1,
+      "seed": 42
+    },
+    {
+      "dimensions": 100,
+      "whiten": false,
+      "clusters": 10,
+      "regularization": 1e-05,
+      "seed": 42
+    },
+    {
+      "dimensions": 100,
+      "whiten": false,
+      "clusters": 10,
+      "regularization": 0.001,
+      "seed": 42
+    },
+    {
+      "dimensions": 100,
+      "whiten": false,
+      "clusters": 50,
+      "regularization": 1e-05,
+      "seed": 42
+    },
+    {
+      "dimensions": 100,
+      "whiten": false,
+      "clusters": 50,
+      "regularization": 0.001,
+      "seed": 42
+    },
+    {
+      "dimensions": 100,
+      "whiten": false,
+      "clusters": 200,
+      "regularization": 1e-05,
+      "seed": 42
+    },
+    {
+      "dimensions": 100,
+      "whiten": false,
+      "clusters": 200,
+      "regularization": 0.001,
+      "seed": 42
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 400,
+      "regularization": 0.0001,
+      "seed": 42
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 400,
+      "regularization": 0.001,
+      "seed": 42
+    }
+  ]
+}

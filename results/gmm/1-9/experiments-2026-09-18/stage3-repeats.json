@@ -1,0 +1,312 @@
+{
+  "stage": "repeats",
+  "rationale": "Four additional independent seeds per recorded review candidate (five including seed 42). Shortlist spans substantive semantic/representation/overlap differences and is not a ranking by BIC, silhouette, size balance, or any other clustering method.",
+  "configurations": [
+    {
+      "run": "pca20-plain-k10-reg1e-05-seed42",
+      "configuration": {
+        "dimensions": 20,
+        "whiten": false,
+        "clusters": 10,
+        "regularization": 1e-05
+      },
+      "reason": "Low-component, within-20D BIC-leading control; inspect broad multiple-theme components."
+    },
+    {
+      "run": "pca20-plain-k50-reg0.001-seed42",
+      "configuration": {
+        "dimensions": 20,
+        "whiten": false,
+        "clusters": 50,
+        "regularization": 0.001
+      },
+      "reason": "Low-dimensional fit with measurable overlapping responsibilities and no dominant/tiny-tail pattern."
+    },
+    {
+      "run": "pca20-white-k50-reg0.1-seed42",
+      "configuration": {
+        "dimensions": 20,
+        "whiten": true,
+        "clusters": 50,
+        "regularization": 0.1
+      },
+      "reason": "Whitening sensitivity with overlapping responsibilities; sampled contents differ materially from plain 20D."
+    },
+    {
+      "run": "pca50-plain-k200-reg0.001-seed42",
+      "configuration": {
+        "dimensions": 50,
+        "whiten": false,
+        "clusters": 200,
+        "regularization": 0.001
+      },
+      "reason": "Recognizable animal, administrative, electronic-device and pleasant-state cores; retain mixed boundaries for review."
+    },
+    {
+      "run": "pca100-plain-k200-reg0.001-seed42",
+      "configuration": {
+        "dimensions": 100,
+        "whiten": false,
+        "clusters": 200,
+        "regularization": 0.001
+      },
+      "reason": "Higher retained variance; distinct animal and software cores in inspected anchors, alongside corpus/sense ambiguities."
+    },
+    {
+      "run": "pca50-plain-k400-reg0.001-seed42",
+      "configuration": {
+        "dimensions": 50,
+        "whiten": false,
+        "clusters": 400,
+        "regularization": 0.001
+      },
+      "reason": "Upper component-count probe; recognizable semantic cores and two tiny groups whose actual words remain related."
+    },
+    {
+      "run": "pca100-plain-k50-reg0.01-seed42",
+      "configuration": {
+        "dimensions": 100,
+        "whiten": false,
+        "clusters": 50,
+        "regularization": 0.01
+      },
+      "reason": "Higher-dimensional overlapping fit without low-dimensional strong-ridge collapse."
+    },
+    {
+      "run": "pca50-plain-k200-reg0.01-seed42",
+      "configuration": {
+        "dimensions": 50,
+        "whiten": false,
+        "clusters": 200,
+        "regularization": 0.01
+      },
+      "reason": "Overlapping 50D alternative with some empty hard components; assess repeated concentration and semantic structure."
+    }
+  ],
+  "jobs": [
+    {
+      "dimensions": 20,
+      "whiten": false,
+      "clusters": 10,
+      "regularization": 1e-05,
+      "seed": 43
+    },
+    {
+      "dimensions": 20,
+      "whiten": false,
+      "clusters": 10,
+      "regularization": 1e-05,
+      "seed": 44
+    },
+    {
+      "dimensions": 20,
+      "whiten": false,
+      "clusters": 10,
+      "regularization": 1e-05,
+      "seed": 45
+    },
+    {
+      "dimensions": 20,
+      "whiten": false,
+      "clusters": 10,
+      "regularization": 1e-05,
+      "seed": 46
+    },
+    {
+      "dimensions": 20,
+      "whiten": false,
+      "clusters": 50,
+      "regularization": 0.001,
+      "seed": 43
+    },
+    {
+      "dimensions": 20,
+      "whiten": false,
+      "clusters": 50,
+      "regularization": 0.001,
+      "seed": 44
+    },
+    {
+      "dimensions": 20,
+      "whiten": false,
+      "clusters": 50,
+      "regularization": 0.001,
+      "seed": 45
+    },
+    {
+      "dimensions": 20,
+      "whiten": false,
+      "clusters": 50,
+      "regularization": 0.001,
+      "seed": 46
+    },
+    {
+      "dimensions": 20,
+      "whiten": true,
+      "clusters": 50,
+      "regularization": 0.1,
+      "seed": 43
+    },
+    {
+      "dimensions": 20,
+      "whiten": true,
+      "clusters": 50,
+      "regularization": 0.1,
+      "seed": 44
+    },
+    {
+      "dimensions": 20,
+      "whiten": true,
+      "clusters": 50,
+      "regularization": 0.1,
+      "seed": 45
+    },
+    {
+      "dimensions": 20,
+      "whiten": true,
+      "clusters": 50,
+      "regularization": 0.1,
+      "seed": 46
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 200,
+      "regularization": 0.001,
+      "seed": 43
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 200,
+      "regularization": 0.001,
+      "seed": 44
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 200,
+      "regularization": 0.001,
+      "seed": 45
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 200,
+      "regularization": 0.001,
+      "seed": 46
+    },
+    {
+      "dimensions": 100,
+      "whiten": false,
+      "clusters": 200,
+      "regularization": 0.001,
+      "seed": 43
+    },
+    {
+      "dimensions": 100,
+      "whiten": false,
+      "clusters": 200,
+      "regularization": 0.001,
+      "seed": 44
+    },
+    {
+      "dimensions": 100,
+      "whiten": false,
+      "clusters": 200,
+      "regularization": 0.001,
+      "seed": 45
+    },
+    {
+      "dimensions": 100,
+      "whiten": false,
+      "clusters": 200,
+      "regularization": 0.001,
+      "seed": 46
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 400,
+      "regularization": 0.001,
+      "seed": 43
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 400,
+      "regularization": 0.001,
+      "seed": 44
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 400,
+      "regularization": 0.001,
+      "seed": 45
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 400,
+      "regularization": 0.001,
+      "seed": 46
+    },
+    {
+      "dimensions": 100,
+      "whiten": false,
+      "clusters": 50,
+      "regularization": 0.01,
+      "seed": 43
+    },
+    {
+      "dimensions": 100,
+      "whiten": false,
+      "clusters": 50,
+      "regularization": 0.01,
+      "seed": 44
+    },
+    {
+      "dimensions": 100,
+      "whiten": false,
+      "clusters": 50,
+      "regularization": 0.01,
+      "seed": 45
+    },
+    {
+      "dimensions": 100,
+      "whiten": false,
+      "clusters": 50,
+      "regularization": 0.01,
+      "seed": 46
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 200,
+      "regularization": 0.01,
+      "seed": 43
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 200,
+      "regularization": 0.01,
+      "seed": 44
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 200,
+      "regularization": 0.01,
+      "seed": 45
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 200,
+      "regularization": 0.01,
+      "seed": 46
+    }
+  ]
+}

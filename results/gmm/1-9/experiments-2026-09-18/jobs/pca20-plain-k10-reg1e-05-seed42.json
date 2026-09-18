@@ -1,0 +1,37 @@
+{
+  "name": "pca20-plain-k10-reg1e-05-seed42",
+  "stage": "screen",
+  "configuration": {
+    "dimensions": 20,
+    "whiten": false,
+    "clusters": 10,
+    "regularization": 1e-05,
+    "seed": 42
+  },
+  "command": [
+    "/Users/xiaogou/Documents/hskclustering/target/release/gmm_cluster",
+    "--input",
+    "/Users/xiaogou/Documents/hskclustering/data/input-embeddings.txt",
+    "--output",
+    "/Users/xiaogou/Documents/hskclustering/results/gmm/1-9/experiments-2026-09-18/runs/pca20-plain-k10-reg1e-05-seed42",
+    "--pca-components",
+    "20",
+    "--clusters",
+    "10",
+    "--regularization",
+    "1e-05",
+    "--seeds",
+    "42",
+    "--max-iterations",
+    "300",
+    "--tolerance",
+    "0.001",
+    "--criterion",
+    "bic"
+  ],
+  "started_utc": "2026-09-18T11:17:20.930908+00:00",
+  "returncode": 0,
+  "finished_utc": "2026-09-18T11:17:22.414254+00:00",
+  "elapsed_seconds": 1.482958875,
+  "assignments_sha256": "dc2358da4be16fa3c22eccc4d7d986af7626c9c1c069c3b700a28416a5cb38b0"
+}

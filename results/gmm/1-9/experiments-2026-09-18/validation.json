@@ -1,0 +1,55 @@
+{
+  "expected_jobs": 85,
+  "completed_jobs": 85,
+  "successful_fits": 85,
+  "failed_fits": [],
+  "tokens_per_fit": 10936,
+  "max_probability_sum_error": 1.4432899320127035e-14,
+  "pca_representations": [
+    {
+      "dimensions": 100,
+      "whiten": false,
+      "sha256": "3b563e0a6d0db354285256f395a75b66035f073111addbb06596f26cb7d42993",
+      "max_orthonormality_error": 7.993605777301127e-15
+    },
+    {
+      "dimensions": 20,
+      "whiten": false,
+      "sha256": "201dbb47bc0a07a0e867034673bbd742e19dda1c0a73cec6df45794f1063a203",
+      "max_orthonormality_error": 4.773959005888173e-15
+    },
+    {
+      "dimensions": 20,
+      "whiten": true,
+      "sha256": "d62ced5ebf2d02d6b82af154a348f4574102c8ccd0fe0571eaf0c1e3ab3d2ba0",
+      "max_orthonormality_error": 4.773959005888173e-15
+    },
+    {
+      "dimensions": 30,
+      "whiten": false,
+      "sha256": "6a2715e756d5493b0ebeb5c59b3746abae8226f296e929fbce5f443081654670",
+      "max_orthonormality_error": 5.995204332975845e-15
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "sha256": "0935ea1298af1f4054ec1afe9920356d99a214a0887a6267b6358288f522b8b7",
+      "max_orthonormality_error": 7.993605777301127e-15
+    },
+    {
+      "dimensions": 50,
+      "whiten": true,
+      "sha256": "2a1d69ccc01b71817a5bdf6754589ccec1300022692243e9d2f25b1d3347bd80",
+      "max_orthonormality_error": 7.993605777301127e-15
+    }
+  ],
+  "configurations_with_five_seeds": 8,
+  "input_and_dictionary_hashes_unchanged": true,
+  "model_parameters_finite": true,
+  "information_criteria_independently_recomputed": true,
+  "all_assignments_cover_exact_vocabulary": true,
+  "all_cluster_catalogues_match_assignments": true,
+  "probability_exports_checked_by_review_tool": true,
+  "independent_geometry_check": "independent-geometry-check.json",
+  "scope": "GMM-only numerical/artifact validation; no claim of semantic accuracy"
+}

@@ -1,0 +1,12 @@
+{
+  "created_utc": "2026-09-18T11:17:20.900455+00:00",
+  "git_commit": "8dd55af9825873ad38be48f8219707aa0c591f34",
+  "input_sha256": "5dcd7e46ec00a70d92adc4510638c73b0642bd2f09afea053bea38bd60cacafa",
+  "dictionary_sha256": "17b592a3a9d42d4ffacb0686d326c7efbfe380327c3671563108b984af948e24",
+  "cargo_lock_sha256": "cf8476fd776992a5f1359ed36e3a79bdd3ad740c653f2c3d2b8814331f403e91",
+  "binary_sha256": "de455b8f17289346a60b6a53eaf1752afacc9c3eabfede136a01ebe22ff18ad2",
+  "rustc": "rustc 1.95.0 (59807616e 2026-04-14)",
+  "scope": "GMM only; semantic relevance without a target granularity; no cross-method comparison",
+  "covariance": "full",
+  "input_tokens": 10936
+}

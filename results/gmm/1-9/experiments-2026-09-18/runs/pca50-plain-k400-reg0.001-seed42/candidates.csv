@@ -1,0 +1,2 @@
+clusters,regularization,seed,converged,log_likelihood,parameters,aic,bic,elapsed_seconds,error
+400,0.001,42,true,994202.4186667408,530399,-927606.8373334815,2944207.9395565074,22.99201175,

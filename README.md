@@ -119,6 +119,17 @@ their argmax. Some mixture components may receive no hard assignments. These
 are model responsibilities, not calibrated probabilities of semantic correctness.
 Large membership/model files are kept locally and ignored by Git.
 
+To export component contents, deterministic samples, boundary words and
+soft-membership diagnostics from one or more completed GMM runs:
+
+```sh
+cargo run --release --locked --example gmm_review -- results/gmm/1-9/pca30
+```
+
+The [2026-09-18 GMM experiment archive](results/gmm/1-9/experiments-2026-09-18/REPORT.md)
+contains a staged sweep and linguistic review tables. It imposes no target group
+size and evaluates GMM independently of other clustering methods.
+
 Lower AIC/BIC wins among successfully converged fits; failed/non-converged fits
 are recorded and excluded. For full covariance the parameter count is
 `p = (k - 1) + k*d + k*d*(d + 1)/2`; `AIC = 2p - 2 log L` and

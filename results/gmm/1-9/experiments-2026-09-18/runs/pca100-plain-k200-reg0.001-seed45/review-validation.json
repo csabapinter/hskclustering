@@ -1,0 +1,12 @@
+{
+  "all_probabilities_finite_in_unit_interval": true,
+  "assignments_sha256": "f366e6510a317023d0e36e080776b8ba56c05703eba952a04e91e8654c4ef680",
+  "cluster_sizes_sum_to_tokens": true,
+  "hard_assignments_equal_argmax": true,
+  "input_sha256": "5dcd7e46ec00a70d92adc4510638c73b0642bd2f09afea053bea38bd60cacafa",
+  "max_probability_sum_error": 1.4210854715202004e-14,
+  "memberships_sha256": "1914c7dc4704f50af4eb7219bc670fcce77f0519e75dfcc02883b3fa5c65bd8b",
+  "silhouette_matches_shared_implementation": true,
+  "soft_mass_sum": 10936.0,
+  "tokens_verified": 10936
+}

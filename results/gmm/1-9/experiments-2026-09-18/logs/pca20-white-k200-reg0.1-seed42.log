@@ -1,0 +1,5 @@
+Preparing L2 -> center -> PCA(20) -> whiten retained components
+10936 tokens, 20 dimensions; retained 21.81% of centered variance
+Fitting k=200, regularization=0.1, seed=42
+  AIC 555180.395, BIC 892424.566 (8.5s)
+Selected k=200, regularization=0.1, seed=42 by Bic; saved /Users/xiaogou/Documents/hskclustering/results/gmm/1-9/experiments-2026-09-18/runs/pca20-white-k200-reg0.1-seed42

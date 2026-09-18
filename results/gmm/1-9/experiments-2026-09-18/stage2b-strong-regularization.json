@@ -1,0 +1,48 @@
+{
+  "stage": "strong-regularization",
+  "rationale": "At 50D and 100D, maximum responsibilities remain near one through ridge 0.001. Probe 0.01 to characterize soft overlap and concentration/failure behavior; this is not an attempt to maximize uncertainty or impose equal sizes.",
+  "jobs": [
+    {
+      "dimensions": 20,
+      "whiten": false,
+      "clusters": 50,
+      "regularization": 0.01,
+      "seed": 42
+    },
+    {
+      "dimensions": 20,
+      "whiten": false,
+      "clusters": 200,
+      "regularization": 0.01,
+      "seed": 42
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 50,
+      "regularization": 0.01,
+      "seed": 42
+    },
+    {
+      "dimensions": 50,
+      "whiten": false,
+      "clusters": 200,
+      "regularization": 0.01,
+      "seed": 42
+    },
+    {
+      "dimensions": 100,
+      "whiten": false,
+      "clusters": 50,
+      "regularization": 0.01,
+      "seed": 42
+    },
+    {
+      "dimensions": 100,
+      "whiten": false,
+      "clusters": 200,
+      "regularization": 0.01,
+      "seed": 42
+    }
+  ]
+}

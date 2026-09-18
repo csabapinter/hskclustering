@@ -12,3 +12,8 @@ the selected model's full soft assignments.
 
 Results from a small verification run are not a tuned recommendation. Record
 the search scope and inspect actual groups before drawing semantic conclusions.
+
+The [2026-09-18 staged sweep](1-9/experiments-2026-09-18/REPORT.md) explores GMM
+independently, with semantic relevance as the objective and no target granularity.
+Its [review index](1-9/experiments-2026-09-18/review-index.csv) links component
+catalogues, dictionary-enriched word details and soft memberships.

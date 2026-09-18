@@ -1,0 +1,36 @@
+{
+  "method": "Direct pairwise cosine distances in Python from freshly normalized raw input; every 2500th sorted token; tolerance 1e-6 accounts for Rust f32 normalized input.",
+  "run": "pca20-plain-k10-reg1e-05-seed42",
+  "checks": [
+    {
+      "token": "〇",
+      "exported_silhouette": 0.028422795116564103,
+      "direct_pairwise_silhouette": 0.028422795390716498,
+      "absolute_error": 2.7415239522987633e-10
+    },
+    {
+      "token": "后顾之忧",
+      "exported_silhouette": 0.0298037959198029,
+      "direct_pairwise_silhouette": 0.029803795410144,
+      "absolute_error": 5.096589018871445e-10
+    },
+    {
+      "token": "报废",
+      "exported_silhouette": 0.01558269647690746,
+      "direct_pairwise_silhouette": 0.01558269490323664,
+      "absolute_error": 1.5736708203900607e-09
+    },
+    {
+      "token": "白色",
+      "exported_silhouette": -0.01159447608252987,
+      "direct_pairwise_silhouette": -0.011594476203648577,
+      "absolute_error": 1.2111870707764982e-10
+    },
+    {
+      "token": "通畅",
+      "exported_silhouette": 0.0744318345579647,
+      "direct_pairwise_silhouette": 0.07443183502887474,
+      "absolute_error": 4.709100331901084e-10
+    }
+  ]
+}
