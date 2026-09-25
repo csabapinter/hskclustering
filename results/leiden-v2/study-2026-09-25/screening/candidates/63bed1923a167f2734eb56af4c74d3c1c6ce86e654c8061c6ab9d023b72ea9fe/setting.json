@@ -1,0 +1,39 @@
+{
+  "gamma": 0.09999999999999998,
+  "graph_key": "0eddf4b47f7ed9f3693758d3e209e157d5381a1e1b75cbdfd420285101091d61",
+  "id": "63bed1923a167f2734eb56af4c74d3c1c6ce86e654c8061c6ab9d023b72ea9fe",
+  "perturbation_seeds": [
+    10000,
+    10001,
+    10002,
+    10003,
+    10004,
+    10005,
+    10006,
+    10007,
+    10008,
+    10009
+  ],
+  "q": 0.8999999999999999,
+  "resolution": 0.09999999999999998,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "source": {
+    "config": {
+      "block_rows": 32,
+      "k": 20,
+      "k_scale": null,
+      "lambda": 0.5,
+      "representation": "raw",
+      "symmetrization": "union",
+      "tau": 0.0,
+      "weight": "snn"
+    },
+    "kind": "neighbors"
+  },
+  "stage": "core",
+  "theta": 0.03333333333333333
+}

@@ -1,0 +1,82 @@
+{
+  "config": {
+    "max_iterations": 100,
+    "max_levels": 1000,
+    "max_local_moves": 10000000,
+    "resolution": 0.00048154441932256146,
+    "seed": 43,
+    "theta": 0.1300169932170916
+  },
+  "cost": {
+    "artifact_bytes": 577973,
+    "elapsed_seconds": 0.18230225,
+    "peak_memory_scope": "Process lifetime high-water RSS, including earlier stages; not a per-candidate allocation estimate",
+    "process_peak_memory_bytes": 671383552
+  },
+  "run": {
+    "assignments": "results/leiden-v2/study-2026-09-25/screening/candidates/6cabf667a00696393812919e4e35026e5d2488491fd16990603e92efa88264fe/seed-43/communities.csv",
+    "error": null,
+    "metrics": {
+      "all_communities_connected": true,
+      "cohesion": {
+        "reason": null,
+        "value": 0.16449681815018521
+      },
+      "communities": 1,
+      "external_reference_agreement": {
+        "reason": "No external evaluation data available",
+        "value": null
+      },
+      "fraction_in_sizes_3_to_30": 0.0,
+      "fraction_in_sizes_over_100": 1.0,
+      "independent_space_coherence": {
+        "reason": "No independent embeddings available",
+        "value": null
+      },
+      "induced_components": [
+        1
+      ],
+      "largest_community_share": 1.0,
+      "margin": {
+        "reason": "Margins require nonsingleton tokens and at least two communities",
+        "value": null
+      },
+      "margin_distribution": {
+        "count": 0,
+        "max": null,
+        "mean": null,
+        "median": null,
+        "min": null,
+        "q25": null,
+        "q75": null,
+        "q95": null,
+        "reason": "No observations",
+        "stddev": null
+      },
+      "nonsingleton_coverage": 1.0,
+      "pair_community_fraction": 0.0,
+      "pair_token_fraction": 0.0,
+      "silhouette": {
+        "reason": "Silhouette undefined for one community or all singletons",
+        "value": null
+      },
+      "singleton_community_fraction": 0.0,
+      "singleton_token_fraction": 0.0,
+      "sizes": {
+        "count": 1,
+        "max": 10936.0,
+        "mean": 10936.0,
+        "median": 10936.0,
+        "min": 10936.0,
+        "q25": 10936.0,
+        "q75": 10936.0,
+        "q95": 10936.0,
+        "reason": null,
+        "stddev": 0.0
+      },
+      "tokens": 10936
+    },
+    "seed": 43,
+    "solver_seconds": 0.16600875
+  }
+}

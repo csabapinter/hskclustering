@@ -1,0 +1,92 @@
+{
+  "key": "04730515b122abe34eb970c70c4e70cd2a84095859e15aeba32eca435e3d7e06",
+  "source": {
+    "kind": "neighbors",
+    "config": {
+      "representation": "raw",
+      "k": 20,
+      "symmetrization": "union",
+      "tau": 0.0,
+      "weight": "local",
+      "lambda": 0.5,
+      "k_scale": null,
+      "block_rows": 32
+    }
+  },
+  "input_sha256": "5dcd7e46ec00a70d92adc4510638c73b0642bd2f09afea053bea38bd60cacafa",
+  "source_graph_sha256": null,
+  "median_weight": 0.3345034802412854,
+  "metrics": {
+    "nodes": 10936,
+    "edges": 146967,
+    "degree": {
+      "count": 10936,
+      "mean": 26.877651792245793,
+      "stddev": 7.397101355133691,
+      "min": 20.0,
+      "q25": 22.0,
+      "median": 25.0,
+      "q75": 30.0,
+      "q95": 41.0,
+      "max": 89.0,
+      "reason": null
+    },
+    "strength": {
+      "count": 10936,
+      "mean": 9.253380692231296,
+      "stddev": 2.4073344217770654,
+      "min": 5.70874687030906,
+      "q25": 7.568035991048015,
+      "median": 8.595410264406015,
+      "q75": 10.244991016435307,
+      "q95": 13.901931488142495,
+      "max": 29.049490904797608,
+      "reason": null
+    },
+    "weight": {
+      "count": 146967,
+      "mean": 0.3442778693524411,
+      "stddev": 0.053933310837659725,
+      "min": 0.1677728457874694,
+      "q25": 0.3148369379400301,
+      "median": 0.3345034802412854,
+      "q75": 0.3605107140341498,
+      "q95": 0.43942964983660526,
+      "max": 0.8960548076380352,
+      "reason": null
+    },
+    "isolates": 0,
+    "components": 1,
+    "largest_component_fraction": 1.0,
+    "neighbor_reciprocity": {
+      "value": 0.6561174103877103,
+      "reason": null
+    },
+    "incoming_neighbor_count": {
+      "count": 10936,
+      "mean": 20.0,
+      "stddev": 10.635133835069109,
+      "min": 0.0,
+      "q25": 13.0,
+      "median": 18.0,
+      "q75": 26.0,
+      "q95": 40.0,
+      "max": 89.0,
+      "reason": null
+    },
+    "incoming_neighbor_skewness": {
+      "value": 1.1427457384289068,
+      "reason": null
+    },
+    "incoming_neighbor_max": 89,
+    "zero_overlap_edges_removed": 0,
+    "zero_weight_edges_removed": 0
+  },
+  "cost": {
+    "elapsed_seconds": 1.534226375,
+    "process_peak_memory_bytes": 601653248,
+    "peak_memory_scope": "Process lifetime high-water RSS, including earlier stages; not a per-candidate allocation estimate",
+    "artifact_bytes": 49667466
+  },
+  "directory": "results/leiden-v2/study-2026-09-25/screening/graphs/04730515b122abe34eb970c70c4e70cd2a84095859e15aeba32eca435e3d7e06"
+}

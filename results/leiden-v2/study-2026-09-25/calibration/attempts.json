@@ -1,0 +1,1882 @@
+[
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 500,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-500"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 501,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-501"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 502,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-502"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 503,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-503"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 504,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-504"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 505,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-505"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 506,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-506"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 507,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-507"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 508,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-508"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 509,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-509"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 510,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-510"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 511,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-511"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 512,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-512"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 513,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-513"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 514,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-514"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 515,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-515"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 516,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-516"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 517,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-517"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 518,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-518"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 519,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-519"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 520,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-520"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 521,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-521"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 522,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-522"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 523,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-523"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 524,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-524"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 525,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-525"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 526,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-526"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 527,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-527"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 528,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-528"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 529,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/seed-529"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40000,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/comparator-40000"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40000,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/edge_removal-40000"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "edge_removal",
+      "resolution": 0.2,
+      "seed": 40000
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40000,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/vocabulary_subsample-40000"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "vocabulary_subsample",
+      "resolution": 0.2,
+      "seed": 40000
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40001,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/comparator-40001"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40001,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/edge_removal-40001"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "edge_removal",
+      "resolution": 0.2,
+      "seed": 40001
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40001,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/vocabulary_subsample-40001"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "vocabulary_subsample",
+      "resolution": 0.2,
+      "seed": 40001
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40002,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/comparator-40002"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40002,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/edge_removal-40002"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "edge_removal",
+      "resolution": 0.2,
+      "seed": 40002
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40002,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/vocabulary_subsample-40002"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "vocabulary_subsample",
+      "resolution": 0.2,
+      "seed": 40002
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40003,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/comparator-40003"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40003,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/edge_removal-40003"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "edge_removal",
+      "resolution": 0.2,
+      "seed": 40003
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40003,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/vocabulary_subsample-40003"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "vocabulary_subsample",
+      "resolution": 0.2,
+      "seed": 40003
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40004,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/comparator-40004"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40004,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/edge_removal-40004"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "edge_removal",
+      "resolution": 0.2,
+      "seed": 40004
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40004,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/vocabulary_subsample-40004"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "vocabulary_subsample",
+      "resolution": 0.2,
+      "seed": 40004
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40005,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/comparator-40005"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40005,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/edge_removal-40005"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "edge_removal",
+      "resolution": 0.2,
+      "seed": 40005
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40005,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/vocabulary_subsample-40005"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "vocabulary_subsample",
+      "resolution": 0.2,
+      "seed": 40005
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40006,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/comparator-40006"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40006,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/edge_removal-40006"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "edge_removal",
+      "resolution": 0.2,
+      "seed": 40006
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40006,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/vocabulary_subsample-40006"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "vocabulary_subsample",
+      "resolution": 0.2,
+      "seed": 40006
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40007,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/comparator-40007"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40007,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/edge_removal-40007"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "edge_removal",
+      "resolution": 0.2,
+      "seed": 40007
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40007,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/vocabulary_subsample-40007"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "vocabulary_subsample",
+      "resolution": 0.2,
+      "seed": 40007
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40008,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/comparator-40008"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40008,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/edge_removal-40008"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "edge_removal",
+      "resolution": 0.2,
+      "seed": 40008
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40008,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/vocabulary_subsample-40008"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "vocabulary_subsample",
+      "resolution": 0.2,
+      "seed": 40008
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40009,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/comparator-40009"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40009,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/edge_removal-40009"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "edge_removal",
+      "resolution": 0.2,
+      "seed": 40009
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40009,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/vocabulary_subsample-40009"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "vocabulary_subsample",
+      "resolution": 0.2,
+      "seed": 40009
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40010,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/comparator-40010"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40010,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/edge_removal-40010"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "edge_removal",
+      "resolution": 0.2,
+      "seed": 40010
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40010,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/vocabulary_subsample-40010"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "vocabulary_subsample",
+      "resolution": 0.2,
+      "seed": 40010
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40011,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/comparator-40011"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40011,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/edge_removal-40011"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "edge_removal",
+      "resolution": 0.2,
+      "seed": 40011
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40011,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/vocabulary_subsample-40011"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "vocabulary_subsample",
+      "resolution": 0.2,
+      "seed": 40011
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40012,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/comparator-40012"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40012,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/edge_removal-40012"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "edge_removal",
+      "resolution": 0.2,
+      "seed": 40012
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40012,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/vocabulary_subsample-40012"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "vocabulary_subsample",
+      "resolution": 0.2,
+      "seed": 40012
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40013,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/comparator-40013"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40013,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/edge_removal-40013"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "edge_removal",
+      "resolution": 0.2,
+      "seed": 40013
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40013,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/vocabulary_subsample-40013"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "vocabulary_subsample",
+      "resolution": 0.2,
+      "seed": 40013
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40014,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/comparator-40014"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40014,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/edge_removal-40014"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "edge_removal",
+      "resolution": 0.2,
+      "seed": 40014
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40014,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/vocabulary_subsample-40014"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "vocabulary_subsample",
+      "resolution": 0.2,
+      "seed": 40014
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40015,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/comparator-40015"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40015,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/edge_removal-40015"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "edge_removal",
+      "resolution": 0.2,
+      "seed": 40015
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40015,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/vocabulary_subsample-40015"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "vocabulary_subsample",
+      "resolution": 0.2,
+      "seed": 40015
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40016,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/comparator-40016"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40016,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/edge_removal-40016"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "edge_removal",
+      "resolution": 0.2,
+      "seed": 40016
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40016,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/vocabulary_subsample-40016"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "vocabulary_subsample",
+      "resolution": 0.2,
+      "seed": 40016
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40017,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/comparator-40017"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40017,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/edge_removal-40017"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "edge_removal",
+      "resolution": 0.2,
+      "seed": 40017
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40017,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/vocabulary_subsample-40017"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "vocabulary_subsample",
+      "resolution": 0.2,
+      "seed": 40017
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40018,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/comparator-40018"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40018,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/edge_removal-40018"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "edge_removal",
+      "resolution": 0.2,
+      "seed": 40018
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40018,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/vocabulary_subsample-40018"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "vocabulary_subsample",
+      "resolution": 0.2,
+      "seed": 40018
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40019,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/comparator-40019"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40019,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/edge_removal-40019"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "edge_removal",
+      "resolution": 0.2,
+      "seed": 40019
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "config": {
+        "max_iterations": 100,
+        "max_levels": 1000,
+        "max_local_moves": 10000000,
+        "resolution": 0.2,
+        "seed": 40019,
+        "theta": 0.3
+      },
+      "directory": "results/leiden-v2/study-2026-09-25/calibration/candidates/6d46121e8b62e1b96ee289f4483c96161cba55d8ceef3c01e8af6603d5985f15/stress/vocabulary_subsample-40019"
+    },
+    "status": "complete",
+    "error": null
+  },
+  {
+    "stage": "calibration",
+    "setting": {
+      "graph": "0ece1475f519b41e5539230d5c76be7a935c37b45e1610281a29a88d3f45f5a5",
+      "kind": "vocabulary_subsample",
+      "resolution": 0.2,
+      "seed": 40019
+    },
+    "status": "complete",
+    "error": null
+  }
+]

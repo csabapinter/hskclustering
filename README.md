@@ -107,6 +107,9 @@ Automatic default nomination requires an explicit selection policy. No external
 evaluation data is available; related metrics are null with reasons.
 See [v2 usage and manifest settings](docs/graph-v2-usage.md) and the
 [construction specification](docs/graph-construction-v2.md).
+The [calibrated core comparison](results/leiden-v2/study-2026-09-25/COMPARISON.md)
+records baseline-derived tolerances, raw k/weight/resolution screening, a
+development shortlist and a fixed sample of groups reviewed as learning material.
 
 ## Run GMM
 

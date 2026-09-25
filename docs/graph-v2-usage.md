@@ -52,6 +52,50 @@ exhausting a limit is a recorded failure, not a successfully converged result.
 
 ## Experiments
 
+For a controlled first comparison, calibrate the archived baseline before looking
+at core candidates:
+
+```sh
+cargo run --release --locked --bin graph_v2 -- calibration-plan \
+  --output calibration-plan.json
+# Inspect the baseline paths, graph grid, seed cohorts and review anchors first.
+cargo run --release --locked --bin graph_v2 -- calibrate \
+  --plan calibration-plan.json --output results/leiden-v2/my-study/calibration
+cargo run --release --locked --bin graph_v2 -- validate-manifest \
+  --manifest results/leiden-v2/my-study/calibration/screening-manifest.json
+cargo run --release --locked --bin graph_v2 -- experiment \
+  --manifest results/leiden-v2/my-study/calibration/screening-manifest.json \
+  --output results/leiden-v2/my-study/screening
+```
+
+The calibration plan defaults to 30 baseline solver fits, 20 paired replicates
+of each perturbation, and 10,000 deterministic splits into two disjoint cohorts
+of the planned screening sizes. The 95th percentile of absolute differences in
+cohort medians sets each tolerance. Repeat ARI resamples whole partitions and
+recomputes the within-cohort median; its pairwise rows are never treated as
+independent replicates. These descriptive tolerances are neither confidence
+intervals nor semantic effect-size thresholds. The coverage floor is the minimum
+observed baseline coverage minus its tolerance. The concentration ceiling is
+the observed maximum plus the observed range (at least one token of headroom).
+All-singleton and one-community partitions are ineligible.
+
+Calibration writes the protocol before fitting and freezes an explicit policy
+only after every required fit/perturbation succeeds with defined metrics.
+Calibration seeds cannot overlap development or reserved confirmation seeds.
+The generated manifest references hashed calibration evidence. Validation and
+execution reject changes to that study, source build, input, metadata, baseline
+graph or archived assignment. JSON floats use exact round-trip parsing so a
+saved tolerance cannot change on readback. Use a new plan/calibration directory
+when changing the design; do not edit the frozen manifest to retune acceptance.
+
+The calibration plan disables ablations, combinations and confirmation, leaving
+the raw core grid, archived controls and development diagnostics enabled.
+`review_anchors` fixes the practical inspection sample without making it a
+semantic benchmark. The [2026-09-25 study](../results/leiden-v2/study-2026-09-25/COMPARISON.md)
+includes the actual calibration, full comparison and a reproducible shortlist.
+
+For the full multi-stage study without this baseline-only calibration workflow:
+
 Generate the complete default manifest, inspect/edit it, then run it:
 
 ```sh
@@ -101,7 +145,7 @@ Lower expansion stops at one community per connected component in every repeat:
 no smaller nonnegative resolution can coarsen a connected partition further.
 
 Graphs are built once for each exact configuration and input hash, then reloaded
-across solver settings. Vocabulary subsamples rebuild their fitted transforms and
+through a buffered JSON reader across solver settings. Vocabulary subsamples rebuild their fitted transforms and
 neighbors; these graphs are also reused across resolutions. For the archived raw
 threshold controls, rebuilding on a subset is exactly equivalent to retaining
 the corresponding stored edges. Sampling rounds 5% edge removal and 90% token

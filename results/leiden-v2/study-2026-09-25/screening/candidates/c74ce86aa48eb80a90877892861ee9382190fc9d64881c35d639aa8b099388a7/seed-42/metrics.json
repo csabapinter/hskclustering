@@ -1,0 +1,80 @@
+{
+  "tokens": 10936,
+  "communities": 21,
+  "sizes": {
+    "count": 21,
+    "mean": 520.7619047619048,
+    "stddev": 279.96528777381786,
+    "min": 181.0,
+    "q25": 266.0,
+    "median": 501.0,
+    "q75": 753.0,
+    "q95": 1008.0,
+    "max": 1134.0,
+    "reason": null
+  },
+  "singleton_token_fraction": 0.0,
+  "pair_token_fraction": 0.0,
+  "singleton_community_fraction": 0.0,
+  "pair_community_fraction": 0.0,
+  "largest_community_share": 0.10369422092172641,
+  "fraction_in_sizes_3_to_30": 0.0,
+  "fraction_in_sizes_over_100": 1.0,
+  "nonsingleton_coverage": 1.0,
+  "induced_components": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "all_communities_connected": true,
+  "cohesion": {
+    "value": 0.22571745487861195,
+    "reason": null
+  },
+  "silhouette": {
+    "value": 0.024038734498099592,
+    "reason": null
+  },
+  "margin": {
+    "value": 0.01907898825489191,
+    "reason": null
+  },
+  "margin_distribution": {
+    "count": 10936,
+    "mean": 0.019078988254891887,
+    "stddev": 0.03571937266949363,
+    "min": -0.1003908443311593,
+    "q25": -0.0051082256070829335,
+    "median": 0.016548853705471378,
+    "q75": 0.03974751448893322,
+    "q95": 0.0817060403479811,
+    "max": 0.21877229208952143,
+    "reason": null
+  },
+  "external_reference_agreement": {
+    "value": null,
+    "reason": "No external evaluation data available"
+  },
+  "independent_space_coherence": {
+    "value": null,
+    "reason": "No independent embeddings available"
+  }
+}

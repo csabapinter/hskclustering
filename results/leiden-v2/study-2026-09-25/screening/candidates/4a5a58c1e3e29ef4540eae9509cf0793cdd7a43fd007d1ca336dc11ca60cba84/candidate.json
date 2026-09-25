@@ -1,0 +1,1064 @@
+{
+  "id": "4a5a58c1e3e29ef4540eae9509cf0793cdd7a43fd007d1ca336dc11ca60cba84",
+  "stage": "core",
+  "graph_key": "9cfcb4974d3f16aa9d79b0d2019c718968b1edb75fe27c90f0a8579957310252",
+  "graph_directory": "results/leiden-v2/study-2026-09-25/screening/graphs/9cfcb4974d3f16aa9d79b0d2019c718968b1edb75fe27c90f0a8579957310252",
+  "source": {
+    "kind": "neighbors",
+    "config": {
+      "representation": "raw",
+      "k": 20,
+      "symmetrization": "union",
+      "tau": 0.0,
+      "weight": "cosine",
+      "lambda": 0.5,
+      "k_scale": null,
+      "block_rows": 32
+    }
+  },
+  "q": 0.0011111111111111111,
+  "resolution": 0.0005236612370869629,
+  "theta": 0.14138853401347998,
+  "baseline": false,
+  "control": false,
+  "runs": [
+    {
+      "seed": 42,
+      "assignments": "results/leiden-v2/study-2026-09-25/screening/candidates/4a5a58c1e3e29ef4540eae9509cf0793cdd7a43fd007d1ca336dc11ca60cba84/seed-42/communities.csv",
+      "metrics": {
+        "tokens": 10936,
+        "communities": 4,
+        "sizes": {
+          "count": 4,
+          "mean": 2734.0,
+          "stddev": 1100.2761017126566,
+          "min": 1323.0,
+          "q25": 2085.75,
+          "median": 2623.0,
+          "q75": 3271.25,
+          "q95": 4147.849999999999,
+          "max": 4367.0,
+          "reason": null
+        },
+        "singleton_token_fraction": 0.0,
+        "pair_token_fraction": 0.0,
+        "singleton_community_fraction": 0.0,
+        "pair_community_fraction": 0.0,
+        "largest_community_share": 0.399323335771763,
+        "fraction_in_sizes_3_to_30": 0.0,
+        "fraction_in_sizes_over_100": 1.0,
+        "nonsingleton_coverage": 1.0,
+        "induced_components": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "all_communities_connected": true,
+        "cohesion": {
+          "value": 0.18401013561751137,
+          "reason": null
+        },
+        "silhouette": {
+          "value": 0.021429460112032797,
+          "reason": null
+        },
+        "margin": {
+          "value": 0.017920896571852356,
+          "reason": null
+        },
+        "margin_distribution": {
+          "count": 10936,
+          "mean": 0.017920896571852415,
+          "stddev": 0.018311559801666585,
+          "min": -0.05704654447407648,
+          "q25": 0.00488432253035586,
+          "median": 0.017353491919655822,
+          "q75": 0.029891736681342505,
+          "q95": 0.04987928866993716,
+          "max": 0.07807520445994301,
+          "reason": null
+        },
+        "external_reference_agreement": {
+          "value": null,
+          "reason": "No external evaluation data available"
+        },
+        "independent_space_coherence": {
+          "value": null,
+          "reason": "No independent embeddings available"
+        }
+      },
+      "solver_seconds": 0.515866125,
+      "error": null
+    },
+    {
+      "seed": 43,
+      "assignments": "results/leiden-v2/study-2026-09-25/screening/candidates/4a5a58c1e3e29ef4540eae9509cf0793cdd7a43fd007d1ca336dc11ca60cba84/seed-43/communities.csv",
+      "metrics": {
+        "tokens": 10936,
+        "communities": 4,
+        "sizes": {
+          "count": 4,
+          "mean": 2734.0,
+          "stddev": 1005.1761039738261,
+          "min": 1515.0,
+          "q25": 2118.0,
+          "median": 2573.0,
+          "q75": 3189.0,
+          "q95": 4057.7999999999997,
+          "max": 4275.0,
+          "reason": null
+        },
+        "singleton_token_fraction": 0.0,
+        "pair_token_fraction": 0.0,
+        "singleton_community_fraction": 0.0,
+        "pair_community_fraction": 0.0,
+        "largest_community_share": 0.39091075347476223,
+        "fraction_in_sizes_3_to_30": 0.0,
+        "fraction_in_sizes_over_100": 1.0,
+        "nonsingleton_coverage": 1.0,
+        "induced_components": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "all_communities_connected": true,
+        "cohesion": {
+          "value": 0.18414826096689826,
+          "reason": null
+        },
+        "silhouette": {
+          "value": 0.021472966281215148,
+          "reason": null
+        },
+        "margin": {
+          "value": 0.017953992490125963,
+          "reason": null
+        },
+        "margin_distribution": {
+          "count": 10936,
+          "mean": 0.017953992490125976,
+          "stddev": 0.018261193545314986,
+          "min": -0.04411891736824894,
+          "q25": 0.005113073984317262,
+          "median": 0.017313842272990057,
+          "q75": 0.029929207179194915,
+          "q95": 0.049509395674627824,
+          "max": 0.08052998707135184,
+          "reason": null
+        },
+        "external_reference_agreement": {
+          "value": null,
+          "reason": "No external evaluation data available"
+        },
+        "independent_space_coherence": {
+          "value": null,
+          "reason": "No independent embeddings available"
+        }
+      },
+      "solver_seconds": 0.493176417,
+      "error": null
+    },
+    {
+      "seed": 44,
+      "assignments": "results/leiden-v2/study-2026-09-25/screening/candidates/4a5a58c1e3e29ef4540eae9509cf0793cdd7a43fd007d1ca336dc11ca60cba84/seed-44/communities.csv",
+      "metrics": {
+        "tokens": 10936,
+        "communities": 4,
+        "sizes": {
+          "count": 4,
+          "mean": 2734.0,
+          "stddev": 1028.195020411984,
+          "min": 1411.0,
+          "q25": 2203.0,
+          "median": 2620.0,
+          "q75": 3151.0,
+          "q95": 4058.2,
+          "max": 4285.0,
+          "reason": null
+        },
+        "singleton_token_fraction": 0.0,
+        "pair_token_fraction": 0.0,
+        "singleton_community_fraction": 0.0,
+        "pair_community_fraction": 0.0,
+        "largest_community_share": 0.39182516459400146,
+        "fraction_in_sizes_3_to_30": 0.0,
+        "fraction_in_sizes_over_100": 1.0,
+        "nonsingleton_coverage": 1.0,
+        "induced_components": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "all_communities_connected": true,
+        "cohesion": {
+          "value": 0.18426258099859552,
+          "reason": null
+        },
+        "silhouette": {
+          "value": 0.021655055821806067,
+          "reason": null
+        },
+        "margin": {
+          "value": 0.01810868926010697,
+          "reason": null
+        },
+        "margin_distribution": {
+          "count": 10936,
+          "mean": 0.01810868926010693,
+          "stddev": 0.018646458071397018,
+          "min": -0.05757064549406404,
+          "q25": 0.004804112352263051,
+          "median": 0.017480167180614833,
+          "q75": 0.030221283637293615,
+          "q95": 0.05058245327255762,
+          "max": 0.08053716645533446,
+          "reason": null
+        },
+        "external_reference_agreement": {
+          "value": null,
+          "reason": "No external evaluation data available"
+        },
+        "independent_space_coherence": {
+          "value": null,
+          "reason": "No independent embeddings available"
+        }
+      },
+      "solver_seconds": 0.303241625,
+      "error": null
+    }
+  ],
+  "repeats": {
+    "pairs": [
+      {
+        "left_seed": 42,
+        "right_seed": 43,
+        "agreement": {
+          "ari": 0.8820463983877299,
+          "variation_of_information": 0.4435155059574276,
+          "left_best_jaccard": [
+            0.8634274458305975,
+            0.9242930305054553,
+            0.9016326530612245,
+            0.9238255033557047
+          ],
+          "right_best_jaccard": [
+            0.8634274458305975,
+            0.9242930305054553,
+            0.9016326530612245,
+            0.9238255033557047
+          ]
+        }
+      },
+      {
+        "left_seed": 42,
+        "right_seed": 44,
+        "agreement": {
+          "ari": 0.8665205066139637,
+          "variation_of_information": 0.486871878955339,
+          "left_best_jaccard": [
+            0.8999305072967339,
+            0.9150066401062417,
+            0.8704280155642024,
+            0.9134097035040432
+          ],
+          "right_best_jaccard": [
+            0.8999305072967339,
+            0.9150066401062417,
+            0.8704280155642024,
+            0.9134097035040432
+          ]
+        }
+      },
+      {
+        "left_seed": 43,
+        "right_seed": 44,
+        "agreement": {
+          "ari": 0.9085213154080855,
+          "variation_of_information": 0.3635092768888404,
+          "left_best_jaccard": [
+            0.8963058976020739,
+            0.9414833295531867,
+            0.9075328816261459,
+            0.9518996165911467
+          ],
+          "right_best_jaccard": [
+            0.8963058976020739,
+            0.9414833295531867,
+            0.9075328816261459,
+            0.9518996165911467
+          ]
+        }
+      }
+    ],
+    "ari": {
+      "count": 3,
+      "mean": 0.8856960734699264,
+      "stddev": 0.01733987852695432,
+      "min": 0.8665205066139637,
+      "q25": 0.8742834525008468,
+      "median": 0.8820463983877299,
+      "q75": 0.8952838568979077,
+      "q95": 0.9058738237060499,
+      "max": 0.9085213154080855,
+      "reason": null
+    },
+    "variation_of_information": {
+      "count": 3,
+      "mean": 0.43129888726720234,
+      "stddev": 0.051098057538560726,
+      "min": 0.3635092768888404,
+      "q25": 0.403512391423134,
+      "median": 0.4435155059574276,
+      "q75": 0.4651936924563833,
+      "q95": 0.48253624165554787,
+      "max": 0.486871878955339,
+      "reason": null
+    },
+    "best_match_jaccard": {
+      "count": 24,
+      "mean": 0.909097935383063,
+      "stddev": 0.024612171948497512,
+      "min": 0.8634274458305975,
+      "q25": 0.8990243548730689,
+      "median": 0.9104712925650945,
+      "q75": 0.9239423851431423,
+      "q95": 0.9503371735354528,
+      "max": 0.9518996165911467,
+      "reason": null
+    },
+    "representative_seed": 43,
+    "representative_index": 1,
+    "note": "VI uses natural logarithms. Pairwise comparisons are dependent diagnostics, not independent replicates. Jaccards are directional per-community matches."
+  },
+  "perturbations": [
+    {
+      "kind": "edge_removal",
+      "seed": 10000,
+      "retained_tokens": 10936,
+      "vocabulary_coverage": 1.0,
+      "comparator_nonsingleton_coverage": 1.0,
+      "perturbed_nonsingleton_coverage": 1.0,
+      "edge_overlap": {
+        "value": 0.9500023814870004,
+        "reason": null
+      },
+      "agreement": {
+        "ari": 0.8030513028538229,
+        "variation_of_information": 0.7019249426009231,
+        "left_best_jaccard": [
+          0.8068571428571428,
+          0.8844971453667105,
+          0.7948611686697058,
+          0.8657869327325395
+        ],
+        "right_best_jaccard": [
+          0.8068571428571428,
+          0.8844971453667105,
+          0.7948611686697058,
+          0.8657869327325395
+        ]
+      },
+      "error": null
+    },
+    {
+      "kind": "vocabulary_subsample",
+      "seed": 10000,
+      "retained_tokens": 9842,
+      "vocabulary_coverage": 0.8999634235552304,
+      "comparator_nonsingleton_coverage": 1.0,
+      "perturbed_nonsingleton_coverage": 1.0,
+      "edge_overlap": {
+        "value": 0.9008764891990493,
+        "reason": null
+      },
+      "agreement": {
+        "ari": 0.7309499769631485,
+        "variation_of_information": 0.863304772267109,
+        "left_best_jaccard": [
+          0.7954110898661568,
+          0.8632254995242626,
+          0.6347866854195968,
+          0.7899322362052275
+        ],
+        "right_best_jaccard": [
+          0.7954110898661568,
+          0.8632254995242626,
+          0.6347866854195968,
+          0.7899322362052275
+        ]
+      },
+      "error": null
+    },
+    {
+      "kind": "edge_removal",
+      "seed": 10001,
+      "retained_tokens": 10936,
+      "vocabulary_coverage": 1.0,
+      "comparator_nonsingleton_coverage": 1.0,
+      "perturbed_nonsingleton_coverage": 1.0,
+      "edge_overlap": {
+        "value": 0.9500023814870004,
+        "reason": null
+      },
+      "agreement": {
+        "ari": 0.7578514318640324,
+        "variation_of_information": 0.8279795173080602,
+        "left_best_jaccard": [
+          0.8097560975609757,
+          0.8378627360663289,
+          0.6500375093773444,
+          0.921302578018996
+        ],
+        "right_best_jaccard": [
+          0.8097560975609757,
+          0.8378627360663289,
+          0.6500375093773444,
+          0.21653543307086615,
+          0.921302578018996
+        ]
+      },
+      "error": null
+    },
+    {
+      "kind": "vocabulary_subsample",
+      "seed": 10001,
+      "retained_tokens": 9842,
+      "vocabulary_coverage": 0.8999634235552304,
+      "comparator_nonsingleton_coverage": 1.0,
+      "perturbed_nonsingleton_coverage": 1.0,
+      "edge_overlap": {
+        "value": 0.8983317333494591,
+        "reason": null
+      },
+      "agreement": {
+        "ari": 0.7010775992959579,
+        "variation_of_information": 0.8138103320492258,
+        "left_best_jaccard": [
+          0.803921568627451,
+          0.7816901408450704,
+          0.669089354424968,
+          0.8911514253980007
+        ],
+        "right_best_jaccard": [
+          0.803921568627451,
+          0.7816901408450704,
+          0.669089354424968,
+          0.8911514253980007
+        ]
+      },
+      "error": null
+    },
+    {
+      "kind": "edge_removal",
+      "seed": 10002,
+      "retained_tokens": 10936,
+      "vocabulary_coverage": 1.0,
+      "comparator_nonsingleton_coverage": 1.0,
+      "perturbed_nonsingleton_coverage": 1.0,
+      "edge_overlap": {
+        "value": 0.9500023814870004,
+        "reason": null
+      },
+      "agreement": {
+        "ari": 0.8323808810542153,
+        "variation_of_information": 0.586682652327831,
+        "left_best_jaccard": [
+          0.8607594936708861,
+          0.8905384444936849,
+          0.8170347003154574,
+          0.9096604022420046
+        ],
+        "right_best_jaccard": [
+          0.8607594936708861,
+          0.8905384444936849,
+          0.8170347003154574,
+          0.9096604022420046
+        ]
+      },
+      "error": null
+    },
+    {
+      "kind": "vocabulary_subsample",
+      "seed": 10002,
+      "retained_tokens": 9842,
+      "vocabulary_coverage": 0.8999634235552304,
+      "comparator_nonsingleton_coverage": 1.0,
+      "perturbed_nonsingleton_coverage": 1.0,
+      "edge_overlap": {
+        "value": 0.9003267726660716,
+        "reason": null
+      },
+      "agreement": {
+        "ari": 0.7210965151253003,
+        "variation_of_information": 0.8573254075558596,
+        "left_best_jaccard": [
+          0.811646297627606,
+          0.8639750060081711,
+          0.6240376390076989,
+          0.7767574414186194
+        ],
+        "right_best_jaccard": [
+          0.811646297627606,
+          0.8639750060081711,
+          0.6240376390076989,
+          0.7767574414186194
+        ]
+      },
+      "error": null
+    },
+    {
+      "kind": "edge_removal",
+      "seed": 10003,
+      "retained_tokens": 10936,
+      "vocabulary_coverage": 1.0,
+      "comparator_nonsingleton_coverage": 1.0,
+      "perturbed_nonsingleton_coverage": 1.0,
+      "edge_overlap": {
+        "value": 0.9500023814870004,
+        "reason": null
+      },
+      "agreement": {
+        "ari": 0.617649459237205,
+        "variation_of_information": 1.0307200083919932,
+        "left_best_jaccard": [
+          0.8729241877256317,
+          0.653702163061564,
+          0.6595218466611706,
+          0.8817567567567568
+        ],
+        "right_best_jaccard": [
+          0.8729241877256317,
+          0.653702163061564,
+          0.6595218466611706,
+          0.22916666666666666,
+          0.8817567567567568
+        ]
+      },
+      "error": null
+    },
+    {
+      "kind": "vocabulary_subsample",
+      "seed": 10003,
+      "retained_tokens": 9842,
+      "vocabulary_coverage": 0.8999634235552304,
+      "comparator_nonsingleton_coverage": 1.0,
+      "perturbed_nonsingleton_coverage": 1.0,
+      "edge_overlap": {
+        "value": 0.9016587946344228,
+        "reason": null
+      },
+      "agreement": {
+        "ari": 0.7239268584110572,
+        "variation_of_information": 0.7989495911399078,
+        "left_best_jaccard": [
+          0.8285928143712575,
+          0.8114456544949818,
+          0.672003659652333,
+          0.8740359897172236
+        ],
+        "right_best_jaccard": [
+          0.8285928143712575,
+          0.8114456544949818,
+          0.672003659652333,
+          0.8740359897172236
+        ]
+      },
+      "error": null
+    },
+    {
+      "kind": "edge_removal",
+      "seed": 10004,
+      "retained_tokens": 10936,
+      "vocabulary_coverage": 1.0,
+      "comparator_nonsingleton_coverage": 1.0,
+      "perturbed_nonsingleton_coverage": 1.0,
+      "edge_overlap": {
+        "value": 0.9500023814870004,
+        "reason": null
+      },
+      "agreement": {
+        "ari": 0.8657600369288884,
+        "variation_of_information": 0.4921950368443735,
+        "left_best_jaccard": [
+          0.908125,
+          0.9194934418815016,
+          0.8424312814556717,
+          0.9154348573392919
+        ],
+        "right_best_jaccard": [
+          0.908125,
+          0.9194934418815016,
+          0.8424312814556717,
+          0.9154348573392919
+        ]
+      },
+      "error": null
+    },
+    {
+      "kind": "vocabulary_subsample",
+      "seed": 10004,
+      "retained_tokens": 9842,
+      "vocabulary_coverage": 0.8999634235552304,
+      "comparator_nonsingleton_coverage": 1.0,
+      "perturbed_nonsingleton_coverage": 1.0,
+      "edge_overlap": {
+        "value": 0.9007610488251403,
+        "reason": null
+      },
+      "agreement": {
+        "ari": 0.7127673700838826,
+        "variation_of_information": 0.8455472051052693,
+        "left_best_jaccard": [
+          0.8220986796386379,
+          0.8121972699251431,
+          0.6302555647155812,
+          0.8703490602224779
+        ],
+        "right_best_jaccard": [
+          0.8220986796386379,
+          0.8121972699251431,
+          0.6302555647155812,
+          0.8703490602224779
+        ]
+      },
+      "error": null
+    },
+    {
+      "kind": "edge_removal",
+      "seed": 10005,
+      "retained_tokens": 10936,
+      "vocabulary_coverage": 1.0,
+      "comparator_nonsingleton_coverage": 1.0,
+      "perturbed_nonsingleton_coverage": 1.0,
+      "edge_overlap": {
+        "value": 0.9500023814870004,
+        "reason": null
+      },
+      "agreement": {
+        "ari": 0.8609604806337098,
+        "variation_of_information": 0.5334076888223795,
+        "left_best_jaccard": [
+          0.7654249126891735,
+          0.9179053281500115,
+          0.9448384554767534,
+          0.8698305084745763
+        ],
+        "right_best_jaccard": [
+          0.7654249126891735,
+          0.9179053281500115,
+          0.9448384554767534,
+          0.8698305084745763
+        ]
+      },
+      "error": null
+    },
+    {
+      "kind": "vocabulary_subsample",
+      "seed": 10005,
+      "retained_tokens": 9842,
+      "vocabulary_coverage": 0.8999634235552304,
+      "comparator_nonsingleton_coverage": 1.0,
+      "perturbed_nonsingleton_coverage": 1.0,
+      "edge_overlap": {
+        "value": 0.9017662549945514,
+        "reason": null
+      },
+      "agreement": {
+        "ari": 0.7551270759747072,
+        "variation_of_information": 0.8236600006698913,
+        "left_best_jaccard": [
+          0.7014341590612777,
+          0.8524666822539163,
+          0.7769164513350559,
+          0.8433602347762289
+        ],
+        "right_best_jaccard": [
+          0.7014341590612777,
+          0.8524666822539163,
+          0.7769164513350559,
+          0.8433602347762289
+        ]
+      },
+      "error": null
+    },
+    {
+      "kind": "edge_removal",
+      "seed": 10006,
+      "retained_tokens": 10936,
+      "vocabulary_coverage": 1.0,
+      "comparator_nonsingleton_coverage": 1.0,
+      "perturbed_nonsingleton_coverage": 1.0,
+      "edge_overlap": {
+        "value": 0.9500023814870004,
+        "reason": null
+      },
+      "agreement": {
+        "ari": 0.837225789608305,
+        "variation_of_information": 0.6292759112957635,
+        "left_best_jaccard": [
+          0.758600583090379,
+          0.9244943820224719,
+          0.8395437262357415,
+          0.8633413050905364
+        ],
+        "right_best_jaccard": [
+          0.758600583090379,
+          0.9244943820224719,
+          0.8395437262357415,
+          0.8633413050905364
+        ]
+      },
+      "error": null
+    },
+    {
+      "kind": "vocabulary_subsample",
+      "seed": 10006,
+      "retained_tokens": 9842,
+      "vocabulary_coverage": 0.8999634235552304,
+      "comparator_nonsingleton_coverage": 1.0,
+      "perturbed_nonsingleton_coverage": 1.0,
+      "edge_overlap": {
+        "value": 0.899822936529556,
+        "reason": null
+      },
+      "agreement": {
+        "ari": 0.6581853801169573,
+        "variation_of_information": 0.9976300230116752,
+        "left_best_jaccard": [
+          0.8167723749119098,
+          0.8260869565217391,
+          0.5012853470437018,
+          0.7268666241225271
+        ],
+        "right_best_jaccard": [
+          0.8167723749119098,
+          0.8260869565217391,
+          0.5012853470437018,
+          0.7268666241225271
+        ]
+      },
+      "error": null
+    },
+    {
+      "kind": "edge_removal",
+      "seed": 10007,
+      "retained_tokens": 10936,
+      "vocabulary_coverage": 1.0,
+      "comparator_nonsingleton_coverage": 1.0,
+      "perturbed_nonsingleton_coverage": 1.0,
+      "edge_overlap": {
+        "value": 0.9500023814870004,
+        "reason": null
+      },
+      "agreement": {
+        "ari": 0.7115161760300089,
+        "variation_of_information": 0.9807688268188448,
+        "left_best_jaccard": [
+          0.7088266953713671,
+          0.8193389906208128,
+          0.6335669781931464,
+          0.19655414908579466,
+          0.8781830695113558
+        ],
+        "right_best_jaccard": [
+          0.7088266953713671,
+          0.8193389906208128,
+          0.6335669781931464,
+          0.8781830695113558
+        ]
+      },
+      "error": null
+    },
+    {
+      "kind": "vocabulary_subsample",
+      "seed": 10007,
+      "retained_tokens": 9842,
+      "vocabulary_coverage": 0.8999634235552304,
+      "comparator_nonsingleton_coverage": 1.0,
+      "perturbed_nonsingleton_coverage": 1.0,
+      "edge_overlap": {
+        "value": 0.8991208193601015,
+        "reason": null
+      },
+      "agreement": {
+        "ari": 0.6810890685662888,
+        "variation_of_information": 0.9239306415835498,
+        "left_best_jaccard": [
+          0.806657223796034,
+          0.7871376811594203,
+          0.13070725156669652,
+          0.7585551330798479,
+          0.8082448469706434
+        ],
+        "right_best_jaccard": [
+          0.806657223796034,
+          0.7871376811594203,
+          0.7585551330798479,
+          0.8082448469706434
+        ]
+      },
+      "error": null
+    },
+    {
+      "kind": "edge_removal",
+      "seed": 10008,
+      "retained_tokens": 10936,
+      "vocabulary_coverage": 1.0,
+      "comparator_nonsingleton_coverage": 1.0,
+      "perturbed_nonsingleton_coverage": 1.0,
+      "edge_overlap": {
+        "value": 0.9500023814870004,
+        "reason": null
+      },
+      "agreement": {
+        "ari": 0.7852657093832137,
+        "variation_of_information": 0.7058070712005398,
+        "left_best_jaccard": [
+          0.857328990228013,
+          0.9011157295996499,
+          0.7162002364998029,
+          0.812310491206792
+        ],
+        "right_best_jaccard": [
+          0.857328990228013,
+          0.9011157295996499,
+          0.7162002364998029,
+          0.812310491206792
+        ]
+      },
+      "error": null
+    },
+    {
+      "kind": "vocabulary_subsample",
+      "seed": 10008,
+      "retained_tokens": 9842,
+      "vocabulary_coverage": 0.8999634235552304,
+      "comparator_nonsingleton_coverage": 1.0,
+      "perturbed_nonsingleton_coverage": 1.0,
+      "edge_overlap": {
+        "value": 0.9003268715667135,
+        "reason": null
+      },
+      "agreement": {
+        "ari": 0.779579968841508,
+        "variation_of_information": 0.7520275702801089,
+        "left_best_jaccard": [
+          0.7696590118302018,
+          0.8823667527588636,
+          0.7506714413607878,
+          0.8407485875706214
+        ],
+        "right_best_jaccard": [
+          0.7696590118302018,
+          0.8823667527588636,
+          0.7506714413607878,
+          0.8407485875706214
+        ]
+      },
+      "error": null
+    },
+    {
+      "kind": "edge_removal",
+      "seed": 10009,
+      "retained_tokens": 10936,
+      "vocabulary_coverage": 1.0,
+      "comparator_nonsingleton_coverage": 1.0,
+      "perturbed_nonsingleton_coverage": 1.0,
+      "edge_overlap": {
+        "value": 0.9500023814870004,
+        "reason": null
+      },
+      "agreement": {
+        "ari": 0.7762431809851714,
+        "variation_of_information": 0.7480971175706506,
+        "left_best_jaccard": [
+          0.8011428571428572,
+          0.8781900064336264,
+          0.8029678483099753,
+          0.7996779388083736
+        ],
+        "right_best_jaccard": [
+          0.8011428571428572,
+          0.8781900064336264,
+          0.8029678483099753,
+          0.7996779388083736
+        ]
+      },
+      "error": null
+    },
+    {
+      "kind": "vocabulary_subsample",
+      "seed": 10009,
+      "retained_tokens": 9842,
+      "vocabulary_coverage": 0.8999634235552304,
+      "comparator_nonsingleton_coverage": 1.0,
+      "perturbed_nonsingleton_coverage": 1.0,
+      "edge_overlap": {
+        "value": 0.8993827720795134,
+        "reason": null
+      },
+      "agreement": {
+        "ari": 0.7711973837365393,
+        "variation_of_information": 0.7390150838847023,
+        "left_best_jaccard": [
+          0.8725274725274725,
+          0.877108983128135,
+          0.72531328320802,
+          0.8062272275587943
+        ],
+        "right_best_jaccard": [
+          0.8725274725274725,
+          0.877108983128135,
+          0.8062272275587943,
+          0.72531328320802
+        ]
+      },
+      "error": null
+    }
+  ],
+  "sensitivity": [
+    {
+      "parameter": "k",
+      "direction": "decrease",
+      "requested_factor": 0.8,
+      "original": 20.0,
+      "changed": 16.0,
+      "edge_overlap": {
+        "value": 0.8045479597460654,
+        "reason": null
+      },
+      "agreement": {
+        "ari": 0.4770348055933385,
+        "variation_of_information": 1.4883005723993372,
+        "left_best_jaccard": [
+          0.7046117921774664,
+          0.6098426069607625,
+          0.3410066328521264,
+          0.6806440791680644
+        ],
+        "right_best_jaccard": [
+          0.7046117921774664,
+          0.6098426069607625,
+          0.32646331409727947,
+          0.20274636510500807,
+          0.3410066328521264,
+          0.6806440791680644,
+          0.18850871530019367
+        ]
+      },
+      "error": null
+    },
+    {
+      "parameter": "resolution",
+      "direction": "decrease",
+      "requested_factor": 0.8,
+      "original": 0.0005236612370869629,
+      "changed": 0.00041892898966957036,
+      "edge_overlap": {
+        "value": 1.0,
+        "reason": null
+      },
+      "agreement": {
+        "ari": 0.8401663454146219,
+        "variation_of_information": 0.5129891392249637,
+        "left_best_jaccard": [
+          0.7835433654558932,
+          0.8806491372226787,
+          0.9101449275362319,
+          0.9204583754634311
+        ],
+        "right_best_jaccard": [
+          0.7835433654558932,
+          0.8806491372226787,
+          0.9101449275362319,
+          0.9204583754634311
+        ]
+      },
+      "error": null
+    },
+    {
+      "parameter": "k",
+      "direction": "increase",
+      "requested_factor": 1.2,
+      "original": 20.0,
+      "changed": 24.0,
+      "edge_overlap": {
+        "value": 0.8361562313316075,
+        "reason": null
+      },
+      "agreement": {
+        "ari": 0.7243025006645327,
+        "variation_of_information": 0.8498593503928178,
+        "left_best_jaccard": [
+          0.8006349206349206,
+          0.8770785097874132,
+          0.624107517849643,
+          0.7465772562168204
+        ],
+        "right_best_jaccard": [
+          0.8006349206349206,
+          0.8770785097874132,
+          0.624107517849643,
+          0.7465772562168204
+        ]
+      },
+      "error": null
+    },
+    {
+      "parameter": "resolution",
+      "direction": "increase",
+      "requested_factor": 1.2,
+      "original": 0.0005236612370869629,
+      "changed": 0.0006283934845043555,
+      "edge_overlap": {
+        "value": 1.0,
+        "reason": null
+      },
+      "agreement": {
+        "ari": 0.6470605753000341,
+        "variation_of_information": 1.0255044155720583,
+        "left_best_jaccard": [
+          0.7516072472238458,
+          0.7268831754623365,
+          0.4758031720211468,
+          0.904258943781942
+        ],
+        "right_best_jaccard": [
+          0.2729957805907173,
+          0.7516072472238458,
+          0.7268831754623365,
+          0.4758031720211468,
+          0.14995957962813258,
+          0.904258943781942
+        ]
+      },
+      "error": null
+    }
+  ],
+  "score": {
+    "id": "4a5a58c1e3e29ef4540eae9509cf0793cdd7a43fd007d1ca336dc11ca60cba84",
+    "graph_id": "9cfcb4974d3f16aa9d79b0d2019c718968b1edb75fe27c90f0a8579957310252",
+    "baseline": false,
+    "metrics": {
+      "cohesion": 0.18414826096689826,
+      "silhouette": 0.021472966281215148,
+      "margin": 0.017953992490125963,
+      "repeat_ari": 0.8820463983877299,
+      "edge_removal_ari": 0.7941585061185183,
+      "subsample_ari": 0.7225116867681787,
+      "nonsingleton_coverage": 1.0
+    },
+    "minimum_communities": 4,
+    "maximum_largest_share": 0.399323335771763,
+    "minimum_coverage": 1.0,
+    "valid": true,
+    "error": null,
+    "transforms": 0,
+    "runtime_seconds": 1.9559664306666666
+  },
+  "representative_assignments": "results/leiden-v2/study-2026-09-25/screening/candidates/4a5a58c1e3e29ef4540eae9509cf0793cdd7a43fd007d1ca336dc11ca60cba84/communities.csv",
+  "directory": "results/leiden-v2/study-2026-09-25/screening/candidates/4a5a58c1e3e29ef4540eae9509cf0793cdd7a43fd007d1ca336dc11ca60cba84"
+}

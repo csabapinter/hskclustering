@@ -1,0 +1,12 @@
+{
+  "created_utc": "2026-09-25T16:20:17.933653+00:00",
+  "sha256": {
+    "analysis-protocol.json": "961c6ee2196848f61c15a9e89dcd6e462698ea02e695bbe96c95ebed81d59eae",
+    "calibration-plan.json": "ec47e342cdb1e9bbfc2838096925aa7c2f5e3141096d22171f7780e66c71dc1a",
+    "calibration/screening-manifest.json": "78eae6c35fce1056415c56d9c9a9f98497480f8429df40d009addf80ad51a2f2"
+  },
+  "base_commit": "a6402e8ed2630ac002c9d2d8a0a32a4666c3a2aa",
+  "rustc": "rustc 1.95.0 (59807616e 2026-04-14)",
+  "platform": "Darwin arm64",
+  "policy_identical_after_buffered_io_fix": true
+}

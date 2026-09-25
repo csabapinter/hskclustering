@@ -1,0 +1,24 @@
+{
+  "status": "interrupted_before_core_screening",
+  "reason": "Buffered large cached graph JSON reads to remove per-byte I/O. No algorithm, study scope, seeds, tolerances, or shortlist/review rules changed. Recalibrated and restarted to preserve source-hash consistency.",
+  "created_utc": "2026-09-25T16:17:22.932124+00:00",
+  "completed_settings": [
+    {
+      "stage": "baseline",
+      "resolution": 0.2
+    },
+    {
+      "stage": "controls",
+      "resolution": 0.05
+    }
+  ],
+  "benchmark": {
+    "before_wall_seconds": 20.382795708,
+    "same_graph_same_seed": true,
+    "before_directory": "/tmp/hsk-v2-json-load-before",
+    "after_directory": "/tmp/hsk-v2-json-load-after",
+    "after_wall_seconds": 2.313021166,
+    "assignments_byte_identical": true,
+    "metrics_identical": true
+  }
+}

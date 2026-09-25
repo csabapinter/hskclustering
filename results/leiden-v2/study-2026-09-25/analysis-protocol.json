@@ -1,0 +1,16 @@
+{
+  "scope": "Baseline calibration, archived controls, raw core screening, and a development shortlist. No centering/ABTT/mutual ablations or fresh-seed confirmation in this study.",
+  "shortlist": {
+    "maximum_core_candidates": 3,
+    "rule": "Keep the baseline. For each of cosine, SNN and local weights, consider valid core candidates on the diagnostic Pareto frontier that satisfy all frozen coverage, concentration and degeneracy limits. Select the candidate with the smallest worst regression relative to the screening baseline, measured in calibrated tolerance units across the seven frozen metrics. Break ties by more metrics improved beyond tolerance, then lower graph-build plus mean solver time, then candidate ID. A shortlisted trade-off is not an accepted replacement. If no candidate in a weight family passes the limits, report that family as having no eligible shortlist entry.",
+    "endpoint_rule": "Include endpoint-limited candidates only as explicitly provisional ablation starting points. They cannot nominate a new default. Preserve search-limit flags."
+  },
+  "practical_review": {
+    "anchors": ["苹果", "牛奶", "咖啡", "衬衫", "足球", "老师", "焦虑", "政策", "合同", "银行", "软件", "感冒", "火车", "妈妈", "为什么", "公斤", "花", "行"],
+    "source": "Same 18 anchors as the archived 2026-09-17 export_review.py, fixed before any core screening results.",
+    "partitions": "Archived recommendation, common-seed baseline representative, and every shortlisted core representative (highest mean repeat ARI, seed breaks ties).",
+    "exports": "All members, 8 highest-cohesion members, 6 lowest-margin nonsingleton boundary words, and 8 members ordered by SHA-256(anchor + NUL + token). Singleton groups are shown. Duplicate groups across anchors are disclosed.",
+    "rubric": "Inspect shared topic or grammatical function, intrusive members, excessive breadth, loss of useful neighbors through fragmentation, and polysemy. Describe usefulness with concrete members. Do not turn spot-checks into an estimated semantic accuracy rate. No learner validation or independent benchmark is available.",
+    "selection_role": "Qualitative context only; does not alter numeric tolerances or the deterministic shortlist."
+  }
+}

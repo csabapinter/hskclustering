@@ -1,0 +1,34 @@
+{
+  "gamma": 1.4707179129123686,
+  "graph_key": "2b119ca4bce22cc040d2b3987379dc4d512fef38b696422d80a88ea69b8a092a",
+  "id": "dee701aff791c8a424444edee4b9dd1e3b786c5421dd3dbbc215757791848a0b",
+  "perturbation_seeds": [
+    10000,
+    10001,
+    10002,
+    10003,
+    10004,
+    10005,
+    10006,
+    10007,
+    10008,
+    10009
+  ],
+  "q": 2.6999999999999997,
+  "resolution": 1.4707179129123686,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "source": {
+    "config": {
+      "path": "results/leiden/1-9/hsk1-9-thresh0.70.graphml",
+      "threshold": 0.75,
+      "unshift": true
+    },
+    "kind": "archived"
+  },
+  "stage": "controls-unshifted",
+  "theta": 0.16341310143470764
+}

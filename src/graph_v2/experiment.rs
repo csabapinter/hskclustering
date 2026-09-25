@@ -1,5 +1,6 @@
 //! Manifest-driven experiments, with graph reuse and immutable output directories.
 use super::{
+    calibration::{self, CalibrationPlan, CalibrationReference, CalibrationReport},
     embeddings::{Embeddings, Representation},
     graph::{self, Graph, GraphConfig, Symmetrization, WeightMode},
     leiden::{self, LeidenConfig},
@@ -19,7 +20,7 @@ use sha2::{Digest, Sha256};
 use std::{
     collections::{BTreeMap, BTreeSet},
     fs,
-    io::Write,
+    io::{BufReader, Write},
     path::{Path, PathBuf},
     time::Instant,
 };
@@ -71,6 +72,8 @@ pub struct Manifest {
     pub similar_edge_count_relative_tolerance: f64,
     pub similar_community_count_relative_tolerance: f64,
     pub selection: Option<SelectionPolicy>,
+    pub calibration: Option<CalibrationReference>,
+    pub review_anchors: Vec<String>,
     pub solver: LeidenConfig,
 }
 impl Default for Manifest {
@@ -115,6 +118,8 @@ impl Default for Manifest {
             similar_edge_count_relative_tolerance: 0.1,
             similar_community_count_relative_tolerance: 0.1,
             selection: None,
+            calibration: None,
+            review_anchors: vec![],
             solver: LeidenConfig::default(),
         }
     }
@@ -229,6 +234,10 @@ pub fn code_hashes() -> BTreeMap<String, String> {
             include_bytes!("../bin/graph_v2.rs").as_slice(),
         ),
         ("graph_v2/mod.rs", include_bytes!("mod.rs").as_slice()),
+        (
+            "graph_v2/calibration.rs",
+            include_bytes!("calibration.rs").as_slice(),
+        ),
         (
             "graph_v2/embeddings.rs",
             include_bytes!("embeddings.rs").as_slice(),
@@ -432,7 +441,8 @@ pub fn cluster_command(
 }
 pub fn load_graph(path: &Path) -> Result<Graph> {
     if path.extension().is_some_and(|s| s == "json") {
-        let graph: Graph = serde_json::from_reader(fs::File::open(path)?)?;
+        // from_reader does not add buffering: cached graphs contain tens of MB.
+        let graph: Graph = serde_json::from_reader(BufReader::new(fs::File::open(path)?))?;
         graph.validate()?;
         Ok(graph)
     } else {
@@ -1585,8 +1595,156 @@ impl Runner {
     }
 }
 
+/// Validate the evidence and exact frozen study before creating any experiment output.
+pub fn verify_calibration(manifest: &Manifest) -> Result<()> {
+    if let Some(reference) = &manifest.calibration {
+        ensure!(
+            sha256(&reference.report)? == reference.report_sha256,
+            "Calibration evidence hash mismatch"
+        );
+        let report: CalibrationReport =
+            serde_json::from_reader(fs::File::open(&reference.report)?)?;
+        report.plan.validate()?;
+        let mut without_reference = manifest.clone();
+        without_reference.calibration = None;
+        ensure!(
+            digest(&serde_json::to_vec(&without_reference)?)
+                == report.frozen_manifest_without_reference_sha256,
+            "Study differs from the calibrated frozen manifest"
+        );
+        ensure!(
+            code_hashes() == report.code_hashes,
+            "Compiled source differs from the calibrated build"
+        );
+        ensure!(
+            sha256(&manifest.input)? == report.input_sha256,
+            "Calibration input hash mismatch"
+        );
+        ensure!(
+            manifest.metadata.as_ref().map(|p| sha256(p)).transpose()? == report.metadata_sha256,
+            "Calibration metadata hash mismatch"
+        );
+        let baseline = manifest
+            .baseline
+            .as_ref()
+            .context("Calibrated baseline missing")?;
+        ensure!(
+            sha256(&baseline.graph)? == report.baseline_graph_sha256,
+            "Calibration graph hash mismatch"
+        );
+        ensure!(
+            sha256(&baseline.recommended_assignments)? == report.archived_assignments_sha256,
+            "Calibration archived assignment hash mismatch"
+        );
+    }
+    Ok(())
+}
+
+pub fn calibrate_command(plan: &CalibrationPlan, output: &Path) -> Result<()> {
+    plan.validate()?;
+    fresh_directory(output)?;
+    let start = Instant::now();
+    write_json(&output.join("plan.json"), plan)?;
+    write_json(
+        &output.join("protocol.json"),
+        &serde_json::json!({"method":calibration::METHOD,"backend":leiden::BACKEND,"code_hashes":code_hashes(),"command":std::env::args().collect::<Vec<_>>(),"executable_sha256":sha256(&std::env::current_exe()?)?}),
+    )?;
+    let result = (|| -> Result<()> {
+        let manifest = &plan.study;
+        let input = Embeddings::load(&manifest.input)?;
+        for anchor in &manifest.review_anchors {
+            ensure!(
+                input.tokens.contains(anchor),
+                "Unknown review anchor: {anchor}"
+            );
+        }
+        let input_hash = sha256(&manifest.input)?;
+        let baseline = manifest.baseline.as_ref().unwrap();
+        let mut runner = Runner {
+            manifest: manifest.clone(),
+            input,
+            input_hash: input_hash.clone(),
+            output: output.into(),
+            metadata: manifest
+                .metadata
+                .as_ref()
+                .map(|p| metrics::load_metadata(p))
+                .transpose()?
+                .unwrap_or_default(),
+            baseline_degrees: None,
+            baseline_labels: None,
+            graphs: BTreeMap::new(),
+            candidates: vec![],
+            attempts: vec![],
+            expansion_limited: BTreeSet::new(),
+        };
+        let source = GraphSource::Archived(ArchiveGraph {
+            path: baseline.graph.clone(),
+            threshold: baseline.threshold,
+            unshift: false,
+        });
+        let (graph, _) = runner.graph(&source)?;
+        runner.baseline_degrees = Some(graph.degrees());
+        let archived = read_assignments(&baseline.recommended_assignments, &runner.input.tokens)?;
+        let (archived_metrics, _) = metrics::partition_metrics(&runner.input, &graph, &archived)?;
+        ensure!(
+            archived_metrics.all_communities_connected,
+            "Archived partition has disconnected communities"
+        );
+        write_json(&output.join("archived-metrics.json"), &archived_metrics)?;
+        let candidate = runner.evaluate(
+            &source,
+            None,
+            Some((baseline.resolution, baseline.theta)),
+            "calibration",
+            true,
+            true,
+            &plan.solver_seeds,
+            &plan.perturbation_seeds,
+        )?;
+        let archive_agreements = candidate.runs.iter().filter_map(|r| r.assignments.as_ref().map(|p|(r.seed,p))).map(|(seed,path)|Ok(serde_json::json!({"seed":seed,"agreement":metrics::agreement(&archived,&read_assignments(path,&graph.tokens)?)?}))).collect::<Result<Vec<_>>>()?;
+        write_json(&output.join("archive-agreements.json"), &archive_agreements)?;
+        let estimate = calibration::derive_policy(plan, &candidate)?;
+        let mut frozen = manifest.clone();
+        frozen.selection = Some(estimate.policy.clone());
+        let report = CalibrationReport {
+            method: calibration::METHOD.into(),
+            plan: plan.clone(),
+            policy: estimate.policy,
+            baseline_distributions: estimate.baseline_distributions,
+            cohort_absolute_differences: estimate.cohort_absolute_differences,
+            input_sha256: input_hash,
+            metadata_sha256: manifest.metadata.as_ref().map(|p| sha256(p)).transpose()?,
+            baseline_graph_sha256: sha256(&baseline.graph)?,
+            archived_assignments_sha256: sha256(&baseline.recommended_assignments)?,
+            code_hashes: code_hashes(),
+            frozen_manifest_without_reference_sha256: digest(&serde_json::to_vec(&frozen)?),
+        };
+        let report_path = output.join("calibration.json");
+        write_json(&report_path, &report)?;
+        frozen.calibration = Some(CalibrationReference {
+            report: report_path.clone(),
+            report_sha256: sha256(&report_path)?,
+        });
+        verify_calibration(&frozen)?;
+        write_json(&output.join("screening-manifest.json"), &frozen)?;
+        let reloaded: Manifest =
+            serde_json::from_reader(fs::File::open(output.join("screening-manifest.json"))?)?;
+        verify_calibration(&reloaded)?;
+        runner.candidates.push(candidate);
+        runner.save_tables()?;
+        Ok(())
+    })();
+    write_json(
+        &output.join("calibration-status.json"),
+        &serde_json::json!({"status":if result.is_ok(){"complete"}else{"failed"},"error":result.as_ref().err().map(|e|format!("{e:#}")),"cost":cost(start,output)?}),
+    )?;
+    result
+}
+
 pub fn experiment_command(manifest: &Manifest, output: &Path) -> Result<()> {
     manifest.validate()?;
+    verify_calibration(manifest)?;
     fresh_directory(output)?;
     let start = Instant::now();
     write_json(&output.join("manifest.json"), manifest)?;

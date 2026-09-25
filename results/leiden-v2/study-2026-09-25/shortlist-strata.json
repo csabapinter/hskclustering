@@ -1,0 +1,1042 @@
+[
+  {
+    "configuration": "seeded baseline",
+    "dimension": "baseline_degree",
+    "group": "q1",
+    "tokens": 2340,
+    "vocabulary_fraction": 0.21397220190197513,
+    "nonsingleton_coverage": 0.9376068376068376,
+    "cohesion": {
+      "value": 0.42967004385365154,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.09048368635810275,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.062251907079645265,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "seeded baseline",
+    "dimension": "baseline_degree",
+    "group": "q2",
+    "tokens": 2185,
+    "vocabulary_fraction": 0.19979882955376738,
+    "nonsingleton_coverage": 0.9922196796338673,
+    "cohesion": {
+      "value": 0.4390476498760302,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.07473219301253217,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.047607768666637344,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "seeded baseline",
+    "dimension": "baseline_degree",
+    "group": "q3",
+    "tokens": 2049,
+    "vocabulary_fraction": 0.18736283833211412,
+    "nonsingleton_coverage": 0.9970717423133236,
+    "cohesion": {
+      "value": 0.4428077564206868,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.06314899045846417,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.03967651427622322,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "seeded baseline",
+    "dimension": "baseline_degree",
+    "group": "q4",
+    "tokens": 2210,
+    "vocabulary_fraction": 0.2020848573518654,
+    "nonsingleton_coverage": 1.0,
+    "cohesion": {
+      "value": 0.44284002146892903,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.05231423765934346,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.032334333748929085,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "seeded baseline",
+    "dimension": "baseline_degree",
+    "group": "q5",
+    "tokens": 2152,
+    "vocabulary_fraction": 0.196781272860278,
+    "nonsingleton_coverage": 1.0,
+    "cohesion": {
+      "value": 0.44055373465160785,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.025428544747274025,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.015473676487542568,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "seeded baseline",
+    "dimension": "hsk",
+    "group": "1",
+    "tokens": 503,
+    "vocabulary_fraction": 0.04599487929773226,
+    "nonsingleton_coverage": 0.9840954274353877,
+    "cohesion": {
+      "value": 0.456690189983028,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.07050269336870027,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.04498666492365646,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "seeded baseline",
+    "dimension": "hsk",
+    "group": "2",
+    "tokens": 763,
+    "vocabulary_fraction": 0.06976956839795172,
+    "nonsingleton_coverage": 0.9868938401048493,
+    "cohesion": {
+      "value": 0.44563898100115684,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.06457768718460585,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.04114574322203305,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "seeded baseline",
+    "dimension": "hsk",
+    "group": "3",
+    "tokens": 968,
+    "vocabulary_fraction": 0.08851499634235552,
+    "nonsingleton_coverage": 0.9803719008264463,
+    "cohesion": {
+      "value": 0.44140426505025265,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.06622470126169949,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.04261334388081376,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "seeded baseline",
+    "dimension": "hsk",
+    "group": "4",
+    "tokens": 991,
+    "vocabulary_fraction": 0.09061814191660571,
+    "nonsingleton_coverage": 0.9889001009081736,
+    "cohesion": {
+      "value": 0.44118422065966817,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.06259626912432746,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.040002404519523124,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "seeded baseline",
+    "dimension": "hsk",
+    "group": "5",
+    "tokens": 1066,
+    "vocabulary_fraction": 0.09747622531089978,
+    "nonsingleton_coverage": 0.9868667917448405,
+    "cohesion": {
+      "value": 0.44078425060504617,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.06484095365334193,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.0415543458624028,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "seeded baseline",
+    "dimension": "hsk",
+    "group": "6",
+    "tokens": 1137,
+    "vocabulary_fraction": 0.10396854425749817,
+    "nonsingleton_coverage": 0.9824098504837291,
+    "cohesion": {
+      "value": 0.4406495220756931,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.0706056819410416,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.0453272046194129,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "seeded baseline",
+    "dimension": "hsk",
+    "group": "7-9",
+    "tokens": 5611,
+    "vocabulary_fraction": 0.5130760790051208,
+    "nonsingleton_coverage": 0.9834254143646409,
+    "cohesion": {
+      "value": 0.4347265406825263,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.05721573408869347,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.0367035011255568,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "seeded baseline",
+    "dimension": "pos",
+    "group": "missing",
+    "tokens": 10936,
+    "vocabulary_fraction": 1.0,
+    "nonsingleton_coverage": 0.9845464520848574,
+    "cohesion": {
+      "value": 0.4389296658242982,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.06169994904745973,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.03952927228147685,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "cosine k=10 q=0.1",
+    "dimension": "baseline_degree",
+    "group": "q1",
+    "tokens": 2340,
+    "vocabulary_fraction": 0.21397220190197513,
+    "nonsingleton_coverage": 0.9978632478632479,
+    "cohesion": {
+      "value": 0.37617780251225286,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.0699906371645976,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.0476641341738372,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "cosine k=10 q=0.1",
+    "dimension": "baseline_degree",
+    "group": "q2",
+    "tokens": 2185,
+    "vocabulary_fraction": 0.19979882955376738,
+    "nonsingleton_coverage": 0.9995423340961098,
+    "cohesion": {
+      "value": 0.4226185930708699,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.09920398194295284,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.06470945724401549,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "cosine k=10 q=0.1",
+    "dimension": "baseline_degree",
+    "group": "q3",
+    "tokens": 2049,
+    "vocabulary_fraction": 0.18736283833211412,
+    "nonsingleton_coverage": 0.9995119570522206,
+    "cohesion": {
+      "value": 0.44323170439802856,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.10093407094594452,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.06359182465974066,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "cosine k=10 q=0.1",
+    "dimension": "baseline_degree",
+    "group": "q4",
+    "tokens": 2210,
+    "vocabulary_fraction": 0.2020848573518654,
+    "nonsingleton_coverage": 1.0,
+    "cohesion": {
+      "value": 0.46506108312114697,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.10538342197676881,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.06388101534931837,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "cosine k=10 q=0.1",
+    "dimension": "baseline_degree",
+    "group": "q5",
+    "tokens": 2152,
+    "vocabulary_fraction": 0.196781272860278,
+    "nonsingleton_coverage": 0.9995353159851301,
+    "cohesion": {
+      "value": 0.4927589165368462,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.09959565396416303,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.05679506328259395,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "cosine k=10 q=0.1",
+    "dimension": "hsk",
+    "group": "1",
+    "tokens": 503,
+    "vocabulary_fraction": 0.04599487929773226,
+    "nonsingleton_coverage": 0.9980119284294234,
+    "cohesion": {
+      "value": 0.46544325617492216,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.11506132883188865,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.07076888056225944,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "cosine k=10 q=0.1",
+    "dimension": "hsk",
+    "group": "2",
+    "tokens": 763,
+    "vocabulary_fraction": 0.06976956839795172,
+    "nonsingleton_coverage": 0.9986893840104849,
+    "cohesion": {
+      "value": 0.45133439044023516,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.10968276114867338,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.06795954637118326,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "cosine k=10 q=0.1",
+    "dimension": "hsk",
+    "group": "3",
+    "tokens": 968,
+    "vocabulary_fraction": 0.08851499634235552,
+    "nonsingleton_coverage": 0.9989669421487604,
+    "cohesion": {
+      "value": 0.434821029340078,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.09694010332897945,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.060893698082094154,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "cosine k=10 q=0.1",
+    "dimension": "hsk",
+    "group": "4",
+    "tokens": 991,
+    "vocabulary_fraction": 0.09061814191660571,
+    "nonsingleton_coverage": 1.0,
+    "cohesion": {
+      "value": 0.44176479999402635,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.09832857905734932,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.06151100967977413,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "cosine k=10 q=0.1",
+    "dimension": "hsk",
+    "group": "5",
+    "tokens": 1066,
+    "vocabulary_fraction": 0.09747622531089978,
+    "nonsingleton_coverage": 1.0,
+    "cohesion": {
+      "value": 0.4414792207710506,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.09933987255303874,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.062436202221398444,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "cosine k=10 q=0.1",
+    "dimension": "hsk",
+    "group": "6",
+    "tokens": 1137,
+    "vocabulary_fraction": 0.10396854425749817,
+    "nonsingleton_coverage": 0.9991204925241864,
+    "cohesion": {
+      "value": 0.43838830017679914,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.10074953294732023,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.06347418259093969,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "cosine k=10 q=0.1",
+    "dimension": "hsk",
+    "group": "7-9",
+    "tokens": 5611,
+    "vocabulary_fraction": 0.5130760790051208,
+    "nonsingleton_coverage": 0.9992871145963287,
+    "cohesion": {
+      "value": 0.4339532994307763,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.0872194637493724,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.054517750912725975,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "cosine k=10 q=0.1",
+    "dimension": "pos",
+    "group": "missing",
+    "tokens": 10936,
+    "vocabulary_fraction": 1.0,
+    "nonsingleton_coverage": 0.9992684711046086,
+    "cohesion": {
+      "value": 0.4389478522976351,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.09460313759859981,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.05913254848671656,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "snn k=40 q=0.3",
+    "dimension": "baseline_degree",
+    "group": "q1",
+    "tokens": 2340,
+    "vocabulary_fraction": 0.21397220190197513,
+    "nonsingleton_coverage": 0.9636752136752137,
+    "cohesion": {
+      "value": 0.3768201276388727,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.03088782025486372,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.02123565738996569,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "snn k=40 q=0.3",
+    "dimension": "baseline_degree",
+    "group": "q2",
+    "tokens": 2185,
+    "vocabulary_fraction": 0.19979882955376738,
+    "nonsingleton_coverage": 0.994508009153318,
+    "cohesion": {
+      "value": 0.4045050742472929,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.043103038813942965,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.028187258338721332,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "snn k=40 q=0.3",
+    "dimension": "baseline_degree",
+    "group": "q3",
+    "tokens": 2049,
+    "vocabulary_fraction": 0.18736283833211412,
+    "nonsingleton_coverage": 0.995119570522206,
+    "cohesion": {
+      "value": 0.4195347220324434,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.04956242651236815,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.03178912619761067,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "snn k=40 q=0.3",
+    "dimension": "baseline_degree",
+    "group": "q4",
+    "tokens": 2210,
+    "vocabulary_fraction": 0.2020848573518654,
+    "nonsingleton_coverage": 0.997737556561086,
+    "cohesion": {
+      "value": 0.43500238218587106,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.05241178689898244,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.032807142519393276,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "snn k=40 q=0.3",
+    "dimension": "baseline_degree",
+    "group": "q5",
+    "tokens": 2152,
+    "vocabulary_fraction": 0.196781272860278,
+    "nonsingleton_coverage": 0.9990706319702602,
+    "cohesion": {
+      "value": 0.45898733235446687,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.05189062802975746,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.030924966284420666,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "snn k=40 q=0.3",
+    "dimension": "hsk",
+    "group": "1",
+    "tokens": 503,
+    "vocabulary_fraction": 0.04599487929773226,
+    "nonsingleton_coverage": 0.9900596421471173,
+    "cohesion": {
+      "value": 0.4352104204120267,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.059027661864456814,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.0373878466462471,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "snn k=40 q=0.3",
+    "dimension": "hsk",
+    "group": "2",
+    "tokens": 763,
+    "vocabulary_fraction": 0.06976956839795172,
+    "nonsingleton_coverage": 0.9934469200524246,
+    "cohesion": {
+      "value": 0.4191173909106484,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.041399705392528054,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.02648091524638135,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "snn k=40 q=0.3",
+    "dimension": "hsk",
+    "group": "3",
+    "tokens": 968,
+    "vocabulary_fraction": 0.08851499634235552,
+    "nonsingleton_coverage": 0.9865702479338843,
+    "cohesion": {
+      "value": 0.41382468334728484,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.045231660592231424,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.028975710487506537,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "snn k=40 q=0.3",
+    "dimension": "hsk",
+    "group": "4",
+    "tokens": 991,
+    "vocabulary_fraction": 0.09061814191660571,
+    "nonsingleton_coverage": 0.9868819374369324,
+    "cohesion": {
+      "value": 0.4200678532713008,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.045446056752427015,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.029166994984409406,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "snn k=40 q=0.3",
+    "dimension": "hsk",
+    "group": "5",
+    "tokens": 1066,
+    "vocabulary_fraction": 0.09747622531089978,
+    "nonsingleton_coverage": 0.9906191369606003,
+    "cohesion": {
+      "value": 0.4220257169410552,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.051439932241142426,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.033013931518678874,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "snn k=40 q=0.3",
+    "dimension": "hsk",
+    "group": "6",
+    "tokens": 1137,
+    "vocabulary_fraction": 0.10396854425749817,
+    "nonsingleton_coverage": 0.9920844327176781,
+    "cohesion": {
+      "value": 0.4157670783290049,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.050648537317325146,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.03252921571817988,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "snn k=40 q=0.3",
+    "dimension": "hsk",
+    "group": "7-9",
+    "tokens": 5611,
+    "vocabulary_fraction": 0.5130760790051208,
+    "nonsingleton_coverage": 0.9887720548921761,
+    "cohesion": {
+      "value": 0.4170899076887903,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.04219732147903663,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.026812599259414878,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "snn k=40 q=0.3",
+    "dimension": "pos",
+    "group": "missing",
+    "tokens": 10936,
+    "vocabulary_fraction": 1.0,
+    "nonsingleton_coverage": 0.9895757132406731,
+    "cohesion": {
+      "value": 0.4186059166208774,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.04530996083535821,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.028902584999825204,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "local k=10 q=0.1",
+    "dimension": "baseline_degree",
+    "group": "q1",
+    "tokens": 2340,
+    "vocabulary_fraction": 0.21397220190197513,
+    "nonsingleton_coverage": 0.9995726495726496,
+    "cohesion": {
+      "value": 0.3704286929188649,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.06853007659833088,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.0467446458886,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "local k=10 q=0.1",
+    "dimension": "baseline_degree",
+    "group": "q2",
+    "tokens": 2185,
+    "vocabulary_fraction": 0.19979882955376738,
+    "nonsingleton_coverage": 1.0,
+    "cohesion": {
+      "value": 0.4209130881107666,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.10116121641871291,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.06596351392798008,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "local k=10 q=0.1",
+    "dimension": "baseline_degree",
+    "group": "q3",
+    "tokens": 2049,
+    "vocabulary_fraction": 0.18736283833211412,
+    "nonsingleton_coverage": 1.0,
+    "cohesion": {
+      "value": 0.44353565680271606,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.10233999681148859,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.06430031546078407,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "local k=10 q=0.1",
+    "dimension": "baseline_degree",
+    "group": "q4",
+    "tokens": 2210,
+    "vocabulary_fraction": 0.2020848573518654,
+    "nonsingleton_coverage": 1.0,
+    "cohesion": {
+      "value": 0.46602653936635413,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.10567486931282931,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.06395990273124666,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "local k=10 q=0.1",
+    "dimension": "baseline_degree",
+    "group": "q5",
+    "tokens": 2152,
+    "vocabulary_fraction": 0.196781272860278,
+    "nonsingleton_coverage": 1.0,
+    "cohesion": {
+      "value": 0.49760537565470464,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.10017650810883971,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.05636585364754448,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "local k=10 q=0.1",
+    "dimension": "hsk",
+    "group": "1",
+    "tokens": 503,
+    "vocabulary_fraction": 0.04599487929773226,
+    "nonsingleton_coverage": 1.0,
+    "cohesion": {
+      "value": 0.47068281166213166,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.11684646368138579,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.07121720235926378,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "local k=10 q=0.1",
+    "dimension": "hsk",
+    "group": "2",
+    "tokens": 763,
+    "vocabulary_fraction": 0.06976956839795172,
+    "nonsingleton_coverage": 0.9986893840104849,
+    "cohesion": {
+      "value": 0.45353025375883266,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.11253736727321814,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.07009604727146321,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "local k=10 q=0.1",
+    "dimension": "hsk",
+    "group": "3",
+    "tokens": 968,
+    "vocabulary_fraction": 0.08851499634235552,
+    "nonsingleton_coverage": 1.0,
+    "cohesion": {
+      "value": 0.434324224907808,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.09825765858628033,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.06161936089197893,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "local k=10 q=0.1",
+    "dimension": "hsk",
+    "group": "4",
+    "tokens": 991,
+    "vocabulary_fraction": 0.09061814191660571,
+    "nonsingleton_coverage": 1.0,
+    "cohesion": {
+      "value": 0.44112466466100425,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.09771171593834478,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.060813964813324385,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "local k=10 q=0.1",
+    "dimension": "hsk",
+    "group": "5",
+    "tokens": 1066,
+    "vocabulary_fraction": 0.09747622531089978,
+    "nonsingleton_coverage": 1.0,
+    "cohesion": {
+      "value": 0.43967148038251946,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.09824450953182805,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.06143917074251964,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "local k=10 q=0.1",
+    "dimension": "hsk",
+    "group": "6",
+    "tokens": 1137,
+    "vocabulary_fraction": 0.10396854425749817,
+    "nonsingleton_coverage": 1.0,
+    "cohesion": {
+      "value": 0.4367001116958708,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.09909297679178025,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.062217369359907834,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "local k=10 q=0.1",
+    "dimension": "hsk",
+    "group": "7-9",
+    "tokens": 5611,
+    "vocabulary_fraction": 0.5130760790051208,
+    "nonsingleton_coverage": 1.0,
+    "cohesion": {
+      "value": 0.4333551939376618,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.08809000462638239,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.0548400492277498,
+      "reason": null
+    }
+  },
+  {
+    "configuration": "local k=10 q=0.1",
+    "dimension": "pos",
+    "group": "missing",
+    "tokens": 10936,
+    "vocabulary_fraction": 1.0,
+    "nonsingleton_coverage": 0.9999085588880761,
+    "cohesion": {
+      "value": 0.43856404128546633,
+      "reason": null
+    },
+    "silhouette": {
+      "value": 0.0951182879675655,
+      "reason": null
+    },
+    "margin": {
+      "value": 0.05924719278745218,
+      "reason": null
+    }
+  }
+]

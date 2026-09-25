@@ -2,6 +2,7 @@ use anyhow::{ensure, Result};
 use clap::{Args, Parser, Subcommand, ValueEnum};
 use hskclustering::{
     graph_v2::{
+        calibration::CalibrationPlan,
         embeddings::Representation,
         experiment::{self, Manifest},
         graph::{GraphConfig, Symmetrization, WeightMode},
@@ -21,6 +22,18 @@ struct Cli {
 
 #[derive(Subcommand)]
 enum Command {
+    /// Write a baseline-only calibration plan and a core-screening study template.
+    CalibrationPlan {
+        #[arg(short, long)]
+        output: PathBuf,
+    },
+    /// Measure baseline variability and freeze an evidence-backed screening manifest.
+    Calibrate {
+        #[arg(long)]
+        plan: PathBuf,
+        #[arg(short, long)]
+        output: PathBuf,
+    },
     /// Write the full experiment manifest. Selection is disabled until a policy is supplied.
     Manifest {
         #[arg(short, long)]
@@ -105,6 +118,18 @@ struct Cluster {
 }
 fn main() -> Result<()> {
     match Cli::parse().command {
+        Command::CalibrationPlan { output } => {
+            ensure!(
+                !output.exists(),
+                "Plan already exists: {}",
+                output.display()
+            );
+            write_json(&output, &CalibrationPlan::default())?;
+        }
+        Command::Calibrate { plan, output } => {
+            let plan: CalibrationPlan = serde_json::from_reader(File::open(plan)?)?;
+            experiment::calibrate_command(&plan, &output)?;
+        }
         Command::Manifest { output } => {
             let manifest = Manifest::default();
             if let Some(path) = output {
@@ -174,6 +199,7 @@ fn main() -> Result<()> {
         Command::ValidateManifest { manifest } => {
             let manifest: Manifest = serde_json::from_reader(File::open(manifest)?)?;
             manifest.validate()?;
+            experiment::verify_calibration(&manifest)?;
             println!(
                 "Manifest is valid; automatic selection {}",
                 if manifest.selection.is_some() {

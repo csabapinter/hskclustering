@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "vocabulary_tokens": 10936,
+  "candidate_settings": 96,
+  "initial_core_settings": 36,
+  "verified_fit_assignment_files": 3386,
+  "size_and_coverage_metrics_recomputed": 3386,
+  "failed_attempts": 0,
+  "complete_subsample_vocabulary": true,
+  "all_recorded_communities_connected": true,
+  "representatives_match_selected_seed": true,
+  "reserved_confirmation_seeds_unused": true,
+  "archived_default_byte_identical": true,
+  "protocol_and_calibration_hashes_verified": true,
+  "report_generator_sha256": "71252444995a20cc9d8977b486d1d1d54003bd0b988e10f27aa6e1bfa4addc53",
+  "note": "Connectivity is checked by the Rust solver and metrics on each induced community; this audit checks saved flags and independently recomputes assignment coverage and sizes."
+}

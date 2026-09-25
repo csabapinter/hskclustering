@@ -23,7 +23,8 @@ linfa-linalg = { version = "0.2.1", default-features = false }
 rand = "0.8.8"
 rand_xoshiro = "0.6.0"
 serde = { version = "1.0", features = ["derive"] }
-serde_json = "1.0"
+# Frozen manifest/source hashes require f64 values to survive JSON readback exactly.
+serde_json = { version = "1.0", features = ["float_roundtrip"] }
 sha2 = "0.10"
 
 # Streaming, escaped output and atomic file replacement.

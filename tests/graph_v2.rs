@@ -265,6 +265,119 @@ fn manifest_disallows_seed_leakage_and_incomplete_selection_policy() -> Result<(
 }
 
 #[test]
+fn calibration_freezes_policy_and_rejects_seed_leakage_or_changed_study() -> Result<()> {
+    use hskclustering::graph_v2::{calibration::CalibrationPlan, experiment};
+    let dir = tempfile::tempdir()?;
+    let input_path = dir.path().join("input.txt");
+    fs::write(
+        &input_path,
+        "6 3\na 1 0 0\nb 1 0 0\nc 1 0 0\nd 0 1 0\ne 0 1 0\nf 0 1 0\n",
+    )?;
+    let input = Embeddings::load(&input_path)?;
+    let built = build(
+        &input,
+        &GraphConfig {
+            k: 2,
+            ..Default::default()
+        },
+    )?;
+    let graph_path = dir.path().join("baseline.graphml");
+    built.graph.write_graphml(&graph_path)?;
+    let assignment_path = dir.path().join("baseline.csv");
+    hskclustering::clustering::write_assignments(
+        &assignment_path,
+        &input.tokens,
+        &[0, 0, 0, 1, 1, 1],
+    )?;
+    let plan = CalibrationPlan {
+        study: Manifest {
+            input: input_path,
+            metadata: None,
+            baseline: Some(Baseline {
+                graph: graph_path,
+                recommended_assignments: assignment_path,
+                threshold: 0.7,
+                resolution: 0.2,
+                theta: 0.3,
+            }),
+            graphs: vec![GraphConfig {
+                k: 2,
+                ..Default::default()
+            }],
+            q: vec![0.1],
+            archived_thresholds: vec![],
+            ablations: false,
+            combinations: false,
+            confirmation: false,
+            max_endpoint_expansions: 0,
+            ..Default::default()
+        },
+        solver_seeds: (500..506).collect(),
+        resamples: 1000,
+        ..Default::default()
+    };
+    let mut leaked = plan.clone();
+    leaked.solver_seeds[0] = leaked.study.confirmation_seeds[0];
+    assert!(leaked.validate().is_err());
+    let out = dir.path().join("calibration");
+    experiment::calibrate_command(&plan, &out)?;
+    let mut frozen: Manifest =
+        serde_json::from_reader(fs::File::open(out.join("screening-manifest.json"))?)?;
+    let policy = frozen.selection.as_ref().unwrap();
+    assert_eq!(policy.metrics.len(), 7);
+    assert!((policy.minimum_nonsingleton_coverage - 5.0 / 6.0).abs() < 1e-12);
+    assert!(policy.metrics.iter().all(|m| m.absolute_tolerance > 0.0));
+    experiment::experiment_command(&frozen, &dir.path().join("screen"))?;
+    frozen.q.push(0.2);
+    assert!(
+        experiment::experiment_command(&frozen, &dir.path().join("changed"))
+            .unwrap_err()
+            .to_string()
+            .contains("frozen manifest")
+    );
+    assert!(!dir.path().join("changed").exists());
+    frozen.q.pop();
+    fs::write(out.join("calibration.json"), "{}")?;
+    assert!(
+        experiment::experiment_command(&frozen, &dir.path().join("tampered"))
+            .unwrap_err()
+            .to_string()
+            .contains("hash mismatch")
+    );
+    assert!(!dir.path().join("tampered").exists());
+    Ok(())
+}
+
+#[test]
+fn frozen_manifest_float_values_survive_json_readback_exactly() -> Result<()> {
+    // These real calibration tolerances changed by an ULP with the fast JSON parser.
+    use hskclustering::graph_v2::selection::{MetricTolerance, SelectionMetric, SelectionPolicy};
+    let manifest = Manifest {
+        selection: Some(SelectionPolicy {
+            metrics: vec![
+                MetricTolerance {
+                    metric: SelectionMetric::EdgeRemovalAri,
+                    absolute_tolerance: 0.01629515026642503,
+                },
+                MetricTolerance {
+                    metric: SelectionMetric::SubsampleAri,
+                    absolute_tolerance: 0.0270481675594183,
+                },
+            ],
+            minimum_nonsingleton_coverage: 0.9815288953913679,
+            minimum_communities: 2,
+            maximum_largest_community_share: 0.017648134601316753,
+            reject_all_singletons: true,
+        }),
+        ..Default::default()
+    };
+    let bytes = serde_json::to_vec(&manifest)?;
+    let reloaded: Manifest = serde_json::from_slice(&bytes)?;
+    assert_eq!(bytes, serde_json::to_vec(&reloaded)?);
+    Ok(())
+}
+
+#[test]
 fn explicit_policy_freezes_and_confirms_an_improvement() -> Result<()> {
     use hskclustering::graph_v2::{
         graph::{Edge, Graph},

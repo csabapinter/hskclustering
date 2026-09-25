@@ -1,0 +1,10 @@
+{
+  "representation": "raw",
+  "k": 40,
+  "symmetrization": "union",
+  "tau": 0.0,
+  "weight": "snn",
+  "lambda": 0.5,
+  "k_scale": null,
+  "block_rows": 32
+}

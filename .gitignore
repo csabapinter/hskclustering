@@ -35,3 +35,17 @@ __pycache__/
 /results/leiden-v2/**/neighbors.csv
 /results/leiden-v2/**/pairs.csv
 /results/leiden-v2/**/words.csv
+# Solver labels duplicate the retained assignment CSVs.
+/results/leiden-v2/**/solver.json
+# Per-candidate records retain these aggregate measurements without duplication.
+/results/leiden-v2/**/candidates.json
+/results/leiden-v2/**/repeats.json
+# Per-candidate sensitivity measurements also live in candidate.json.
+/results/leiden-v2/**/candidates/*/sensitivity.json
+# Detailed stress/sensitivity fits stay local; seeds, agreements and checksums remain.
+/results/leiden-v2/**/stress/
+/results/leiden-v2/**/sensitivity/*/
+# Rejected pre-screening run is kept locally; its rejection record is tracked.
+/results/leiden-v2/study-2026-09-25/calibration-readback-rejected/
+/results/leiden-v2/study-2026-09-25/calibration-before-io-fix/
+/results/leiden-v2/study-2026-09-25/screening-unbuffered-interrupted/

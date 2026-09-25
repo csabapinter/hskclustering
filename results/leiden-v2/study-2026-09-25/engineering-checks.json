@@ -1,0 +1,25 @@
+{
+  "checked_utc": "2026-09-25T16:18:12.883420+00:00",
+  "checks": [
+    {
+      "command": "cargo test --locked",
+      "exit_code": 0,
+      "tests_passed": 45
+    },
+    {
+      "command": "cargo clippy --all-targets --locked -- -D warnings",
+      "exit_code": 0
+    },
+    {
+      "command": "cargo fmt --check",
+      "exit_code": 0
+    }
+  ],
+  "note": "Existing vendored graphrs unused_parens warning remains; application checks pass. The report script also receives a full-data artifact audit after the study.",
+  "artifact_audit": {
+    "status": "passed",
+    "verified_fit_assignment_files": 3386,
+    "failed_attempts": 0,
+    "report_links": "all resolve"
+  }
+}

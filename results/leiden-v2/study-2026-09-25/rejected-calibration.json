@@ -1,0 +1,23 @@
+{
+  "directory": "results/leiden-v2/study-2026-09-25/calibration-readback-rejected",
+  "status": "rejected_before_screening",
+  "reason": "JSON f64 deserialization changed a calibrated tolerance by an ULP, so the frozen manifest digest did not match on readback. No candidate screening ran from this calibration. Enabled serde_json float_roundtrip, added regression coverage and readback validation, and reran calibration from scratch.",
+  "compiled_source_hashes": {
+    "Cargo.lock": "8f39df3170c8d9f8f529825d81b17fdffa94b6cdd2d5362ec3dae3e2d955302d",
+    "Cargo.toml": "1d02e4c51c37db1f6f69943b0903c9cef8abab63da62019435891df282d0a6ca",
+    "bin/graph_v2.rs": "e4cab4f0376ed41eabb6be771da0c6cffa1868f6c3cc3d44c9e2f95faea2a8a9",
+    "clustering.rs": "7e6ff73096d6e2688e90253fc72207a5fe633a682bd8ee59ce28aa6c0b0c1f4e",
+    "graph_io.rs": "b80b546c372a66af09920a7e54a62a4bee83df6e36ac2a5fb4b41e1f76e54bb5",
+    "graph_v2/calibration.rs": "f488bf31a5cabd1d525fc79e868541237a72f390e75b362b46bd1d53a04e7e5d",
+    "graph_v2/embeddings.rs": "18185e83fb33128749df61a59e36b7ad4555f46ac3d25729cbd854899e31fff7",
+    "graph_v2/experiment.rs": "129bd0a5b1bccda32d5b18db30e945132f3b5be01faf58de745a7f1fcd6d1cab",
+    "graph_v2/graph.rs": "5224f282058b9c67d691d42af4fa6609995e8f0f1adccb4f532867c85450ce7d",
+    "graph_v2/leiden.rs": "b2389ce54784564bf2806bcfcc7ebdaf5aac7ac628b95eec67b612196aae6b85",
+    "graph_v2/metrics.rs": "17e641871f4073f5e43566a8eb14299e0610a86ad928c4b9c81a34405daa889d",
+    "graph_v2/mod.rs": "aecc050cf85820626c699256478a354f781a901d76595cc32ccfb2674a423017",
+    "graph_v2/selection.rs": "7464e1aaf109770e2f9f93d11ecbf9ac7302b4bba19e0840f9af40a6dff1231a",
+    "output.rs": "2dcdc8b58dc27cdf1255f5000775d47bf24614a0e48c4a5f1b75ef1010530a37"
+  },
+  "recorded_wall_seconds": 137.89046275,
+  "note": "Original diagnostic artifacts remain locally; embedded paths describe their original location."
+}

@@ -1,0 +1,102 @@
+{
+  "config": {
+    "max_iterations": 100,
+    "max_levels": 1000,
+    "max_local_moves": 10000000,
+    "resolution": 0.00031963470319634703,
+    "seed": 43,
+    "theta": 0.02876712328767123
+  },
+  "cost": {
+    "artifact_bytes": 1004491,
+    "elapsed_seconds": 0.486589958,
+    "peak_memory_scope": "Process lifetime high-water RSS, including earlier stages; not a per-candidate allocation estimate",
+    "process_peak_memory_bytes": 695615488
+  },
+  "run": {
+    "assignments": "results/leiden-v2/study-2026-09-25/screening/candidates/c4eb317e2cb17ef63c5416debc92a4ed4e26fba7d703bb38b044703b02d52650/seed-43/communities.csv",
+    "error": null,
+    "metrics": {
+      "all_communities_connected": true,
+      "cohesion": {
+        "reason": null,
+        "value": 0.20715647195485654
+      },
+      "communities": 21,
+      "external_reference_agreement": {
+        "reason": "No external evaluation data available",
+        "value": null
+      },
+      "fraction_in_sizes_3_to_30": 0.0,
+      "fraction_in_sizes_over_100": 0.9991770299926848,
+      "independent_space_coherence": {
+        "reason": "No independent embeddings available",
+        "value": null
+      },
+      "induced_components": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "largest_community_share": 0.18480248719824433,
+      "margin": {
+        "reason": null,
+        "value": -0.03115949994682128
+      },
+      "margin_distribution": {
+        "count": 10927,
+        "max": 0.09915882363405773,
+        "mean": -0.031159499946821163,
+        "median": -0.025615668671928715,
+        "min": -0.3989995948861064,
+        "q25": -0.059099491600878726,
+        "q75": 0.0023418791941663825,
+        "q95": 0.038327816554138146,
+        "reason": null,
+        "stddev": 0.04864767511267305
+      },
+      "nonsingleton_coverage": 0.9991770299926848,
+      "pair_community_fraction": 0.0,
+      "pair_token_fraction": 0.0,
+      "silhouette": {
+        "reason": null,
+        "value": -0.03854624120951897
+      },
+      "singleton_community_fraction": 0.42857142857142855,
+      "singleton_token_fraction": 0.0008229700073152889,
+      "sizes": {
+        "count": 21,
+        "max": 2021.0,
+        "mean": 520.7619047619048,
+        "median": 458.0,
+        "min": 1.0,
+        "q25": 1.0,
+        "q75": 810.0,
+        "q95": 1944.0,
+        "reason": null,
+        "stddev": 608.8915694199236
+      },
+      "tokens": 10936
+    },
+    "seed": 43,
+    "solver_seconds": 0.464970292
+  }
+}
