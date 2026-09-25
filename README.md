@@ -80,6 +80,34 @@ files replace prior results atomically. The existing `--preprocess` flag still
 whitens raw embeddings before final normalization; it is off for this baseline.
 GMM has its own explicitly ordered preprocessing below.
 
+## Run graph v2
+
+The separate `graph_v2` Rust runner implements exact sparse cosine neighbors,
+optional centering/ABTT, union or mutual connectivity, cosine/SNN/local weights,
+and seeded weighted CPM. The legacy commands above remain available.
+
+```sh
+cargo run --release --locked --bin graph_v2 -- build \
+  --input data/input-embeddings.txt --output results/leiden-v2/graph \
+  --k 20 --weight cosine
+
+cargo run --release --locked --bin graph_v2 -- cluster \
+  --graph results/leiden-v2/graph/graph.json \
+  --output results/leiden-v2/seed42 --seed 42 --q 0.1
+```
+
+Every output directory must be new. Assignments keep the `token,community`
+format. Build output includes GraphML, fitted transforms, directed neighbors,
+candidate-pair diagnostics and graph metrics; clustering adds source-space
+coherence, size/coverage/connectivity metrics and solver provenance.
+
+The manifest-driven experiment runner supports controls, screening, ablations,
+combinations, fresh-seed confirmation, perturbations and automated reports.
+Automatic default nomination requires an explicit selection policy. No external
+evaluation data is available; related metrics are null with reasons.
+See [v2 usage and manifest settings](docs/graph-v2-usage.md) and the
+[construction specification](docs/graph-construction-v2.md).
+
 ## Run GMM
 
 ```sh

@@ -28,3 +28,10 @@ __pycache__/
 # This archive has one fit per run: these files exactly duplicate communities.csv.
 # Keep candidate assignments in ordinary multi-fit sweeps.
 /results/gmm/1-9/experiments-2026-09-18/runs/*/k*-reg*-seed*.communities.csv
+
+# V2's exact graphs and detailed diagnostics are regenerable from manifests.
+/results/leiden-v2/**/graph.graphml
+/results/leiden-v2/**/graph.json
+/results/leiden-v2/**/neighbors.csv
+/results/leiden-v2/**/pairs.csv
+/results/leiden-v2/**/words.csv

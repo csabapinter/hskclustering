@@ -1,6 +1,8 @@
 # Graph construction v2
 
-Status: proposed. Output: weighted, undirected vocabulary graphs and Leiden CPM
+Status: implemented as the additional Rust `graph_v2` runner; see
+[usage and manifest settings](graph-v2-usage.md).
+Output: weighted, undirected vocabulary graphs and Leiden CPM
 partitions. Evaluation is automated. Nodes remain distinct spellings; assignments
 retain the `token,community` format.
 
@@ -78,12 +80,11 @@ not optimization targets. Record every attempted setting, including failures.
 | --- | --- |
 | Graph | Nodes, edges, degree/strength/weight quantiles, isolates, components, largest-component fraction, neighbor reciprocity, incoming-neighbor count skewness and maximum. High incoming counts are diagnostics, not error labels. |
 | Partition | Community count and size quantiles; singleton/pair fractions; largest-community share; fractions in sizes 3–30 and >100; induced connectivity of every community. |
-| Coherence | Exact cosine silhouette, word-weighted nonsingleton cohesion and own-versus-best-other community similarity margins in the unchanged normalized 300D input. Also report in a separately sourced frozen embedding space when available, with coverage. |
+| Coherence | Exact cosine silhouette, word-weighted nonsingleton cohesion and own-versus-best-other community similarity margins in the unchanged normalized input (300D for the HSK dataset). No independent embedding space is available. |
 | Solver variability | Pairwise ARI and variation of information across repeats; per-community best-match Jaccard distributions. Report median, dispersion and range; pairwise comparisons are not independent replicates. |
 | Construction sensitivity | Edge-set overlap and partition ARI after changing `k` and `r` by approximately ±20%, holding other settings fixed. Preserve the parameter direction in reports. |
 | Perturbation robustness | Ten common-seed replicates each of 5% random edge removal and 90% vocabulary subsampling. Rebuild transforms and graphs for vocabulary subsamples; compare partitions on retained tokens. Run the unperturbed comparator with the same solver seed. Report coverage changes alongside agreement. |
-| Reference agreement | Existing lexical benchmarks: Recall@10/20 and MAP where candidate universes are defined; coassignment precision/recall on labeled pairs; Spearman correlation for graded similarity/relatedness scores. Keep relation types separate and retrieval cutoffs fixed across graphs. Unlisted pairs are unknown, not negative examples. |
-| Null controls | Compare cohesion and available reference-agreement metrics with 100 token-label permutations preserving community sizes. Report observed-minus-null-mean and null quantiles. |
+| Null controls | Compare cohesion with 100 token-label permutations preserving community sizes. Report observed-minus-null-mean and null quantiles. |
 | Stratification | Repeat coverage/coherence summaries by HSK band, baseline-degree quantile and available part of speech. Record missing metadata and ambiguous mappings. HSK level is not a community label. |
 | Cost | Graph construction and Leiden time, peak memory, artifact size and convergence/failure status. |
 
@@ -93,23 +94,25 @@ Original-space coherence favors the source geometry; agreement, stability and
 cluster sizes remain separate measurements. Perturbations measure sensitivity,
 not uncertainty from embedding-training corpora.
 
-Reference assets require version, license, checksum, vocabulary mapping and
-coverage. Freeze benchmark splits before tuning, separating development and test
-tokens; omit cross-split pairs. Test labels and any duplicate supervised relations
-must be excluded from graph fitting and parameter selection. Test vectors may
-remain in the unlabeled vocabulary graph. Reserve fresh seeds and perturbation
-replicates for confirmation. Evaluate frozen candidates on test assets once.
+No external lexical benchmarks, labeled relations or independent evaluation
+embeddings are available for this implementation. Reference agreement and
+independent-space coherence are unavailable (`null` with reasons), and no
+benchmark splits are required. Do not infer reference labels from HSK levels or
+unlisted word pairs. Reserve fresh seeds and perturbation replicates for
+confirmation. Claims are limited to source-space coherence and stability.
 
 ## Selection
 
 Reject candidates with invalid graph/partition invariants or degenerate partitions.
 During development, retain the Pareto set over coherence, repeat agreement,
-perturbation agreement and nonsingleton coverage; include the baseline. Add
-reference-agreement metrics only when coverage and relation definitions are common
-across candidates. Report large-community concentration alongside this set.
+perturbation agreement and nonsingleton coverage; include the baseline. Report
+large-community concentration alongside this set.
 
 Freeze the metric panel, coverage limits and comparison tolerances in the experiment
-manifest before screening. Nominate a default on development results: no metric
+manifest before screening. Selection requires explicit metric tolerances, coverage
+limits and degeneracy criteria; there are no implicit acceptance thresholds.
+Construction and evaluation remain available without a selection policy, but may
+not automatically nominate a default. Nominate a default on development results: no metric
 degrades beyond tolerance and at least one improves beyond tolerance relative to
 the baseline. Resolve equivalent candidates by fewer transforms, then lower
 runtime. Confirmation accepts or rejects that nomination without retuning; absent
@@ -121,7 +124,7 @@ size bands and CPM objective alone do not select a winner.
 | Extension | Integration requirement |
 | --- | --- |
 | [Mutual proximity](https://www.jmlr.org/papers/v13/schnitzer12a.html) | Separate neighbor-ranking variant; specify the distance-distribution estimator and compare with local scaling alone before combining corrections. |
-| [Lexical retrofitting](https://aclanthology.org/N15-1184/) | Optional representation transform using versioned relation types and weights. Exclude supervised relations involving test tokens; compare with the unmodified representation. |
+| [Lexical retrofitting](https://aclanthology.org/N15-1184/) | Future extension requiring separately supplied, versioned relation assets and a frozen development/test protocol. No such assets are available in the current implementation. Compare with the unmodified representation. |
 | [Consensus graph](https://www.nature.com/articles/srep00336) | On original candidate edges, use coassignment frequency across a fixed-setting ensemble as weight; evaluate the complete procedure using independent ensembles. Frequency is not a correctness probability. |
 
 Sense-specific nodes require a separate assignment schema. PCA truncation and
@@ -131,7 +134,7 @@ whitening remain separate representation experiments.
 
 Each experiment uses a new directory containing the configuration, input and code
 hashes, fitted transforms, neighbor data, GraphML, run assignments, metric tables,
-benchmark splits, seed lists and selection report. Cache keys include all graph
+seed lists and selection report. Cache keys include all graph
 parameters and input hashes. Preserve legacy commands and archived artifacts.
 
 Required checks: exact neighbor agreement against brute force; deterministic ties;
