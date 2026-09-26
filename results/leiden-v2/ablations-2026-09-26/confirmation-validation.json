@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "settings": 8,
+  "verified_fit_assignments": 348,
+  "frozen_settings_unchanged": true,
+  "reserved_seed_cohorts_verified": true,
+  "full_and_subsample_vocabularies_verified": true,
+  "sizes_and_coverage_recomputed": true,
+  "representatives_match_seed": true,
+  "no_default_exported": true
+}

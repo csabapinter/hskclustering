@@ -1,0 +1,35 @@
+{
+  "status": "Supported experimental improvement over raw cosine k=10 q=0.1; not a replacement of the archived default",
+  "candidate_id": "abf1672f469d728689427171d78a42c8a70cd60f4c6ca1e65c1c4b622f5276a7",
+  "graph": {
+    "representation": {
+      "abtt": 1
+    },
+    "k": 10,
+    "symmetrization": "union",
+    "tau": 0.0,
+    "weight": "cosine",
+    "lambda": 0.5,
+    "k_scale": null,
+    "block_rows": 32
+  },
+  "q": 0.1,
+  "fitted_resolution": 0.04013429507562125,
+  "fitted_theta": 0.12040288522686375,
+  "representative_seed": 1000,
+  "assignments": "results/leiden-v2/ablations-2026-09-26/experimental.communities.csv",
+  "assignments_sha256": "68b08b71e9657cad33215fa31eef76fcbd39e049c329d09f8217c242387fb548",
+  "source_candidate": "results/leiden-v2/ablations-2026-09-26/confirmation/confirmation/abf1672f469d728689427171d78a42c8a70cd60f4c6ca1e65c1c4b622f5276a7/candidate.json",
+  "source_assignments": "results/leiden-v2/ablations-2026-09-26/confirmation/confirmation/abf1672f469d728689427171d78a42c8a70cd60f4c6ca1e65c1c4b622f5276a7/communities.csv",
+  "decision_sha256": "a259b4095777cde8a7d85c2b5b354f3ba7fc162716f61cde9e73ca2d3a4b5240",
+  "confirmation_metrics": {
+    "cohesion": 0.43875743659936023,
+    "silhouette": 0.09309757083217214,
+    "margin": 0.05799289360749485,
+    "repeat_ari": 0.7865434836300049,
+    "edge_removal_ari": 0.7693653663151558,
+    "subsample_ari": 0.6816334966541604,
+    "nonsingleton_coverage": 0.9991770299926848
+  },
+  "interpretation": "Edge-removal stability improved beyond the frozen tolerance in development and confirmation, with no other metric regressing beyond tolerance. Largest groups are slightly larger than raw cosine; semantic examples include both improvements and regressions."
+}

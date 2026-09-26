@@ -1,0 +1,72 @@
+{
+  "ablations": [
+    {
+      "factor": "center",
+      "id": "a4a547d6853e0209b348d9931438914fd759984269f39355b09895d876205d75",
+      "name": "center cosine k=10 q=0.1",
+      "decision": "do not adopt; retain as a measured trade-off",
+      "development_pass": true,
+      "confirmation_pass": false,
+      "confirmation_regressions": [],
+      "confirmation_improvements": [],
+      "confirmation_guard_failures": "",
+      "endpoint_limited": false
+    },
+    {
+      "factor": "abtt1",
+      "id": "abf1672f469d728689427171d78a42c8a70cd60f4c6ca1e65c1c4b622f5276a7",
+      "name": "abtt(1) cosine k=10 q=0.1",
+      "decision": "keep experimental improvement",
+      "development_pass": true,
+      "confirmation_pass": true,
+      "confirmation_regressions": [],
+      "confirmation_improvements": [
+        "edge_removal_ari"
+      ],
+      "confirmation_guard_failures": "",
+      "endpoint_limited": false
+    },
+    {
+      "factor": "abtt3",
+      "id": "fdeacfe8a18745cfad4cbd41e29ad26cbb1fec79c58b819d6385fc4f6aa90fab",
+      "name": "abtt(3) cosine k=10 q=0.1",
+      "decision": "do not adopt; retain as a measured trade-off",
+      "development_pass": false,
+      "confirmation_pass": false,
+      "confirmation_regressions": [
+        "cohesion",
+        "silhouette",
+        "margin"
+      ],
+      "confirmation_improvements": [
+        "edge_removal_ari"
+      ],
+      "confirmation_guard_failures": "",
+      "endpoint_limited": false
+    },
+    {
+      "factor": "mutual",
+      "id": "83f3e7ba5712748354bf38ae49aaa0b86593bb3adb7caf604fe3c56546fb8ccf",
+      "name": "cosine k=10 mutual q=0.1",
+      "decision": "do not adopt; retain as a measured trade-off",
+      "development_pass": false,
+      "confirmation_pass": false,
+      "confirmation_regressions": [
+        "margin",
+        "nonsingleton_coverage"
+      ],
+      "confirmation_improvements": [
+        "cohesion",
+        "repeat_ari",
+        "edge_removal_ari"
+      ],
+      "confirmation_guard_failures": "",
+      "endpoint_limited": false
+    }
+  ],
+  "frozen_default_nominee": "b58dfe04de33ba8c519a49ab8641c0cfd99a5c4022b6a198e1ffe7db1adade67",
+  "default_nominee_confirmation_accepted": true,
+  "archived_files_unchanged": true,
+  "no_new_default_exported": true,
+  "note": "Experimental decisions compare with raw cosine; default acceptance compares only the frozen nominee with the archived baseline. No substitution or retuning."
+}

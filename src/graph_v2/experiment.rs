@@ -1742,6 +1742,175 @@ pub fn calibrate_command(plan: &CalibrationPlan, output: &Path) -> Result<()> {
     result
 }
 
+/// A frozen subset, not a second opportunity to search on confirmation seeds.
+#[derive(Clone, Debug, Serialize, Deserialize)]
+#[serde(deny_unknown_fields)]
+pub struct ConfirmationPlan {
+    pub screening: PathBuf,
+    pub manifest_sha256: String,
+    pub provenance_sha256: String,
+    pub candidates: BTreeMap<String, String>,
+}
+
+/// Reuse the screening evaluator with unchanged settings and reserved seeds.
+/// This produces measurements only; it never selects or exports a new default.
+pub fn confirmation_command(plan: &ConfirmationPlan, output: &Path) -> Result<()> {
+    let read = |name: &str| -> Result<serde_json::Value> {
+        Ok(serde_json::from_reader(BufReader::new(fs::File::open(
+            plan.screening.join(name),
+        )?))?)
+    };
+    ensure!(
+        sha256(&plan.screening.join("manifest.json"))? == plan.manifest_sha256
+            && sha256(&plan.screening.join("provenance.json"))? == plan.provenance_sha256,
+        "Screening manifest/provenance hash mismatch"
+    );
+    ensure!(
+        read("experiment-status.json")?["status"] == "complete",
+        "Screening is incomplete"
+    );
+    let manifest: Manifest = serde_json::from_value(read("manifest.json")?)?;
+    ensure!(
+        !manifest.confirmation && read("confirmation.json")? == serde_json::json!([]),
+        "Screening already consumed confirmation seeds"
+    );
+    // Check confirmation cohort sizes as well as disjointness, without changing
+    // the frozen screening manifest or its calibration reference.
+    Manifest {
+        confirmation: true,
+        ..manifest.clone()
+    }
+    .validate()?;
+    verify_calibration(&manifest)?;
+    let provenance = read("provenance.json")?;
+    ensure!(
+        provenance["code_hashes"] == serde_json::to_value(code_hashes())?,
+        "Compiled source differs from screening"
+    );
+    let input_hash = sha256(&manifest.input)?;
+    ensure!(
+        provenance["input_sha256"] == input_hash,
+        "Screening input hash mismatch"
+    );
+    let metadata_hash = manifest.metadata.as_ref().map(|p| sha256(p)).transpose()?;
+    ensure!(
+        provenance["metadata_sha256"] == serde_json::to_value(&metadata_hash)?,
+        "Screening metadata hash mismatch"
+    );
+    ensure!(!plan.candidates.is_empty(), "Confirmation subset is empty");
+    let mut frozen = vec![];
+    for (id, expected_hash) in &plan.candidates {
+        ensure!(
+            id.len() == 64 && id.bytes().all(|b| b.is_ascii_hexdigit()),
+            "Invalid candidate ID"
+        );
+        let path = plan
+            .screening
+            .join("candidates")
+            .join(id)
+            .join("candidate.json");
+        ensure!(
+            sha256(&path)? == *expected_hash,
+            "Frozen candidate hash mismatch: {id}"
+        );
+        let candidate: Candidate = serde_json::from_reader(BufReader::new(fs::File::open(path)?))?;
+        ensure!(
+            candidate.id == *id && candidate.score.valid,
+            "Invalid screening candidate: {id}"
+        );
+        let record: GraphRecord = serde_json::from_reader(BufReader::new(fs::File::open(
+            candidate.graph_directory.join("graph-record.json"),
+        )?))?;
+        if let GraphSource::Archived(source) = &candidate.source {
+            ensure!(
+                Some(sha256(&source.path)?) == record.source_graph_sha256,
+                "Archived graph changed since screening"
+            );
+        }
+        frozen.push(candidate);
+    }
+    fresh_directory(output)?;
+    let start = Instant::now();
+    write_json(&output.join("plan.json"), plan)?;
+    write_json(&output.join("manifest.json"), &manifest)?;
+    write_json(
+        &output.join("provenance.json"),
+        &serde_json::json!({
+            "version": VERSION, "backend": leiden::BACKEND, "input_sha256": input_hash,
+            "metadata_sha256": metadata_hash, "code_hashes": code_hashes(),
+            "executable_sha256": sha256(&std::env::current_exe()?)?,
+            "command": std::env::args().collect::<Vec<_>>(),
+            "screening": plan.screening, "plan_sha256": digest(&serde_json::to_vec(plan)?),
+            "note": "Frozen settings and reserved seeds; evaluation only, no retuning or default selection"
+        }),
+    )?;
+    let result = (|| -> Result<()> {
+        let input = Embeddings::load(&manifest.input)?;
+        let metadata = manifest
+            .metadata
+            .as_ref()
+            .map(|p| metrics::load_metadata(p))
+            .transpose()?
+            .unwrap_or_default();
+        let mut runner = Runner {
+            manifest: manifest.clone(),
+            input,
+            input_hash,
+            output: output.into(),
+            metadata,
+            baseline_degrees: None,
+            baseline_labels: None,
+            graphs: BTreeMap::new(),
+            candidates: vec![],
+            attempts: vec![],
+            expansion_limited: BTreeSet::new(),
+        };
+        if let Some(baseline) = &manifest.baseline {
+            let (graph, _) = runner.graph(&GraphSource::Archived(ArchiveGraph {
+                path: baseline.graph.clone(),
+                threshold: baseline.threshold,
+                unshift: false,
+            }))?;
+            runner.baseline_degrees = Some(graph.degrees());
+        }
+        let mut confirmation = vec![];
+        for candidate in frozen {
+            let mut confirmed = runner.evaluate(
+                &candidate.source,
+                candidate.q,
+                Some((candidate.resolution, candidate.theta)),
+                "confirmation",
+                candidate.baseline,
+                candidate.control,
+                &manifest.confirmation_seeds,
+                &manifest.confirmation_perturbation_seeds,
+            )?;
+            ensure!(
+                confirmed.id == candidate.id,
+                "Confirmation graph/settings differ from screening"
+            );
+            confirmed.sensitivity = runner.sensitivity(&confirmed)?;
+            write_json(&confirmed.directory.join("candidate.json"), &confirmed)?;
+            runner.attempt("confirmation", &confirmed.id, confirmed.score.error.clone())?;
+            confirmation.push(confirmed);
+            write_json(&output.join("confirmation.json"), &confirmation)?;
+        }
+        ensure!(
+            confirmation.iter().all(|c| c.score.valid),
+            "Incomplete or invalid confirmation fits"
+        );
+        Ok(())
+    })();
+    write_json(
+        &output.join("experiment-status.json"),
+        &serde_json::json!({
+            "status": if result.is_ok() { "complete" } else { "failed" },
+            "error": result.as_ref().err().map(|e| format!("{e:#}")), "cost": cost(start, output)?,
+        }),
+    )?;
+    result
+}
+
 pub fn experiment_command(manifest: &Manifest, output: &Path) -> Result<()> {
     manifest.validate()?;
     verify_calibration(manifest)?;

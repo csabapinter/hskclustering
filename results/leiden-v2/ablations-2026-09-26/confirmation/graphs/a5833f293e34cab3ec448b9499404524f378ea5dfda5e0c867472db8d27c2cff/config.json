@@ -1,0 +1,12 @@
+{
+  "representation": {
+    "abtt": 1
+  },
+  "k": 12,
+  "symmetrization": "union",
+  "tau": 0.0,
+  "weight": "cosine",
+  "lambda": 0.5,
+  "k_scale": null,
+  "block_rows": 32
+}

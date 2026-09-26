@@ -110,6 +110,9 @@ See [v2 usage and manifest settings](docs/graph-v2-usage.md) and the
 The [calibrated core comparison](results/leiden-v2/study-2026-09-25/COMPARISON.md)
 records baseline-derived tolerances, raw k/weight/resolution screening, a
 development shortlist and a fixed sample of groups reviewed as learning material.
+The [focused k=10 ablations](results/leiden-v2/ablations-2026-09-26/README.md)
+compare centering, ABTT(1/3), and mutual neighbors individually, retune resolution,
+and confirm a frozen subset against the raw cosine and local-weight references.
 
 ## Run GMM
 

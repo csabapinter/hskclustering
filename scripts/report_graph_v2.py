@@ -44,7 +44,11 @@ def name(candidate):
     if candidate["source"]["kind"] == "archived":
         suffix = f'q={candidate["q"]:.6g}' if config["unshift"] else f'r={candidate["resolution"]:.6g}'
         return f'control t={config["threshold"]} {"unshifted" if config["unshift"] else "stored"} {suffix}'
-    return f'{config["weight"]} k={config["k"]} q={candidate["q"]:.6g}'
+    representation = config["representation"]
+    prefix = "" if representation == "raw" else (
+        f'abtt({representation["abtt"]}) ' if isinstance(representation, dict) else representation + " ")
+    topology = " mutual" if config["symmetrization"] == "mutual" else ""
+    return f'{prefix}{config["weight"]} k={config["k"]}{topology} q={candidate["q"]:.6g}'
 
 
 def summarize(candidates, manifest, development, limits):
@@ -325,8 +329,9 @@ def validate_artifacts(study, candidates, manifest):
     assert not observed_seeds & reserved
     assert read(screen / "confirmation.json") == []
     assert (screen / "communities.csv").read_bytes() == Path(manifest["baseline"]["recommended_assignments"]).read_bytes()
-    initial_grid = {(g["k"], g["weight"], q) for g in manifest["graphs"] for q in manifest["q"]}
-    completed_grid = {(c["source"]["config"]["k"], c["source"]["config"]["weight"], c["q"]) for c in candidates if c["stage"] == "core"}
+    graph_identity = lambda g: json.dumps(g, sort_keys=True)
+    initial_grid = {(graph_identity(g), q) for g in manifest["graphs"] for q in manifest["q"]}
+    completed_grid = {(graph_identity(c["source"]["config"]), c["q"]) for c in candidates if c["stage"] == "core"}
     assert initial_grid <= completed_grid
     failures = [a for a in read(screen / "attempts.json") if a["status"] == "failed"]
     assert not failures, failures[:3]

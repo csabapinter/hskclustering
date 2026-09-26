@@ -265,6 +265,93 @@ fn manifest_disallows_seed_leakage_and_incomplete_selection_policy() -> Result<(
 }
 
 #[test]
+fn frozen_subset_confirmation_preserves_settings_and_rejects_changed_evidence() -> Result<()> {
+    use hskclustering::{
+        graph_v2::experiment::{self, Candidate, ConfirmationPlan},
+        output::{sha256, write_json},
+    };
+    let dir = tempfile::tempdir()?;
+    let input = dir.path().join("input.txt");
+    fs::write(
+        &input,
+        "6 3\na 1 0 0\nb 1 0 0\nc 1 0 0\nd 0 1 0\ne 0 1 0\nf 0 1 0\n",
+    )?;
+    let manifest = Manifest {
+        input: input.clone(),
+        metadata: None,
+        baseline: None,
+        graphs: vec![GraphConfig {
+            k: 2,
+            ..Default::default()
+        }],
+        q: vec![0.1],
+        archived_thresholds: vec![],
+        ablations: false,
+        combinations: false,
+        confirmation: false,
+        max_endpoint_expansions: 0,
+        ..Default::default()
+    };
+    let screen = dir.path().join("screening");
+    experiment::experiment_command(&manifest, &screen)?;
+    let candidates: Vec<Candidate> =
+        serde_json::from_reader(fs::File::open(screen.join("candidates.json"))?)?;
+    let candidate = &candidates[0];
+    let candidate_path = candidate.directory.join("candidate.json");
+    let before = fs::read(&candidate_path)?;
+    let plan = ConfirmationPlan {
+        screening: screen.clone(),
+        manifest_sha256: sha256(&screen.join("manifest.json"))?,
+        provenance_sha256: sha256(&screen.join("provenance.json"))?,
+        candidates: [(candidate.id.clone(), sha256(&candidate_path)?)]
+            .into_iter()
+            .collect(),
+    };
+    write_json(&dir.path().join("plan.json"), &plan)?;
+    success(
+        dir.path(),
+        &["confirm", "--plan", "plan.json", "--output", "confirmation"],
+    )?;
+    let confirmed: Vec<Candidate> = serde_json::from_reader(fs::File::open(
+        dir.path().join("confirmation/confirmation.json"),
+    )?)?;
+    assert_eq!(confirmed.len(), 1);
+    let c = &confirmed[0];
+    assert_eq!(c.id, candidate.id);
+    assert_eq!(c.resolution, candidate.resolution);
+    assert_eq!(c.theta, candidate.theta);
+    assert_eq!(
+        c.runs.iter().map(|r| r.seed).collect::<Vec<_>>(),
+        manifest.confirmation_seeds
+    );
+    assert_eq!(c.perturbations.len(), 20);
+    assert!(c.score.valid);
+    assert!(!dir.path().join("confirmation/communities.csv").exists());
+    assert_eq!(fs::read(&candidate_path)?, before);
+
+    let mut changed = plan.clone();
+    changed
+        .candidates
+        .insert(candidate.id.clone(), "wrong hash".into());
+    assert!(
+        experiment::confirmation_command(&changed, &dir.path().join("changed-candidate")).is_err()
+    );
+    assert!(!dir.path().join("changed-candidate").exists());
+    let mut leaked = manifest.clone();
+    leaked.confirmation_seeds[0] = leaked.screening_seeds[0];
+    write_json(&screen.join("manifest.json"), &leaked)?;
+    let mut leaked_plan = plan.clone();
+    leaked_plan.manifest_sha256 = sha256(&screen.join("manifest.json"))?;
+    assert!(experiment::confirmation_command(&leaked_plan, &dir.path().join("leaked")).is_err());
+    assert!(!dir.path().join("leaked").exists());
+    write_json(&screen.join("manifest.json"), &manifest)?;
+    fs::write(&input, "changed input")?;
+    assert!(experiment::confirmation_command(&plan, &dir.path().join("changed-input")).is_err());
+    assert!(!dir.path().join("changed-input").exists());
+    Ok(())
+}
+
+#[test]
 fn calibration_freezes_policy_and_rejects_seed_leakage_or_changed_study() -> Result<()> {
     use hskclustering::graph_v2::{calibration::CalibrationPlan, experiment};
     let dir = tempfile::tempdir()?;

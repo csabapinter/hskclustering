@@ -1,0 +1,10 @@
+{
+  "cost": {
+    "artifact_bytes": 2089125209,
+    "elapsed_seconds": 130.173009417,
+    "peak_memory_scope": "Process lifetime high-water RSS, including earlier stages; not a per-candidate allocation estimate",
+    "process_peak_memory_bytes": 417366016
+  },
+  "error": null,
+  "status": "complete"
+}

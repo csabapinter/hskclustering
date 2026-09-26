@@ -1,0 +1,261 @@
+{
+  "strata": [
+    {
+      "dimension": "baseline_degree",
+      "group": "q1",
+      "tokens": 2340,
+      "vocabulary_fraction": 0.21397220190197513,
+      "nonsingleton_coverage": 0.9376068376068376,
+      "cohesion": {
+        "value": 0.42967004385365154,
+        "reason": null
+      },
+      "silhouette": {
+        "value": 0.09048368635810275,
+        "reason": null
+      },
+      "margin": {
+        "value": 0.062251907079645265,
+        "reason": null
+      }
+    },
+    {
+      "dimension": "baseline_degree",
+      "group": "q2",
+      "tokens": 2185,
+      "vocabulary_fraction": 0.19979882955376738,
+      "nonsingleton_coverage": 0.9922196796338673,
+      "cohesion": {
+        "value": 0.4390476498760302,
+        "reason": null
+      },
+      "silhouette": {
+        "value": 0.07473219301253217,
+        "reason": null
+      },
+      "margin": {
+        "value": 0.047607768666637344,
+        "reason": null
+      }
+    },
+    {
+      "dimension": "baseline_degree",
+      "group": "q3",
+      "tokens": 2049,
+      "vocabulary_fraction": 0.18736283833211412,
+      "nonsingleton_coverage": 0.9970717423133236,
+      "cohesion": {
+        "value": 0.4428077564206868,
+        "reason": null
+      },
+      "silhouette": {
+        "value": 0.06314899045846417,
+        "reason": null
+      },
+      "margin": {
+        "value": 0.03967651427622322,
+        "reason": null
+      }
+    },
+    {
+      "dimension": "baseline_degree",
+      "group": "q4",
+      "tokens": 2210,
+      "vocabulary_fraction": 0.2020848573518654,
+      "nonsingleton_coverage": 1.0,
+      "cohesion": {
+        "value": 0.44284002146892903,
+        "reason": null
+      },
+      "silhouette": {
+        "value": 0.05231423765934346,
+        "reason": null
+      },
+      "margin": {
+        "value": 0.032334333748929085,
+        "reason": null
+      }
+    },
+    {
+      "dimension": "baseline_degree",
+      "group": "q5",
+      "tokens": 2152,
+      "vocabulary_fraction": 0.196781272860278,
+      "nonsingleton_coverage": 1.0,
+      "cohesion": {
+        "value": 0.44055373465160785,
+        "reason": null
+      },
+      "silhouette": {
+        "value": 0.025428544747274025,
+        "reason": null
+      },
+      "margin": {
+        "value": 0.015473676487542568,
+        "reason": null
+      }
+    },
+    {
+      "dimension": "hsk",
+      "group": "1",
+      "tokens": 503,
+      "vocabulary_fraction": 0.04599487929773226,
+      "nonsingleton_coverage": 0.9840954274353877,
+      "cohesion": {
+        "value": 0.456690189983028,
+        "reason": null
+      },
+      "silhouette": {
+        "value": 0.07050269336870027,
+        "reason": null
+      },
+      "margin": {
+        "value": 0.04498666492365646,
+        "reason": null
+      }
+    },
+    {
+      "dimension": "hsk",
+      "group": "2",
+      "tokens": 763,
+      "vocabulary_fraction": 0.06976956839795172,
+      "nonsingleton_coverage": 0.9868938401048493,
+      "cohesion": {
+        "value": 0.44563898100115684,
+        "reason": null
+      },
+      "silhouette": {
+        "value": 0.06457768718460585,
+        "reason": null
+      },
+      "margin": {
+        "value": 0.04114574322203305,
+        "reason": null
+      }
+    },
+    {
+      "dimension": "hsk",
+      "group": "3",
+      "tokens": 968,
+      "vocabulary_fraction": 0.08851499634235552,
+      "nonsingleton_coverage": 0.9803719008264463,
+      "cohesion": {
+        "value": 0.44140426505025265,
+        "reason": null
+      },
+      "silhouette": {
+        "value": 0.06622470126169949,
+        "reason": null
+      },
+      "margin": {
+        "value": 0.04261334388081376,
+        "reason": null
+      }
+    },
+    {
+      "dimension": "hsk",
+      "group": "4",
+      "tokens": 991,
+      "vocabulary_fraction": 0.09061814191660571,
+      "nonsingleton_coverage": 0.9889001009081736,
+      "cohesion": {
+        "value": 0.44118422065966817,
+        "reason": null
+      },
+      "silhouette": {
+        "value": 0.06259626912432746,
+        "reason": null
+      },
+      "margin": {
+        "value": 0.040002404519523124,
+        "reason": null
+      }
+    },
+    {
+      "dimension": "hsk",
+      "group": "5",
+      "tokens": 1066,
+      "vocabulary_fraction": 0.09747622531089978,
+      "nonsingleton_coverage": 0.9868667917448405,
+      "cohesion": {
+        "value": 0.44078425060504617,
+        "reason": null
+      },
+      "silhouette": {
+        "value": 0.06484095365334193,
+        "reason": null
+      },
+      "margin": {
+        "value": 0.0415543458624028,
+        "reason": null
+      }
+    },
+    {
+      "dimension": "hsk",
+      "group": "6",
+      "tokens": 1137,
+      "vocabulary_fraction": 0.10396854425749817,
+      "nonsingleton_coverage": 0.9824098504837291,
+      "cohesion": {
+        "value": 0.4406495220756931,
+        "reason": null
+      },
+      "silhouette": {
+        "value": 0.0706056819410416,
+        "reason": null
+      },
+      "margin": {
+        "value": 0.0453272046194129,
+        "reason": null
+      }
+    },
+    {
+      "dimension": "hsk",
+      "group": "7-9",
+      "tokens": 5611,
+      "vocabulary_fraction": 0.5130760790051208,
+      "nonsingleton_coverage": 0.9834254143646409,
+      "cohesion": {
+        "value": 0.4347265406825263,
+        "reason": null
+      },
+      "silhouette": {
+        "value": 0.05721573408869347,
+        "reason": null
+      },
+      "margin": {
+        "value": 0.0367035011255568,
+        "reason": null
+      }
+    },
+    {
+      "dimension": "pos",
+      "group": "missing",
+      "tokens": 10936,
+      "vocabulary_fraction": 1.0,
+      "nonsingleton_coverage": 0.9845464520848574,
+      "cohesion": {
+        "value": 0.4389296658242982,
+        "reason": null
+      },
+      "silhouette": {
+        "value": 0.06169994904745973,
+        "reason": null
+      },
+      "margin": {
+        "value": 0.03952927228147685,
+        "reason": null
+      }
+    }
+  ],
+  "missing_hsk": 0,
+  "missing_pos": 10936,
+  "ambiguous_mappings": 143,
+  "degree_quantile_boundaries": [
+    20.0,
+    33.0,
+    49.0,
+    81.0
+  ],
+  "note": "Summaries use global community membership. Multiple HSK/POS mappings appear in each applicable stratum. Tied degrees stay in the lower quintile; bins may be empty. HSK is metadata, never a label."
+}

@@ -1,0 +1,55 @@
+{
+  "scope": "One-factor follow-up: k=10 raw cosine and raw local union controls; cosine center, ABTT(1), ABTT(3), and raw mutual. No combined changes, new embeddings, solver changes, size caps, or relaxed default-selection criteria.",
+  "reference": {
+    "representation": "raw",
+    "weight": "cosine",
+    "symmetrization": "union",
+    "k": 10,
+    "q": 0.1
+  },
+  "search": "Initial q = 0.01, 0.03, 0.1, 0.3 for every graph. Existing Pareto endpoint expansion, factor 3, at most two rounds. Retune q independently. Preserve every endpoint-limit flag; no claim of an exhaustive optimum.",
+  "calibration": "Rerun the unchanged archived-baseline calibration on the current build and freeze its existing seven-metric policy. Baseline-derived tolerances applied to raw-cosine comparisons are descriptive common scales, not a new calibration of kNN variability or inferential significance tests.",
+  "shortlist": {
+    "groups": [
+      "center",
+      "abtt1",
+      "abtt3",
+      "mutual"
+    ],
+    "rule": "For each ablation graph, shortlist at most one valid candidate on the global seven-metric Pareto frontier that passes the calibrated coverage/concentration/degeneracy guards. Minimize the largest regression versus raw cosine k=10 q=0.1 in tolerance units; break ties by more improved metrics, q closest to 0.1 in absolute log ratio, then candidate ID. Include endpoint-limited entries as explicitly provisional experimental comparisons, never default nominees.",
+    "controls": "Always confirm archived baseline, raw cosine q=0.1, raw local q=0.1, and the unshifted threshold-0.70 q=0.3 control. Also include the frozen automatic default nominee, if distinct.",
+    "no_eligible": "If a factor has no guarded Pareto candidate, report why it is discarded at screening and do not choose a replacement after seeing confirmation."
+  },
+  "granularity_control": "For each factor also show the valid setting closest to the raw-cosine reference median community count, breaking ties by smaller q then ID. Label count matching successful only within the existing 10% relative tolerance. Report largest group, token fraction in 3-30 groups and >100 groups. Counts are comparison controls, not quality scores.",
+  "experimental_decision": "For a shortlisted change, keep as a supported experimental improvement only if development AND fresh confirmation each pass all calibrated guards, no one of the seven metrics regresses beyond its frozen tolerance versus raw cosine q=0.1, and at least one metric improves beyond tolerance. Mixed trade-offs remain provisional, with the simple raw configuration preferred absent a confirmed improvement. Diagnostic/qualitative findings never silently relax this rule.",
+  "default_decision": "The existing automatic default nominee is frozen during screening. Only that nominee may replace the archived default if the unchanged seven-metric policy and hard guards pass against the archived baseline on fresh confirmation and its graph has no unresolved endpoint flag. Never substitute another nominee after confirmation. This study records the decision and leaves the archived files unchanged.",
+  "confirmation": "Freeze candidate IDs and hashes before any reserved solver seeds 1000-1009 or perturbation seeds 20000-20009 are run. Use the same exact graph configuration, resolution and theta. Every finalist receives 10 fresh solver runs, 10 paired 5% edge-removal and 10 paired 90% vocabulary-subsample replicates; rebuild transforms/neighbours for subsampling. No retuning.",
+  "practical_review": {
+    "anchors": [
+      "苹果",
+      "牛奶",
+      "咖啡",
+      "衬衫",
+      "足球",
+      "老师",
+      "焦虑",
+      "政策",
+      "合同",
+      "银行",
+      "软件",
+      "感冒",
+      "火车",
+      "妈妈",
+      "为什么",
+      "公斤",
+      "花",
+      "行"
+    ],
+    "source": "Same 18 anchors as the archived 2026-09-17 export_review.py, fixed before any core screening results.",
+    "partitions": "Archived recommendation, fresh archived baseline, raw cosine and raw local q=0.1, unshifted threshold-0.70 q=0.3, and every frozen ablation finalist, using representative fresh-confirmation partitions.",
+    "exports": "All members, 8 highest-cohesion members, 6 lowest-margin nonsingleton boundary words, and 8 members ordered by SHA-256(anchor + NUL + token). Singleton groups are shown. Duplicate groups across anchors are disclosed.",
+    "rubric": "Inspect shared topic or grammatical function, intrusive members, excessive breadth, loss of useful neighbors through fragmentation, and polysemy. Describe usefulness with concrete members. Do not turn spot-checks into an estimated semantic accuracy rate. No learner validation or independent benchmark is available.",
+    "selection_role": "Qualitative context only; does not alter numeric tolerances or the deterministic shortlist."
+  },
+  "limitations": "The same 18-anchor desk review supplies qualitative context only. Source-space metrics reuse the input embedding geometry; no external labels, learner feedback or independent semantic accuracy claim. Single-vector polysemy remains unresolved."
+}

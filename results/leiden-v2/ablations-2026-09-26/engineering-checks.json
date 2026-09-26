@@ -1,0 +1,26 @@
+{
+  "cargo_test_locked": {
+    "status": "passed",
+    "tests": 46
+  },
+  "cargo_clippy_all_targets_locked_deny_warnings": {
+    "status": "passed",
+    "note": "Existing vendored graphrs unused-parentheses warning is unchanged."
+  },
+  "cargo_fmt_check": {
+    "status": "passed"
+  },
+  "reporting_end_to_end": {
+    "status": "passed",
+    "fixture": "37 vectors in 5 dimensions, unequal-density groups plus an outlier; all six graph variants; 15 screening settings, 5 frozen confirmation settings; reports and assignment audits passed"
+  },
+  "calibration_reproduction": {
+    "policy_exactly_reproduced": true,
+    "baseline_distributions_except_runtime_exactly_reproduced": true
+  },
+  "reporting_sources_sha256": {
+    "scripts/report_graph_v2.py": "30d5fa9715137a7404e346a488efcf9a5e012815c5e25e6f3db95175c985625f",
+    "scripts/report_graph_v2_ablations.py": "414dfb1bf265ab488af1fbbb2b5a465daa55b2f9365c6cc407f561ed058070b4"
+  },
+  "new_test": "frozen_subset_confirmation_preserves_settings_and_rejects_changed_evidence"
+}

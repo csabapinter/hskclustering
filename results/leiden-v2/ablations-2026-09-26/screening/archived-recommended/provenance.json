@@ -1,0 +1,11 @@
+{
+  "assignments_sha256": "f3232926d843e7a9087a52d935defbf4cdb05987b00dd4c653ebff9aecd86e3d",
+  "baseline": {
+    "graph": "results/leiden/1-9/hsk1-9-thresh0.70.graphml",
+    "recommended_assignments": "results/leiden/1-9/experiments-2026-09-17/recommended.communities.csv",
+    "resolution": 0.2,
+    "theta": 0.3,
+    "threshold": 0.7
+  },
+  "graph_sha256": "64fee58e649365ce1c4d4aec95b5102e77afcc1a565be9ff6d398658dd8fcaa5"
+}

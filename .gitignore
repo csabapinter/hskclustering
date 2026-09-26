@@ -49,3 +49,12 @@ __pycache__/
 /results/leiden-v2/study-2026-09-25/calibration-readback-rejected/
 /results/leiden-v2/study-2026-09-25/calibration-before-io-fix/
 /results/leiden-v2/study-2026-09-25/screening-unbuffered-interrupted/
+
+# Ablation studies retain reports, settings, checksums and representative assignments.
+# Full evaluation dumps, repeated fits and sampled graph inputs are regenerable.
+/results/leiden-v2/ablations-*/**/candidate.json
+/results/leiden-v2/ablations-*/confirmation/confirmation.json
+/results/leiden-v2/ablations-*/**/count-matched-comparisons.json
+/results/leiden-v2/ablations-*/**/archive-agreements.json
+/results/leiden-v2/ablations-*/**/perturbation-graphs/
+/results/leiden-v2/ablations-*/**/seed-*/

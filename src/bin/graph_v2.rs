@@ -4,7 +4,7 @@ use hskclustering::{
     graph_v2::{
         calibration::CalibrationPlan,
         embeddings::Representation,
-        experiment::{self, Manifest},
+        experiment::{self, ConfirmationPlan, Manifest},
         graph::{GraphConfig, Symmetrization, WeightMode},
         leiden::LeidenConfig,
     },
@@ -47,6 +47,13 @@ enum Command {
     Experiment {
         #[arg(long)]
         manifest: PathBuf,
+        #[arg(short, long)]
+        output: PathBuf,
+    },
+    /// Confirm an explicitly frozen subset of a completed screening study.
+    Confirm {
+        #[arg(long)]
+        plan: PathBuf,
         #[arg(short, long)]
         output: PathBuf,
     },
@@ -118,6 +125,10 @@ struct Cluster {
 }
 fn main() -> Result<()> {
     match Cli::parse().command {
+        Command::Confirm { plan, output } => {
+            let plan: ConfirmationPlan = serde_json::from_reader(File::open(plan)?)?;
+            experiment::confirmation_command(&plan, &output)?;
+        }
         Command::CalibrationPlan { output } => {
             ensure!(
                 !output.exists(),

@@ -188,6 +188,31 @@ baseline assignment is invented. `baseline`, `metadata`, and `selection` can be
 `null` for experiments on another vocabulary. Smaller graph grids and disabled
 ablation/combination stages are supported; the manifest records that scope.
 
+### Confirm a focused subset after screening
+
+A study with `confirmation: false` can freeze a smaller subset after development:
+
+```sh
+cargo run --release --locked --bin graph_v2 -- confirm \
+  --plan results/leiden-v2/ablations-2026-09-26/confirmation-plan.json \
+  --output results/leiden-v2/ablations-2026-09-26/confirmation
+```
+
+The plan contains `screening` (the completed experiment directory),
+`manifest_sha256`, `provenance_sha256`, and `candidates` (a map from full
+candidate IDs to SHA-256 hashes of their saved `candidate.json` files).
+The command verifies the screening evidence, compiled source, input, metadata,
+archived graphs, and seed separation before running the exact saved resolution
+and theta with the reserved confirmation cohorts. It requires a fresh output
+directory and writes measurements only; it cannot search, substitute a nominee,
+or export a new default.
+
+The [focused ablation study](../results/leiden-v2/ablations-2026-09-26/README.md)
+uses this command to compare centering, ABTT(1/3), and mutual neighbors separately
+against raw cosine k=10, q=0.1, retaining local weights as a comparator. Its
+reporting script freezes the shortlist before confirmation and applies the
+predeclared experimental and archived-default comparisons separately.
+
 ## Artifacts and conventions
 
 | Artifact | Contents |

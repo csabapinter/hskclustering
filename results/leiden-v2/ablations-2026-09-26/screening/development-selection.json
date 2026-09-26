@@ -1,0 +1,115 @@
+{
+  "policy": {
+    "metrics": [
+      {
+        "metric": "cohesion",
+        "absolute_tolerance": 0.0011423326200969974
+      },
+      {
+        "metric": "silhouette",
+        "absolute_tolerance": 0.003049472360882037
+      },
+      {
+        "metric": "margin",
+        "absolute_tolerance": 0.0019569158020358787
+      },
+      {
+        "metric": "repeat_ari",
+        "absolute_tolerance": 0.039403070709194785
+      },
+      {
+        "metric": "edge_removal_ari",
+        "absolute_tolerance": 0.01629515026642503
+      },
+      {
+        "metric": "subsample_ari",
+        "absolute_tolerance": 0.0270481675594183
+      },
+      {
+        "metric": "nonsingleton_coverage",
+        "absolute_tolerance": 0.001188734455010998
+      }
+    ],
+    "minimum_nonsingleton_coverage": 0.9815288953913679,
+    "minimum_communities": 2,
+    "maximum_largest_community_share": 0.017648134601316753,
+    "reject_all_singletons": true
+  },
+  "pareto": [
+    "fc9885db9bcd8fb30de107bb7b53b8384f6bf2de3968e0c11aaa91caaf0b9183",
+    "cf4f02f5de05747348c1d74a71ed3f9623f39818c827243c04ec05324a1d8333",
+    "4079e0589ca6b806f43802ece7a65d9d710e273292cfe9092797d0170e77380f",
+    "51873a67c03bd2ac2764493d292c5bec459a0d90bdfc4643fd219d06df2cde8d",
+    "b58dfe04de33ba8c519a49ab8641c0cfd99a5c4022b6a198e1ffe7db1adade67",
+    "16a3a71a6202a5db6528e2b9f9115f324d36c2cfdf82cc33980b9bb8dd73b113",
+    "13a6f713700626845f39ce752f8e8e4edbb6763ffe46cfdc13ba8c115b2e7e40",
+    "582548f5461bc9fe1cf07320d400f01dc60bd3482c1cb7f79425a966efe02dc6",
+    "04df865daae2a855d614ef567ece96cdc99d3c59594425071c6cb56fca9139c8",
+    "61c3fb746194c654ace3b4e6a87c04c90fe768e0b3e86bc0d5d082e4bbf72766",
+    "a350e7b700819901e3b6c6f02f3f8f07badde82e4cd8ae6077d550357d90b3ec",
+    "77a70a7b85826be9e3716acb2359d7d83472bebb1329328358d8a40d702bd135",
+    "a4a547d6853e0209b348d9931438914fd759984269f39355b09895d876205d75",
+    "bda25d45c0323b3913888781f07416c24e17538c9b70099ee331f7549bf47b7b",
+    "99208c85a67fb4f5441f8b44a399f7eb4b283c6f99bd2c7c7b0a4b0c263256c3",
+    "28f7577a910b7a16ae8ae6f30b708eb830cd3cfe5503ffdca914b4ced94f89cf",
+    "abf1672f469d728689427171d78a42c8a70cd60f4c6ca1e65c1c4b622f5276a7",
+    "c25fe35396425969cbabd0ffabea4395579fe6bb9518e5632afe93816d9a21a0",
+    "b8ad2a749703f245f554a8a34fb6d36dfedff57b4d87c4e08e0b54e4fd599451",
+    "ce0b4afcff376b5f96a0118eb5f33cc39b0b276cd7c67134f7f32b9383df4bac",
+    "fdeacfe8a18745cfad4cbd41e29ad26cbb1fec79c58b819d6385fc4f6aa90fab",
+    "2ada89cfa48c2d80a804e636d4f814df053a03ecebfd0d5db447f8fa29104a17",
+    "895e15081dab388577e039d83c6478fc336d77f5a8fe5ba78c3c463859d4cb39",
+    "321f5fbbfebce44c949188ee99d32d7a8b211b33e672e807efd19b85375e6921",
+    "83f3e7ba5712748354bf38ae49aaa0b86593bb3adb7caf604fe3c56546fb8ccf",
+    "414826689f7fdbf2628e72b8e1cf8e9f691af9ae274a1f6939da19adbb5e5d9d",
+    "31a640d7445b5c2b8093278984092be37cab0251bb0997c9f36c117494e3d8ec"
+  ],
+  "nominee": "b58dfe04de33ba8c519a49ab8641c0cfd99a5c4022b6a198e1ffe7db1adade67",
+  "rejected": {
+    "01d08e36055a8a770611226e8f5a24150517c11033a4b689e87fe3e8be562c6f": "Largest-community share exceeds explicit limit",
+    "04df865daae2a855d614ef567ece96cdc99d3c59594425071c6cb56fca9139c8": "Does not improve the baseline within the frozen tolerances",
+    "13a6f713700626845f39ce752f8e8e4edbb6763ffe46cfdc13ba8c115b2e7e40": "Does not improve the baseline within the frozen tolerances",
+    "1670591ec3b40c672813d05ce0d71b8dd788cb2159c57674513be75501d4936d": "Nonsingleton coverage below explicit limit",
+    "16a3a71a6202a5db6528e2b9f9115f324d36c2cfdf82cc33980b9bb8dd73b113": "Does not improve the baseline within the frozen tolerances",
+    "28f7577a910b7a16ae8ae6f30b708eb830cd3cfe5503ffdca914b4ced94f89cf": "Does not improve the baseline within the frozen tolerances",
+    "2ada89cfa48c2d80a804e636d4f814df053a03ecebfd0d5db447f8fa29104a17": "Does not improve the baseline within the frozen tolerances",
+    "31a640d7445b5c2b8093278984092be37cab0251bb0997c9f36c117494e3d8ec": "Nonsingleton coverage below explicit limit",
+    "321f5fbbfebce44c949188ee99d32d7a8b211b33e672e807efd19b85375e6921": "Does not improve the baseline within the frozen tolerances",
+    "4027310994c02d10f5efc0b11c0d1d7328830b3781ea68201f62d850aaf80d2a": "Does not improve the baseline within the frozen tolerances",
+    "4079e0589ca6b806f43802ece7a65d9d710e273292cfe9092797d0170e77380f": "Largest-community share exceeds explicit limit",
+    "414826689f7fdbf2628e72b8e1cf8e9f691af9ae274a1f6939da19adbb5e5d9d": "Nonsingleton coverage below explicit limit",
+    "4327e32e3244951f627aa1a975a61e0efd9a30eb33b2f3547040bb9ef3828231": "Nonsingleton coverage below explicit limit",
+    "44417920f885ce2ed966b9bbf2f6ea8d4df620ba52af8a3cd51a960085e3e7b3": "Largest-community share exceeds explicit limit",
+    "492bebeff72687231638cbba78d12cb8575cf19e6f639d4f25f4cd494c87d367": "Nonsingleton coverage below explicit limit",
+    "51873a67c03bd2ac2764493d292c5bec459a0d90bdfc4643fd219d06df2cde8d": "Largest-community share exceeds explicit limit",
+    "582548f5461bc9fe1cf07320d400f01dc60bd3482c1cb7f79425a966efe02dc6": "Nonsingleton coverage below explicit limit",
+    "60b34c50ea9805154f2e14c2e288bfe6057c77a67eabab7ddddf8ee1e6d8fd4b": "Largest-community share exceeds explicit limit",
+    "61c3fb746194c654ace3b4e6a87c04c90fe768e0b3e86bc0d5d082e4bbf72766": "Does not improve the baseline within the frozen tolerances",
+    "77a70a7b85826be9e3716acb2359d7d83472bebb1329328358d8a40d702bd135": "Does not improve the baseline within the frozen tolerances",
+    "83f3e7ba5712748354bf38ae49aaa0b86593bb3adb7caf604fe3c56546fb8ccf": "Does not improve the baseline within the frozen tolerances",
+    "895e15081dab388577e039d83c6478fc336d77f5a8fe5ba78c3c463859d4cb39": "Nonsingleton coverage below explicit limit",
+    "8a419abcbb75a5a1468eecc332236ec36cce3f3654d6104c39f841ecaa88b6df": "Largest-community share exceeds explicit limit",
+    "99208c85a67fb4f5441f8b44a399f7eb4b283c6f99bd2c7c7b0a4b0c263256c3": "Nonsingleton coverage below explicit limit",
+    "9ef89c0d6aebf7cb5486230b4c6ecc6ffee2ea6d143e42279a1fb69883003a51": "Does not improve the baseline within the frozen tolerances",
+    "a350e7b700819901e3b6c6f02f3f8f07badde82e4cd8ae6077d550357d90b3ec": "Nonsingleton coverage below explicit limit",
+    "a4a547d6853e0209b348d9931438914fd759984269f39355b09895d876205d75": "Does not improve the baseline within the frozen tolerances",
+    "abf1672f469d728689427171d78a42c8a70cd60f4c6ca1e65c1c4b622f5276a7": "Does not improve the baseline within the frozen tolerances",
+    "b50f8452ebf4c223e55cff82d44f43b6c61a37618d03248f3ed0e5a5001ea7cd": "Nonsingleton coverage below explicit limit",
+    "b6f562eeb80cd07700e1379444f0c5807a447ef3c0facb6ff7ef7c4d5e1161c1": "Largest-community share exceeds explicit limit",
+    "b8ad2a749703f245f554a8a34fb6d36dfedff57b4d87c4e08e0b54e4fd599451": "Nonsingleton coverage below explicit limit",
+    "bda25d45c0323b3913888781f07416c24e17538c9b70099ee331f7549bf47b7b": "Does not improve the baseline within the frozen tolerances",
+    "c25fe35396425969cbabd0ffabea4395579fe6bb9518e5632afe93816d9a21a0": "Does not improve the baseline within the frozen tolerances",
+    "c64f421716ca1c07e63fb416032aa8af4302b0dd353d9d931f1e2c63b565a0dc": "Largest-community share exceeds explicit limit",
+    "c9e0fc3d3c571835dfb4d8e5ad6ae89ddf04e98fa160e03f3f06d167de9ee2c1": "Nonsingleton coverage below explicit limit",
+    "ce0b4afcff376b5f96a0118eb5f33cc39b0b276cd7c67134f7f32b9383df4bac": "Does not improve the baseline within the frozen tolerances",
+    "cf4f02f5de05747348c1d74a71ed3f9623f39818c827243c04ec05324a1d8333": "Largest-community share exceeds explicit limit",
+    "cf95b9c208c943ecfd7df5ff383fe8ce0b70ca7960ed8e9cc81197bb8e1ae523": "Largest-community share exceeds explicit limit",
+    "dd737c2bae2b745837236b0c4a64cc3796bb621f322609c8caa51bbdae207055": "Nonsingleton coverage below explicit limit",
+    "e6564bf3ce1b07f44b2767c663adbef91f1f4d28459c685a4b3760f12d8ea853": "Nonsingleton coverage below explicit limit",
+    "ef62d43fd6b88ac448361f76ac8cf7727cbe1799e7dcd51f0948f0c60b313089": "Does not improve the baseline within the frozen tolerances",
+    "f0a10464eaad704bb7141bde0f575c3fe6cdf1e450c1e9bd2deb136400595f8c": "Nonsingleton coverage below explicit limit",
+    "fdeacfe8a18745cfad4cbd41e29ad26cbb1fec79c58b819d6385fc4f6aa90fab": "Does not improve the baseline within the frozen tolerances",
+    "fe95943cba3b473beded8b6229c8e09e530d1bf42a35103888e35252ad44d90c": "Largest-community share exceeds explicit limit"
+  },
+  "reason": "Development nominee frozen; fresh-seed confirmation is still required"
+}
