@@ -1,7 +1,38 @@
-# HSK vocabulary clustering
+## Summary
 
-Group Chinese words with related contexts/meanings into communities for studying,
-using Rust: graphrs for Leiden and Linfa for Gaussian mixture models (GMM).
+Semantic clustering of HSK 3.0 Chinese vocabulary. Two primary goals:
+
+- Create a graph where words with related contexts/meanings are closer to each other than unrelated ones.
+- Find clusters for words that can be studied together when a student focuses on a certain topic. This means that antonyms (not just synonyms) might land in the same cluster if they belong to the same topic (e.g. 结婚, 离婚 in cluster 450 or 大, 小 in cluster 969).
+
+This is still work in progress, but the currently preferred clustering is achieved with Leiden:
+
+[`results/leiden-v2/ablations-2026-09-26/confirmation/confirmation/b58dfe04de33ba8c519a49ab8641c0cfd99a5c4022b6a198e1ffe7db1adade67/communities.csv`](results/leiden-v2/ablations-2026-09-26/confirmation/confirmation/b58dfe04de33ba8c519a49ab8641c0cfd99a5c4022b6a198e1ffe7db1adade67/communities.csv)
+
+Besides graph creation and Leiden, an alternative approach with GMM was also experimented with. Despite the intuition that one word shouldn't be constrained to one study topic and overlapping communities should be allowed, GMM seems to be subpar for this particular use case.
+
+
+## Input data
+
+Data source: [Chinese Word Vectors](https://github.com/Embedding/Chinese-Word-Vectors),
+mixed-large SGNS, 300 dimensions, word + character + ngram.
+
+Use `data/input-embeddings.txt`, prefiltered to the desired vocabulary. The Rust
+tools use every token in this file; they do not infer or filter HSK levels.
+
+```text
+<number_of_words> <embedding_dimension>
+<word> <value_1> <value_2> ... <value_N>
+<word> <value_1> <value_2> ... <value_N>
+```
+
+Token counts and dimensions must be exact. Tokens must be unique, values finite,
+and vectors nonzero. Invalid input produces an error with its line/token context.
+The current input covers all HSK 1–9 bands with 10,936 distinct spellings; 36 rows
+in `data/hsk-data.csv` have no matched embedding. HSK entries and spellings are not
+one-to-one, so these two counts do not sum to the CSV row count.
+
+## Project structure
 
 Each method has a small, separate runner. Shared code covers embeddings,
 assignment CSVs and comparison metrics; there is no clustering plugin framework.
@@ -22,25 +53,6 @@ The previous `graphs/1-9-leiden/` and `graphs/1-3-leiden/` directories moved to
 Graphs are still valid artifacts within Leiden results, not a requirement of
 other methods. The old estimate of about 72% distinguishable thematic groups
 applies only to the HSK 1–3 archive.
-
-## Input
-
-Use `data/input-embeddings.txt`, prefiltered to the desired vocabulary. The Rust
-tools use every token in this file; they do not infer or filter HSK levels.
-The source used here is [Chinese Word Vectors](https://github.com/Embedding/Chinese-Word-Vectors),
-mixed-large SGNS, 300 dimensions, word + character + ngram.
-
-```text
-<number_of_words> <embedding_dimension>
-<word> <value_1> <value_2> ... <value_N>
-<word> <value_1> <value_2> ... <value_N>
-```
-
-Token counts and dimensions must be exact. Tokens must be unique, values finite,
-and vectors nonzero. Invalid input produces an error with its line/token context.
-The current input covers all HSK 1–9 bands with 10,936 distinct spellings; 36 rows
-in `data/hsk-data.csv` have no matched embedding. HSK entries and spellings are not
-one-to-one, so these two counts do not sum to the CSV row count.
 
 ## Run Leiden
 
