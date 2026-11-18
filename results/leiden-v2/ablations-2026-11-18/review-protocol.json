@@ -1,0 +1,26 @@
+{
+  "source": "results/leiden-v2/ablations-2026-09-26/analysis-protocol.json",
+  "source_sha256": "53ef390f63a1c1428282b44ece9c0254b5008974f92f518a69c29d79459fb76d",
+  "anchors": [
+    "苹果",
+    "牛奶",
+    "咖啡",
+    "衬衫",
+    "足球",
+    "老师",
+    "焦虑",
+    "政策",
+    "合同",
+    "银行",
+    "软件",
+    "感冒",
+    "火车",
+    "妈妈",
+    "为什么",
+    "公斤",
+    "花",
+    "行"
+  ],
+  "selection_role": "Qualitative desk review only; no effect on numeric shortlist or recommendation rule. Historical anchors copied during current screening, before fresh confirmation.",
+  "rubric": "Inspect shared topic or grammatical function, intrusive members, excessive breadth, loss of useful neighbors through fragmentation, and polysemy. Describe usefulness with concrete members. Do not turn spot-checks into an estimated semantic accuracy rate. No learner validation or independent benchmark is available."
+}

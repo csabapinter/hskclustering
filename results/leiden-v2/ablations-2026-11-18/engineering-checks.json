@@ -1,0 +1,123 @@
+{
+  "date": "2026-11-18",
+  "rustc": "rustc 1.95.0 (59807616e 2026-04-14)",
+  "cargo": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)",
+  "dependency_changes": "None required; existing locked dependencies build offline; system bzip2 handles archive input.",
+  "checks": [
+    {
+      "command": "cargo fmt --all -- --check",
+      "status": "passed"
+    },
+    {
+      "command": "cargo test --locked --offline",
+      "status": "passed",
+      "tests": 54
+    },
+    {
+      "command": "cargo clippy --locked --offline --all-targets --no-deps -- -D warnings",
+      "status": "passed"
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p 'test_report_updated_leiden.py' -v",
+      "status": "passed",
+      "tests": 4
+    },
+    {
+      "command": "python3 scripts/audit_updated_leiden.py --self-test",
+      "status": "passed",
+      "tests": 2
+    },
+    {
+      "command": "PYTHONPYCACHEPREFIX=/private/tmp/hsk-leiden-study-qa/pycache python3 -m py_compile scripts/audit_updated_leiden.py scripts/report_updated_leiden.py",
+      "status": "passed"
+    },
+    {
+      "command": "git diff --check",
+      "status": "passed"
+    }
+  ],
+  "synthetic_end_to_end": {
+    "screening_settings": 65,
+    "confirmation_settings": 4,
+    "solver_fits": 355,
+    "screening_status": "complete",
+    "confirmation_status": "complete",
+    "no_qualifying_finalist_path": "verified: no assignment invented",
+    "existing_output_preserved": "verified bytewise",
+    "modified_screening_evidence_rejected": "verified before confirmation directory creation"
+  },
+  "real_preparation": {
+    "dataset": "data/updated-dataset-2026.csv",
+    "dataset_sha256": "8affc248b8040dce5830d0d40338ed66f4173a78526f1d67729036abddc0801d",
+    "source": "data/download/merge_sgns_bigram_char300.txt.bz2",
+    "source_sha256": "ac6615ddca35da7931922ab446e616baacbb88940dad5d100d4f96a35bcb3c1a",
+    "entries_sha256": "f217e7692941e7a584bc7572f1363f5a79e63fb941e7ebf8da89d85c5d5bf56f",
+    "embeddings_sha256": "8045de1546df8aba88235b2f971b3a0db0ca12ac77fbbff7dc66b56facaeecfc",
+    "rows": 11000,
+    "unique_tokens": 10896,
+    "repeated_spelling_rows": 104,
+    "source_rows": 1348468,
+    "dimension": 300,
+    "matched_tokens": 10888,
+    "missing_tokens": 8,
+    "matched_rows": 10992,
+    "missing_rows": 8,
+    "matching": "Exact spelling; cluster once per spelling; retain every ID; no fallback vectors"
+  },
+  "real_screening": {
+    "elapsed_seconds": 276.469740167,
+    "error": null,
+    "status": "complete"
+  },
+  "artifact_policy": "Regenerable graphs, per-seed and stress outputs remain local under existing ignore rules; protocols, summaries, representative assignments, ID exports and audits retained.",
+  "real_confirmation": {
+    "elapsed_seconds": 178.127180166,
+    "error": null,
+    "status": "complete"
+  },
+  "real_solver_fits": 315,
+  "recommendation": {
+    "assignment_sha256": "dcbcd860bff0bd367ea8ecd28af5531b5c1bae4d9d02ef5df8cbd0f82976ec00",
+    "name": "threshold-0.40-q0.3",
+    "representative_seed": 1008,
+    "rule": "Profile distance = 0.5 token-size-band TV + 0.3 group-size-band TV + 0.2 abs(ln(mean-size/reference-mean)); bands 1,2,3-5,6-10,11-20,21-30,31-50,51-100,>100. Guardrails every seed >=95% nonsingleton coverage, <=4% largest group, connected nondegenerate partition. Confirm transferred threshold .40 q .3 plus best eligible threshold, raw-neighbor, and transformed-neighbor candidates; choose by development profile distance only if fresh-seed repeat ARI >=.65 and both paired stress median ARIs >=.65; otherwise report no qualified recommendation. Score is descriptive, no significance/semantic claim. No tuning after confirmation; no endpoint expansion.",
+    "shortlist_sha256": "b79da1caf59060f0fda769fbb40f3dfd88d8dfea955624cc11ad54f2d23556c7"
+  },
+  "real_assignment_audit": {
+    "status": "passed",
+    "counts": {
+      "input_tokens": 10888,
+      "embedding_dimension": 300,
+      "graphs": 13,
+      "graph_edges": 2146396,
+      "assignment_files": 384,
+      "assignment_rows": 4148322,
+      "screening_candidates": 65,
+      "confirmation_candidates": 3,
+      "stress_pairs": 30,
+      "source_ids": 11000,
+      "assigned_ids": 10992,
+      "missing_ids": 8,
+      "repeated_spelling_rows": 104
+    },
+    "errors": []
+  },
+  "finalist_id_exports_verified": [
+    {
+      "file": "results/leiden-v2/ablations-2026-11-18/confirmation/candidates/threshold-0.40-q0.3/communities-with-ids.csv",
+      "rows": 11000,
+      "sha256": "8c1063db2c468a8497cefbac2cb2058b0311b90bd5622485820a11a1ea6d9528"
+    },
+    {
+      "file": "results/leiden-v2/ablations-2026-11-18/confirmation/candidates/raw-k20-q0.3/communities-with-ids.csv",
+      "rows": 11000,
+      "sha256": "c84cb50b7de830ab9e3aa9761efc5ba0d054ec6ba19fba081b1ad9daba0c6062"
+    },
+    {
+      "file": "results/leiden-v2/ablations-2026-11-18/confirmation/candidates/abtt3-k10-q0.2/communities-with-ids.csv",
+      "rows": 11000,
+      "sha256": "ff185e34540f149f4eaffba8421a698fbac35745830a1ac278e98af16e3f5bc7"
+    }
+  ],
+  "report_script_sha256": "0d00b31ea4d178f0acb49f0c25a82e87b01a5f78707a9065f4c9f56dae02fe69"
+}

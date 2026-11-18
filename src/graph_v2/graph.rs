@@ -342,6 +342,61 @@ pub fn exact_neighbors(
     Ok(result)
 }
 
+/// Exact raw-cosine threshold graph, retaining every input token.
+///
+/// Coordinates are used unchanged: the input must already contain finite unit
+/// vectors. Only the upper triangle is evaluated, in parallel batches of 32
+/// rows. Additional working storage is O(32n), beyond the returned edge list;
+/// no dense similarity matrix is allocated. Indexed parallel collection keeps
+/// edges in deterministic (source, target) order.
+pub fn build_threshold(input: &Embeddings, tau: f64) -> Result<Graph> {
+    ensure!(
+        tau.is_finite() && (0.0..=1.0).contains(&tau),
+        "tau must be in [0,1]"
+    );
+    let n = input.tokens.len();
+    ensure!(
+        n > 0 && input.vectors.len() == n,
+        "Empty or misaligned input"
+    );
+    ensure!(
+        input.tokens.windows(2).all(|w| w[0] < w[1]),
+        "Input tokens must be unique and lexically sorted"
+    );
+    let dimension = input.vectors[0].len();
+    ensure!(
+        dimension > 0
+            && input.vectors.iter().all(|row| row.len() == dimension
+                && row.iter().all(|x| x.is_finite())
+                && (dot(row, row) - 1.0).abs() < 1e-10),
+        "Threshold graphs require finite unit vectors with matching dimensions"
+    );
+    let mut graph = Graph {
+        tokens: input.tokens.clone(),
+        edges: vec![],
+    };
+    for start in (0..n).step_by(32) {
+        let rows: Vec<Vec<Edge>> = (start..(start + 32).min(n))
+            .into_par_iter()
+            .map(|u| {
+                let mut edges = vec![];
+                for v in u + 1..n {
+                    let weight = cosine(&input.vectors[u], &input.vectors[v]);
+                    if weight >= tau && weight > 0.0 {
+                        edges.push(Edge { u, v, weight });
+                    }
+                }
+                edges
+            })
+            .collect();
+        for row in rows {
+            graph.edges.extend(row);
+        }
+    }
+    graph.validate()?;
+    Ok(graph)
+}
+
 pub fn build(input: &Embeddings, config: &GraphConfig) -> Result<BuiltGraph> {
     config.validate()?;
     ensure!(
@@ -500,6 +555,122 @@ impl BuiltGraph {
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[test]
+    fn threshold_graph_matches_serial_upper_triangle_across_thread_counts() -> Result<()> {
+        let mut text = String::from("67 3\n");
+        for i in 0..67 {
+            text.push_str(&format!(
+                "word{i:02} {} {} {}\n",
+                (i * 7 % 23) as f64 - 11.0,
+                (i * 11 % 29) as f64 - 14.0,
+                1.0 + (i * 13 % 31) as f64,
+            ));
+        }
+        let input = Embeddings::read(text.as_bytes())?;
+        let original = input.vectors.clone();
+        let serial = rayon::ThreadPoolBuilder::new().num_threads(1).build()?;
+        let parallel = rayon::ThreadPoolBuilder::new().num_threads(4).build()?;
+        for tau in [0.0, 0.35, 0.4, 0.45, 1.0] {
+            let mut expected = vec![];
+            for u in 0..input.tokens.len() {
+                for v in u + 1..input.tokens.len() {
+                    let weight = input.vectors[u]
+                        .iter()
+                        .zip(&input.vectors[v])
+                        .map(|(a, b)| a * b)
+                        .sum::<f64>()
+                        .clamp(-1.0, 1.0);
+                    if weight >= tau && weight > 0.0 {
+                        expected.push(Edge { u, v, weight });
+                    }
+                }
+            }
+            let graph = parallel.install(|| build_threshold(&input, tau))?;
+            assert_eq!(graph.tokens, input.tokens);
+            assert_eq!(graph.edges, expected);
+            assert_eq!(
+                graph.edges,
+                serial.install(|| build_threshold(&input, tau))?.edges
+            );
+        }
+        assert_eq!(input.vectors, original);
+        Ok(())
+    }
+
+    #[test]
+    fn threshold_boundaries_duplicate_vectors_and_isolates() -> Result<()> {
+        let input = Embeddings::read("5 2\na 1 0\nb 0.6 0.8\nc 0 1\nd -1 0\ne 1 0\n".as_bytes())?;
+        let boundary = cosine(&input.vectors[0], &input.vectors[1]);
+        let equal = build_threshold(&input, boundary)?;
+        assert!(equal.edges.iter().any(|edge| (edge.u, edge.v) == (0, 1)));
+        let above = build_threshold(&input, f64::from_bits(boundary.to_bits() + 1))?;
+        assert!(!above.edges.iter().any(|edge| (edge.u, edge.v) == (0, 1)));
+        let zero = build_threshold(&input, 0.0)?;
+        assert_eq!(zero.tokens, input.tokens);
+        assert_eq!(zero.degrees()[3], 0);
+        assert!(!zero.edges.iter().any(|edge| (edge.u, edge.v) == (0, 2)));
+        assert!(zero.edges.iter().all(|edge| edge.weight > 0.0));
+        assert_eq!(
+            build_threshold(&input, 1.0)?.edges,
+            vec![Edge {
+                u: 0,
+                v: 4,
+                weight: 1.0
+            }]
+        );
+        let singleton = input.subset(&[3]);
+        for tau in [0.0, 1.0] {
+            let graph = build_threshold(&singleton, tau)?;
+            assert_eq!(graph.tokens, singleton.tokens);
+            assert!(graph.edges.is_empty());
+        }
+        Ok(())
+    }
+
+    #[test]
+    fn threshold_graph_rejects_invalid_thresholds_and_unaligned_vectors() -> Result<()> {
+        let input = Embeddings::read("2 2\na 1 0\nb 0 1\n".as_bytes())?;
+        for tau in [-0.1, 1.1, f64::NAN, f64::INFINITY] {
+            assert!(build_threshold(&input, tau).is_err());
+        }
+        for vectors in [
+            vec![],
+            vec![vec![1.0, 0.0]],
+            vec![vec![], vec![]],
+            vec![vec![1.0, 0.0], vec![1.0]],
+            vec![vec![2.0, 0.0], vec![0.0, 1.0]],
+            vec![vec![f64::NAN, 0.0], vec![0.0, 1.0]],
+        ] {
+            assert!(build_threshold(
+                &Embeddings {
+                    tokens: input.tokens.clone(),
+                    vectors
+                },
+                0.4
+            )
+            .is_err());
+        }
+        for tokens in [vec!["b".into(), "a".into()], vec!["a".into(), "a".into()]] {
+            assert!(build_threshold(
+                &Embeddings {
+                    tokens,
+                    vectors: input.vectors.clone()
+                },
+                0.4
+            )
+            .is_err());
+        }
+        assert!(build_threshold(
+            &Embeddings {
+                tokens: vec![],
+                vectors: vec![]
+            },
+            0.4
+        )
+        .is_err());
+        Ok(())
+    }
+
     #[test]
     fn neighbors_match_brute_force_and_deterministic_ties() -> Result<()> {
         let data = Embeddings::read("5 2\ne -1 0\nd 0 1\nc 1 0\nb 1 0\na 1 0\n".as_bytes())?;

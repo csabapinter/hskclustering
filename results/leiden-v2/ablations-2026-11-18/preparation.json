@@ -1,0 +1,18 @@
+{
+  "dataset": "data/updated-dataset-2026.csv",
+  "dataset_sha256": "8affc248b8040dce5830d0d40338ed66f4173a78526f1d67729036abddc0801d",
+  "source": "data/download/merge_sgns_bigram_char300.txt.bz2",
+  "source_sha256": "ac6615ddca35da7931922ab446e616baacbb88940dad5d100d4f96a35bcb3c1a",
+  "entries_sha256": "f217e7692941e7a584bc7572f1363f5a79e63fb941e7ebf8da89d85c5d5bf56f",
+  "embeddings_sha256": "8045de1546df8aba88235b2f971b3a0db0ca12ac77fbbff7dc66b56facaeecfc",
+  "rows": 11000,
+  "unique_tokens": 10896,
+  "repeated_spelling_rows": 104,
+  "source_rows": 1348468,
+  "dimension": 300,
+  "matched_tokens": 10888,
+  "missing_tokens": 8,
+  "matched_rows": 10992,
+  "missing_rows": 8,
+  "matching": "Exact spelling; cluster once per spelling; retain every ID; no fallback vectors"
+}

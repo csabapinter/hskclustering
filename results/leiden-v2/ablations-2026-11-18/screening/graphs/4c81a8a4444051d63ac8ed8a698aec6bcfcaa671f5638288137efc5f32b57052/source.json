@@ -1,0 +1,13 @@
+{
+  "kind": "neighbors",
+  "config": {
+    "representation": "raw",
+    "k": 10,
+    "symmetrization": "union",
+    "tau": 0.0,
+    "weight": "snn",
+    "lambda": 0.5,
+    "k_scale": null,
+    "block_rows": 32
+  }
+}

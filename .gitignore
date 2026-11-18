@@ -58,3 +58,8 @@ __pycache__/
 /results/leiden-v2/ablations-*/**/archive-agreements.json
 /results/leiden-v2/ablations-*/**/perturbation-graphs/
 /results/leiden-v2/ablations-*/**/seed-*/
+# Focused studies keep compact CSV summaries; full per-seed JSON is regenerable.
+/results/leiden-v2/ablations-*/screening/summary.json
+/results/leiden-v2/ablations-*/confirmation/summary.json
+# Console transcripts duplicate the retained attempts, status and result records.
+/results/leiden-v2/ablations-*/*.log

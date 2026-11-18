@@ -1,5 +1,6 @@
 //! Additive, reproducible vocabulary graph pipeline. Legacy runners are untouched.
 pub mod calibration;
+pub mod dataset;
 pub mod embeddings;
 pub mod experiment;
 pub mod graph;

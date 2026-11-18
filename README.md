@@ -9,6 +9,12 @@ This is still work in progress, but the currently preferred clustering is achiev
 
 [`results/leiden-v2/ablations-2026-09-26/confirmation/confirmation/b58dfe04de33ba8c519a49ab8641c0cfd99a5c4022b6a198e1ffe7db1adade67/communities.csv`](results/leiden-v2/ablations-2026-09-26/confirmation/confirmation/b58dfe04de33ba8c519a49ab8641c0cfd99a5c4022b6a198e1ffe7db1adade67/communities.csv)
 
+For `data/updated-dataset-2026.csv`, the [2026-11-18 study](results/leiden-v2/ablations-2026-11-18/README.md)
+recommends [ID-preserving assignments](results/leiden-v2/ablations-2026-11-18/recommended.communities.csv)
+from raw cosine threshold .40, q=.30, seed 1008. All 11,000 source IDs are retained;
+10,992 have memberships and eight explicitly lack embeddings. The result has
+1,387 communities, median size 4, after 65 screening settings and fresh confirmation.
+
 Besides graph creation and Leiden, an alternative approach with GMM was also experimented with. Despite the intuition that one word shouldn't be constrained to one study topic and overlapping communities should be allowed, GMM seems to be subpar for this particular use case.
 
 
@@ -117,6 +123,8 @@ The manifest-driven experiment runner supports controls, screening, ablations,
 combinations, fresh-seed confirmation, perturbations and automated reports.
 Automatic default nomination requires an explicit selection policy. No external
 evaluation data is available; related metrics are null with reasons.
+For a changed `ID,Tilelabels` vocabulary and a reference cluster-size distribution,
+see [ID-preserving preparation and focused Leiden studies](docs/updated-vocabulary-leiden.md).
 See [v2 usage and manifest settings](docs/graph-v2-usage.md) and the
 [construction specification](docs/graph-construction-v2.md).
 The [calibrated core comparison](results/leiden-v2/study-2026-09-25/COMPARISON.md)

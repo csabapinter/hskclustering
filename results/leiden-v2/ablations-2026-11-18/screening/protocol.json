@@ -1,0 +1,365 @@
+{
+  "input": "data/updated-2026-prepared/embeddings.txt",
+  "input_sha256": "8045de1546df8aba88235b2f971b3a0db0ca12ac77fbbff7dc66b56facaeecfc",
+  "reference": "results/leiden-v2/ablations-2026-09-26/confirmation/confirmation/b58dfe04de33ba8c519a49ab8641c0cfd99a5c4022b6a198e1ffe7db1adade67/communities.csv",
+  "reference_sha256": "615fe49c2c3a6b6022265d80a09e41a29d75ca25bad0ce8c05ee1c0792c4c30b",
+  "reference_profile": {
+    "tokens": 10936,
+    "communities": 1360,
+    "mean": 8.041176470588235,
+    "median": 4.0,
+    "q25": 3.0,
+    "q75": 9.0,
+    "q95": 24.0,
+    "max": 163,
+    "group_fractions": [
+      0.125,
+      0.12205882352941176,
+      0.3323529411764706,
+      0.2036764705882353,
+      0.15073529411764705,
+      0.03161764705882353,
+      0.022058823529411766,
+      0.009558823529411765,
+      0.0029411764705882353
+    ],
+    "token_fractions": [
+      0.01554498902706657,
+      0.03035844915874177,
+      0.15691294806144843,
+      0.188643013899049,
+      0.2713057790782736,
+      0.09637893196781273,
+      0.10662033650329188,
+      0.08311997073884418,
+      0.051115581565471836
+    ]
+  },
+  "specs": [
+    {
+      "name": "threshold-0.35",
+      "source": {
+        "kind": "threshold",
+        "config": 0.35
+      },
+      "q": [
+        0.15,
+        0.225,
+        0.3,
+        0.4,
+        0.55
+      ]
+    },
+    {
+      "name": "threshold-0.40",
+      "source": {
+        "kind": "threshold",
+        "config": 0.4
+      },
+      "q": [
+        0.15,
+        0.225,
+        0.3,
+        0.4,
+        0.55
+      ]
+    },
+    {
+      "name": "threshold-0.45",
+      "source": {
+        "kind": "threshold",
+        "config": 0.45
+      },
+      "q": [
+        0.15,
+        0.225,
+        0.3,
+        0.4,
+        0.55
+      ]
+    },
+    {
+      "name": "raw-k10",
+      "source": {
+        "kind": "neighbors",
+        "config": {
+          "representation": "raw",
+          "k": 10,
+          "symmetrization": "union",
+          "tau": 0.0,
+          "weight": "cosine",
+          "lambda": 0.5,
+          "k_scale": null,
+          "block_rows": 32
+        }
+      },
+      "q": [
+        0.03,
+        0.06,
+        0.1,
+        0.2,
+        0.3
+      ]
+    },
+    {
+      "name": "raw-k20",
+      "source": {
+        "kind": "neighbors",
+        "config": {
+          "representation": "raw",
+          "k": 20,
+          "symmetrization": "union",
+          "tau": 0.0,
+          "weight": "cosine",
+          "lambda": 0.5,
+          "k_scale": null,
+          "block_rows": 32
+        }
+      },
+      "q": [
+        0.03,
+        0.06,
+        0.1,
+        0.2,
+        0.3
+      ]
+    },
+    {
+      "name": "raw-k40",
+      "source": {
+        "kind": "neighbors",
+        "config": {
+          "representation": "raw",
+          "k": 40,
+          "symmetrization": "union",
+          "tau": 0.0,
+          "weight": "cosine",
+          "lambda": 0.5,
+          "k_scale": null,
+          "block_rows": 32
+        }
+      },
+      "q": [
+        0.03,
+        0.06,
+        0.1,
+        0.2,
+        0.3
+      ]
+    },
+    {
+      "name": "center-k10",
+      "source": {
+        "kind": "neighbors",
+        "config": {
+          "representation": "center",
+          "k": 10,
+          "symmetrization": "union",
+          "tau": 0.0,
+          "weight": "cosine",
+          "lambda": 0.5,
+          "k_scale": null,
+          "block_rows": 32
+        }
+      },
+      "q": [
+        0.03,
+        0.06,
+        0.1,
+        0.2,
+        0.3
+      ]
+    },
+    {
+      "name": "abtt1-k10",
+      "source": {
+        "kind": "neighbors",
+        "config": {
+          "representation": {
+            "abtt": 1
+          },
+          "k": 10,
+          "symmetrization": "union",
+          "tau": 0.0,
+          "weight": "cosine",
+          "lambda": 0.5,
+          "k_scale": null,
+          "block_rows": 32
+        }
+      },
+      "q": [
+        0.03,
+        0.06,
+        0.1,
+        0.2,
+        0.3
+      ]
+    },
+    {
+      "name": "abtt3-k10",
+      "source": {
+        "kind": "neighbors",
+        "config": {
+          "representation": {
+            "abtt": 3
+          },
+          "k": 10,
+          "symmetrization": "union",
+          "tau": 0.0,
+          "weight": "cosine",
+          "lambda": 0.5,
+          "k_scale": null,
+          "block_rows": 32
+        }
+      },
+      "q": [
+        0.03,
+        0.06,
+        0.1,
+        0.2,
+        0.3
+      ]
+    },
+    {
+      "name": "mutual-k10",
+      "source": {
+        "kind": "neighbors",
+        "config": {
+          "representation": "raw",
+          "k": 10,
+          "symmetrization": "mutual",
+          "tau": 0.0,
+          "weight": "cosine",
+          "lambda": 0.5,
+          "k_scale": null,
+          "block_rows": 32
+        }
+      },
+      "q": [
+        0.03,
+        0.06,
+        0.1,
+        0.2,
+        0.3
+      ]
+    },
+    {
+      "name": "snn-k10",
+      "source": {
+        "kind": "neighbors",
+        "config": {
+          "representation": "raw",
+          "k": 10,
+          "symmetrization": "union",
+          "tau": 0.0,
+          "weight": "snn",
+          "lambda": 0.5,
+          "k_scale": null,
+          "block_rows": 32
+        }
+      },
+      "q": [
+        0.03,
+        0.06,
+        0.1,
+        0.2,
+        0.3
+      ]
+    },
+    {
+      "name": "local-k10",
+      "source": {
+        "kind": "neighbors",
+        "config": {
+          "representation": "raw",
+          "k": 10,
+          "symmetrization": "union",
+          "tau": 0.0,
+          "weight": "local",
+          "lambda": 0.5,
+          "k_scale": null,
+          "block_rows": 32
+        }
+      },
+      "q": [
+        0.03,
+        0.06,
+        0.1,
+        0.2,
+        0.3
+      ]
+    },
+    {
+      "name": "blend-k10",
+      "source": {
+        "kind": "neighbors",
+        "config": {
+          "representation": "raw",
+          "k": 10,
+          "symmetrization": "union",
+          "tau": 0.0,
+          "weight": "cosine_snn",
+          "lambda": 0.5,
+          "k_scale": null,
+          "block_rows": 32
+        }
+      },
+      "q": [
+        0.03,
+        0.06,
+        0.1,
+        0.2,
+        0.3
+      ]
+    }
+  ],
+  "screening_seeds": [
+    42,
+    43,
+    44
+  ],
+  "confirmation_seeds": [
+    1000,
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008,
+    1009
+  ],
+  "stress_seeds": [
+    20000,
+    20001,
+    20002,
+    20003,
+    20004,
+    20005,
+    20006,
+    20007,
+    20008,
+    20009
+  ],
+  "code_hashes": {
+    "Cargo.lock": "8f39df3170c8d9f8f529825d81b17fdffa94b6cdd2d5362ec3dae3e2d955302d",
+    "Cargo.toml": "09cb94ae1c5f399dd50a0181ac854363a8fbd80f946d57df7e4f4e3f88f7ef9b",
+    "bin/graph_v2.rs": "adcaaf22021631a282dabb4bfa979dd4f0fbad9aa66130a5fd5e4bb101e072b1",
+    "bin/leiden_study.rs": "bb21eddb5f2ddc458777fc6827b1e5f73f732c29ce4b0f70c241d193d483b09a",
+    "bin/prepare_dataset.rs": "f065959bdb903edf18c68b52e87d17d6e73d3021ebfcc6dd3d240c3c928632f5",
+    "clustering.rs": "7e6ff73096d6e2688e90253fc72207a5fe633a682bd8ee59ce28aa6c0b0c1f4e",
+    "graph_io.rs": "b80b546c372a66af09920a7e54a62a4bee83df6e36ac2a5fb4b41e1f76e54bb5",
+    "graph_v2/calibration.rs": "f488bf31a5cabd1d525fc79e868541237a72f390e75b362b46bd1d53a04e7e5d",
+    "graph_v2/dataset.rs": "8e8768b5d7681b6b685cb04f4f171ae8e3741e978fb1dfee346ba6dc2e9f5f90",
+    "graph_v2/embeddings.rs": "18185e83fb33128749df61a59e36b7ad4555f46ac3d25729cbd854899e31fff7",
+    "graph_v2/experiment.rs": "f5ea59863032f65bd21dc4985136d06d33cdad1feaafd62f12d80c1448698b45",
+    "graph_v2/graph.rs": "f0b51c1dbe6535c0decaa4d7952707e76ff23345608b095bc11031ec8eef1d4a",
+    "graph_v2/leiden.rs": "b2389ce54784564bf2806bcfcc7ebdaf5aac7ac628b95eec67b612196aae6b85",
+    "graph_v2/metrics.rs": "17e641871f4073f5e43566a8eb14299e0610a86ad928c4b9c81a34405daa889d",
+    "graph_v2/mod.rs": "d29e3d7d85512e7a9467be1105f591e3e3f87c3ba2c014d91387a959f67f6bcc",
+    "graph_v2/selection.rs": "7464e1aaf109770e2f9f93d11ecbf9ac7302b4bba19e0840f9af40a6dff1231a",
+    "output.rs": "2dcdc8b58dc27cdf1255f5000775d47bf24614a0e48c4a5f1b75ef1010530a37"
+  },
+  "selection_rule": "Profile distance = 0.5 token-size-band TV + 0.3 group-size-band TV + 0.2 abs(ln(mean-size/reference-mean)); bands 1,2,3-5,6-10,11-20,21-30,31-50,51-100,>100. Guardrails every seed >=95% nonsingleton coverage, <=4% largest group, connected nondegenerate partition. Confirm transferred threshold .40 q .3 plus best eligible threshold, raw-neighbor, and transformed-neighbor candidates; choose by development profile distance only if fresh-seed repeat ARI >=.65 and both paired stress median ARIs >=.65; otherwise report no qualified recommendation. Score is descriptive, no significance/semantic claim. No tuning after confirmation; no endpoint expansion."
+}

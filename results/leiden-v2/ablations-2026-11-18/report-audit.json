@@ -1,0 +1,82 @@
+{
+  "selected": "threshold-0.40-q0.3",
+  "report_script_sha256": "0d00b31ea4d178f0acb49f0c25a82e87b01a5f78707a9065f4c9f56dae02fe69",
+  "inputs_sha256": {
+    "results/leiden-v2/ablations-2026-11-18/screening/protocol.json": "d986a139c863ca29370a83d5772853ad9abdc7a1f02a6d109ff22dfbda2a0979",
+    "results/leiden-v2/ablations-2026-11-18/screening/summary.json": "0786d1a1ead6720679c4fe1297d7f9a2f9ebe8ccb63f9a304f58f2c1ad515a2b",
+    "results/leiden-v2/ablations-2026-11-18/confirmation/summary.json": "a8c8d5cba85f4adda7ca2d41b5a3d5421ea1518861867480ffb52a1f54e9f3bc",
+    "results/leiden-v2/ablations-2026-11-18/confirmation/candidates/threshold-0.40-q0.3/communities.csv": "dcbcd860bff0bd367ea8ecd28af5531b5c1bae4d9d02ef5df8cbd0f82976ec00",
+    "results/leiden-v2/ablations-2026-11-18/recommended.communities.csv": "8c1063db2c468a8497cefbac2cb2058b0311b90bd5622485820a11a1ea6d9528",
+    "results/leiden-v2/ablations-2026-11-18/screening/shortlist.json": "b79da1caf59060f0fda769fbb40f3dfd88d8dfea955624cc11ad54f2d23556c7"
+  },
+  "selected_profile": {
+    "tokens": 10888,
+    "communities": 1387,
+    "mean": 7.850036049026676,
+    "median": 4.0,
+    "q25": 3.0,
+    "q75": 9.0,
+    "q95": 24.0,
+    "max": 171,
+    "group_fractions": [
+      0.11824080749819754,
+      0.12833453496755587,
+      0.3439077144917087,
+      0.20475847152126891,
+      0.14275414563806776,
+      0.03316510454217736,
+      0.015861571737563085,
+      0.010093727469358327,
+      0.002883922134102379
+    ],
+    "token_fractions": [
+      0.015062454077883909,
+      0.03269654665686995,
+      0.16899338721528287,
+      0.19939382806759737,
+      0.25973548861131524,
+      0.10663115356355621,
+      0.07623071271124174,
+      0.09037472446730345,
+      0.0508817046289493
+    ]
+  },
+  "id_expanded_profile": {
+    "tokens": 10992,
+    "communities": 1387,
+    "mean": 7.925018024513338,
+    "median": 5.0,
+    "q25": 3.0,
+    "q75": 9.0,
+    "q95": 24.0,
+    "max": 171,
+    "group_fractions": [
+      0.11247296322999278,
+      0.12761355443403027,
+      0.3431867339581831,
+      0.21124729632299927,
+      0.14275414563806776,
+      0.033886085075702954,
+      0.015861571737563085,
+      0.010093727469358327,
+      0.002883922134102379
+    ],
+    "token_fractions": [
+      0.014192139737991267,
+      0.03220524017467249,
+      0.1675764192139738,
+      0.2038755458515284,
+      0.25736899563318777,
+      0.10826055312954876,
+      0.07560043668122271,
+      0.09052037845705968,
+      0.050400291120815136
+    ]
+  },
+  "id_coverage": {
+    "source_ids": 11000,
+    "assigned_ids": 10992,
+    "unassigned_ids": 8,
+    "unassigned_unique_labels": 8
+  }
+}

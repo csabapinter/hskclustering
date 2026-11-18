@@ -1,0 +1,7 @@
+{
+  "assignment_sha256": "dcbcd860bff0bd367ea8ecd28af5531b5c1bae4d9d02ef5df8cbd0f82976ec00",
+  "name": "threshold-0.40-q0.3",
+  "representative_seed": 1008,
+  "rule": "Profile distance = 0.5 token-size-band TV + 0.3 group-size-band TV + 0.2 abs(ln(mean-size/reference-mean)); bands 1,2,3-5,6-10,11-20,21-30,31-50,51-100,>100. Guardrails every seed >=95% nonsingleton coverage, <=4% largest group, connected nondegenerate partition. Confirm transferred threshold .40 q .3 plus best eligible threshold, raw-neighbor, and transformed-neighbor candidates; choose by development profile distance only if fresh-seed repeat ARI >=.65 and both paired stress median ARIs >=.65; otherwise report no qualified recommendation. Score is descriptive, no significance/semantic claim. No tuning after confirmation; no endpoint expansion.",
+  "shortlist_sha256": "b79da1caf59060f0fda769fbb40f3dfd88d8dfea955624cc11ad54f2d23556c7"
+}

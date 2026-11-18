@@ -1,0 +1,55 @@
+{
+  "nodes": 10888,
+  "edges": 288480,
+  "degree": {
+    "count": 10888,
+    "mean": 52.99044819985305,
+    "stddev": 13.736328473481665,
+    "min": 40.0,
+    "q25": 44.0,
+    "median": 49.0,
+    "q75": 57.0,
+    "q95": 80.0,
+    "max": 167.0,
+    "reason": null
+  },
+  "strength": {
+    "count": 10888,
+    "mean": 23.579362075366973,
+    "stddev": 7.814903990814281,
+    "min": 12.280979518929978,
+    "q25": 18.344421006951606,
+    "median": 21.560857457220713,
+    "q75": 26.37595575158884,
+    "q95": 39.018785996808475,
+    "max": 85.16803667164744,
+    "reason": null
+  },
+  "weight": {
+    "count": 288480,
+    "mean": 0.44497381842171596,
+    "stddev": 0.07445228480926325,
+    "min": 0.260497908836489,
+    "q25": 0.3940146820392617,
+    "median": 0.4320408124320496,
+    "q75": 0.48045607238951205,
+    "q95": 0.5850983260365211,
+    "max": 0.9521722662138956,
+    "reason": null
+  },
+  "isolates": 0,
+  "components": 1,
+  "largest_component_fraction": 1.0,
+  "neighbor_reciprocity": {
+    "value": null,
+    "reason": "Directed neighbor lists unavailable for archived graph"
+  },
+  "incoming_neighbor_count": null,
+  "incoming_neighbor_skewness": {
+    "value": null,
+    "reason": "Directed neighbor lists unavailable for archived graph"
+  },
+  "incoming_neighbor_max": null,
+  "zero_overlap_edges_removed": null,
+  "zero_weight_edges_removed": null
+}

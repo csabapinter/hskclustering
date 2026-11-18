@@ -235,6 +235,14 @@ pub fn code_hashes() -> BTreeMap<String, String> {
         ),
         ("graph_v2/mod.rs", include_bytes!("mod.rs").as_slice()),
         (
+            "graph_v2/dataset.rs",
+            include_bytes!("dataset.rs").as_slice(),
+        ),
+        (
+            "bin/prepare_dataset.rs",
+            include_bytes!("../bin/prepare_dataset.rs").as_slice(),
+        ),
+        (
             "graph_v2/calibration.rs",
             include_bytes!("calibration.rs").as_slice(),
         ),
